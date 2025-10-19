@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,89 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Char_Leg_T_0
+      name: Char_1_Leg_T_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 0
         y: 0
-        width: 8
-        height: 9
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 56a423310e5f51be0800000000000000
-      internalID: -1507028157542020507
+      spriteID: 15e9ecfcf2ff07b40ab842ee4eb8928c
+      internalID: -771162810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_Leg_T_1
+      name: Char_1_Leg_T_1
       rect:
         serializedVersion: 2
-        x: 44
+        x: 32
         y: 0
-        width: 8
-        height: 9
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9c26d5f0f4278b6a0800000000000000
-      internalID: -6433266383812992311
+      spriteID: ef129fd4bd1c0b144a25b2bfdea52781
+      internalID: 1600259956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_Leg_T_2
+      name: Char_1_Leg_T_2
       rect:
         serializedVersion: 2
-        x: 76
+        x: 64
         y: 0
-        width: 8
-        height: 9
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3b99aae99d7fa8c60800000000000000
-      internalID: 7821336216924232115
+      spriteID: bb1adf6f9be65e746aac0138bb9c1fb2
+      internalID: 413861299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_Leg_T_3
+      name: Char_1_Leg_T_3
       rect:
         serializedVersion: 2
-        x: 108
+        x: 96
         y: 0
-        width: 8
-        height: 9
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2bcb51af6e4115e50800000000000000
-      internalID: 6796236294949551282
+      spriteID: e78a037b42a399544bb342968bc31eae
+      internalID: 1347491246
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 64eb4e8e0a4e61f45bd91b1169e5f5df
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Char_Leg_T_0: -1507028157542020507
-      Char_Leg_T_1: -6433266383812992311
-      Char_Leg_T_2: 7821336216924232115
-      Char_Leg_T_3: 6796236294949551282
+      Char_1_Leg_T_0: -771162810
+      Char_1_Leg_T_1: 1600259956
+      Char_1_Leg_T_2: 413861299
+      Char_1_Leg_T_3: 1347491246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

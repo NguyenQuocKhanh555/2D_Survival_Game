@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,89 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Char_Head_R_0
+      name: Char_1_Head_R_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 17
-        width: 14
-        height: 14
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: abe257211308cd7b0800000000000000
-      internalID: -5198138921640972614
+      spriteID: 85227545bd5af404c9af88efaaccd83c
+      internalID: 500546229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_Head_R_1
+      name: Char_1_Head_R_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 15
-        width: 14
-        height: 14
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bbfedfaa70be20140800000000000000
-      internalID: 4684564980584804283
+      spriteID: 4cc5e4da8b8a00340a5c5602ec6ea2dc
+      internalID: -360295550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_Head_R_2
+      name: Char_1_Head_R_2
       rect:
         serializedVersion: 2
-        x: 73
-        y: 17
-        width: 14
-        height: 14
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bfbbfb4bcb0f3c850800000000000000
-      internalID: 6396220589073218555
+      spriteID: f4aca2a6ff0e0f3428f08dc518ecb0a3
+      internalID: -322762505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_Head_R_3
+      name: Char_1_Head_R_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 19
-        width: 14
-        height: 13
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d79fff6f773776a40800000000000000
-      internalID: 5361380840490137981
+      spriteID: 58d438af27ed34245b502e49da0eee95
+      internalID: 1802193047
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bb959e9edb560054fa075ceedab84bb5
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Char_Head_R_0: -5198138921640972614
-      Char_Head_R_1: 4684564980584804283
-      Char_Head_R_2: 6396220589073218555
-      Char_Head_R_3: 5361380840490137981
+      Char_1_Head_R_0: 500546229
+      Char_1_Head_R_1: -360295550
+      Char_1_Head_R_2: -322762505
+      Char_1_Head_R_3: 1802193047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
