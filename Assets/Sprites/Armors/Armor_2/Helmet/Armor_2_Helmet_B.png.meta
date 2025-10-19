@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 7d4d6ab57dc29d545b679c06f4c25afb
+guid: c117169b83575e647bef68960fba2a14
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2482259435071570959
-    second: Char_prototype_R_0
+      213: 7544630036260368508
+    second: Armor_2_Helmet_B_0
   - first:
-      213: 8044244685464010103
-    second: Char_prototype_R_1
+      213: 2759835539747018987
+    second: Armor_2_Helmet_B_1
   - first:
-      213: -8859075617660999356
-    second: Char_prototype_R_2
+      213: -3663451434824911607
+    second: Armor_2_Helmet_B_2
   - first:
-      213: -8072953229476755506
-    second: Char_prototype_R_3
-  - first:
-      213: 4814671653399166485
-    second: Char_prototype_R_4
+      213: 2212383999544890346
+    second: Armor_2_Helmet_B_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Char_prototype_R_0
+      name: Armor_2_Helmet_B_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 0
-        width: 20
-        height: 31
+        x: 4
+        y: 23
+        width: 24
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fb7234023e3d8dd0800000000000000
-      internalID: -2482259435071570959
+      spriteID: c70ba097b09e3b860800000000000000
+      internalID: 7544630036260368508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_prototype_R_1
+      name: Armor_2_Helmet_B_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 0
-        width: 20
-        height: 29
+        x: 36
+        y: 21
+        width: 24
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77df763dbe5e2af60800000000000000
-      internalID: 8044244685464010103
+      spriteID: be89e191dc7ec4620800000000000000
+      internalID: 2759835539747018987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_prototype_R_2
+      name: Armor_2_Helmet_B_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 20
-        height: 31
+        x: 68
+        y: 23
+        width: 24
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 449edf2c9ad3e0580800000000000000
-      internalID: -8859075617660999356
+      spriteID: 905bd5f645ec82dc0800000000000000
+      internalID: -3663451434824911607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_prototype_R_3
+      name: Armor_2_Helmet_B_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 20
-        height: 20
+        x: 100
+        y: 25
+        width: 24
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,30 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec702b46fcb17ff80800000000000000
-      internalID: -8072953229476755506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_prototype_R_4
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 19
-        width: 14
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51efffa0c5621d240800000000000000
-      internalID: 4814671653399166485
+      spriteID: ae391af9687f3be10800000000000000
+      internalID: 2212383999544890346
       vertices: []
       indices: 
       edges: []
@@ -235,11 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Char_prototype_R_0: -2482259435071570959
-      Char_prototype_R_1: 8044244685464010103
-      Char_prototype_R_2: -8859075617660999356
-      Char_prototype_R_3: -8072953229476755506
-      Char_prototype_R_4: 4814671653399166485
+      Armor_2_Helmet_B_0: 7544630036260368508
+      Armor_2_Helmet_B_1: 2759835539747018987
+      Armor_2_Helmet_B_2: -3663451434824911607
+      Armor_2_Helmet_B_3: 2212383999544890346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
