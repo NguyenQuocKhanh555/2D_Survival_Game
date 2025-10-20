@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
+  m_Name: Skin1Head
+  m_EditorClassIdentifier: 
+  partName: Skin1Head
+  partAnimationID: 1
+  allPartAnimations:
+  - {fileID: 7400000, guid: c03eca45497b21140a34e2eb17432247, type: 2}
+  - {fileID: 7400000, guid: 04d9cdca0b80efc4ab25fce84da16497, type: 2}
+  - {fileID: 7400000, guid: cc9bad79cfcfb1c4da58a3e7ae9fe7ca, type: 2}
+  - {fileID: 7400000, guid: a4f89ce0712d1544e85dd9a1b9409a5c, type: 2}

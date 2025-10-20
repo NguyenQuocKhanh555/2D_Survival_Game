@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerControls playerControls;
     private Rigidbody2D rb;
+    private Animator animator;
 
     private Vector2 moveInput;
     private bool isRunning;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -38,6 +40,12 @@ public class PlayerController : MonoBehaviour
         moveInput = playerControls.PlayerMovement.Move.ReadValue<Vector2>();
         bool isShiftPressed = Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed;
         isRunning = isShiftPressed;
+
+        if (moveInput.x != 0 || moveInput.y != 0)
+        {
+            animator.SetFloat("lastHorizontal", moveInput.x);
+            animator.SetFloat("lastVertical", moveInput.y);
+        }
     }
 
     private void Move()
