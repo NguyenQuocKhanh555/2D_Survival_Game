@@ -5,9 +5,9 @@ public class PlayerEquipmentController : MonoBehaviour
 {
     [SerializeField] private SO_PlayerBody playerBody;
 
-    [SerializeField] private string[] bodyPartTypes;
-    [SerializeField] private string[] playerStates;
-    [SerializeField] private string[] playerDirections;
+    [SerializeField] private string[] _bodyPartTypes;
+    [SerializeField] private string[] _playerStates;
+    [SerializeField] private string[] _playerDirections;
 
     private Animator animator;
     private AnimationClip animationClip;
@@ -28,18 +28,18 @@ public class PlayerEquipmentController : MonoBehaviour
 
     private void UpdatePlayerParts()
     {
-        for (int partIndex = 0; partIndex < bodyPartTypes.Length; partIndex++)
+        for (int partIndex = 0; partIndex < _bodyPartTypes.Length; partIndex++)
         {
-            string partType = bodyPartTypes[partIndex];
+            string partType = _bodyPartTypes[partIndex];
             string partID = playerBody.playerBodyParts[partIndex].playerPart.partAnimationID.ToString();
 
-            for (int stateIndex = 0; stateIndex < playerStates.Length; stateIndex++)
+            for (int stateIndex = 0; stateIndex < _playerStates.Length; stateIndex++)
             {
-                string state = playerStates[stateIndex];
+                string state = _playerStates[stateIndex];
 
-                for (int directionIndex = 0; directionIndex < playerDirections.Length; directionIndex++)
+                for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
                 {
-                    string direction = playerDirections[directionIndex];
+                    string direction = _playerDirections[directionIndex];
 
                     animationClip = Resources.Load<AnimationClip>(
                         "PlayerAnimations/" + partType + "/" + state + "/" + partType + "_" + partID + "_" + state + "_" + direction);

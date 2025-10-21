@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 413895676}
   - component: {fileID: 413895677}
   - component: {fileID: 413895678}
+  - component: {fileID: 413895679}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -242,6 +243,7 @@ Transform:
   - {fileID: 1414524203}
   - {fileID: 115533189}
   - {fileID: 1299036130}
+  - {fileID: 1635846564}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &413895675
@@ -283,8 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4231f4dc9a30f549b89388d321b1a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2.5
-  runSpeed: 5
+  _walkSpeed: 2.5
+  _runSpeed: 5
 --- !u!95 &413895677
 Animator:
   serializedVersion: 7
@@ -320,17 +322,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 11400000, guid: c34702851451c9f4ab982f404db1aed5, type: 2}
-  bodyPartTypes:
-  - Head
-  - Torso
-  - Legs
-  playerStates:
-  - idle
-  playerDirections:
-  - down
-  - left
-  - right
-  - up
+  _bodyPartTypes: []
+  _playerStates: []
+  _playerDirections: []
+--- !u!114 &413895679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413895673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e3deaad76c53a4c8cd409a5f20b2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: 435d6f92756663141af8c9b26ff5b855, type: 2}
+  isDead: 0
+  isHungry: 0
+  isThirsty: 0
+  isExhausted: 0
+  isTemperatureCritical: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +783,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1635846563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635846564}
+  - component: {fileID: 1635846565}
+  - component: {fileID: 1635846566}
+  m_Layer: 0
+  m_Name: InteractDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1635846564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635846563}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 413895674}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1635846565
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635846563}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -1}
+  m_Radius: 1
+--- !u!114 &1635846566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635846563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba625d052df92924ebe2484ada1f9ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1727974765
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +971,7 @@ MonoBehaviour:
     m_PostInfinity: 0
     m_RotationOrder: 4
   globalLight: {fileID: 619394801}
-  timeScale: 6000
+  _timeScale: 6000
 --- !u!1 &1796968425
 GameObject:
   m_ObjectHideFlags: 0
