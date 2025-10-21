@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: DefaultHead
   partAnimationID: 0
   allPartAnimations:
-  - {fileID: 7400000, guid: 699eeeb298a263d42bc7b3fdc1e23328, type: 2}
-  - {fileID: 7400000, guid: 11419d8a37098d149a3745798c4f9676, type: 2}
-  - {fileID: 7400000, guid: 48bb5d0914adf8c49b2ba14e40677bbf, type: 2}
-  - {fileID: 7400000, guid: 4f38f08a3ee50914b9135a1b24f29880, type: 2}
+  - {fileID: 7400000, guid: 7c6d52da2aaabfb4ab6bb861cbfc3769, type: 2}
+  - {fileID: 7400000, guid: b8dac75089ad44c478af3e7039a7f10f, type: 2}
+  - {fileID: 7400000, guid: 78617f4eae7842f4583ac40640e9dc8b, type: 2}
+  - {fileID: 7400000, guid: 37f5243a368aaed408f88621557fa4e5, type: 2}

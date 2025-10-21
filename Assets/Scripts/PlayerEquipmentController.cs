@@ -33,16 +33,16 @@ public class PlayerEquipmentController : MonoBehaviour
             string partType = _bodyPartTypes[partIndex];
             string partID = playerBody.playerBodyParts[partIndex].playerPart.partAnimationID.ToString();
 
-            for (int stateIndex = 0; stateIndex < _playerStates.Length; stateIndex++)
+            for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
             {
-                string state = _playerStates[stateIndex];
+                string direction = _playerDirections[directionIndex];
 
-                for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
+                for (int stateIndex = 0; stateIndex < _playerStates.Length; stateIndex++)
                 {
-                    string direction = _playerDirections[directionIndex];
+                    string state = _playerStates[stateIndex];
 
                     animationClip = Resources.Load<AnimationClip>(
-                        "PlayerAnimations/" + partType + "/" + state + "/" + partType + "_" + partID + "_" + state + "_" + direction);
+                        "PlayerAnimations/" + state + "/" + partType + "/" + partType + "_" + partID + "_" + state + "_" + direction);
 
                     defaultAnimationClips[partType + "_" + 0 + "_" + state + "_" + direction] = animationClip;
                 }

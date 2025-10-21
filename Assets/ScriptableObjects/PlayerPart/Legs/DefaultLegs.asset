@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: DefaultLegs
   partAnimationID: 0
   allPartAnimations:
-  - {fileID: 7400000, guid: 5c7849b6ee127884eb393b4c2346babf, type: 2}
-  - {fileID: 7400000, guid: 9d71df2c0c77ebc438c196935306d9a3, type: 2}
-  - {fileID: 7400000, guid: 94ede639ab040bf4fb78925b2413eefa, type: 2}
-  - {fileID: 7400000, guid: ec0b844c88ece5748ba00fa34656caa1, type: 2}
+  - {fileID: 7400000, guid: f4bf1a8f57307cb4b9a62f439fe51028, type: 2}
+  - {fileID: 7400000, guid: 5b6d195440e7a31478812a681bed687b, type: 2}
+  - {fileID: 7400000, guid: 1d9299bc4b83cb1479a1befd5be73e30, type: 2}
+  - {fileID: 7400000, guid: 85f3220c17f28864d80eb996ab3c23ad, type: 2}

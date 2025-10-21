@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: DefaultTorso
   partAnimationID: 0
   allPartAnimations:
-  - {fileID: 7400000, guid: 80aa17544add1224c910795ede03a23b, type: 2}
-  - {fileID: 7400000, guid: db412e0d30b86a149bc0dd006c48bebb, type: 2}
-  - {fileID: 7400000, guid: d16f97898581c1f42a48b76a707e73f5, type: 2}
-  - {fileID: 7400000, guid: da58e15b1b3d3cc4bb66184e3eb8fe0a, type: 2}
+  - {fileID: 7400000, guid: a459799ff12013f4db10a31dfdf9f048, type: 2}
+  - {fileID: 7400000, guid: fc5f237eef412144b9a496be465bf137, type: 2}
+  - {fileID: 7400000, guid: 45a92dd732e534441838e6177defc4f1, type: 2}
+  - {fileID: 7400000, guid: 69cedf9647950c3429c33a65b6520a90, type: 2}
