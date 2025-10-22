@@ -3,25 +3,25 @@ using UnityEngine;
 
 public class PlayerEquipmentController : MonoBehaviour
 {
-    [SerializeField] private SO_PlayerBody playerBody;
+    [SerializeField] private SO_PlayerBody _playerBody;
 
     [SerializeField] private string[] _bodyPartTypes;
     [SerializeField] private string[] _playerStates;
     [SerializeField] private string[] _playerDirections;
 
-    private Animator animator;
-    private AnimationClip animationClip;
-    private AnimatorOverrideController animatorOverrideController;
-    private AnimationClipOverrides defaultAnimationClips;
+    private Animator _animator;
+    private AnimationClip _animationClip;
+    private AnimatorOverrideController _animatorOverrideController;
+    private AnimationClipOverrides _defaultAnimationClips;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
-        animator.runtimeAnimatorController = animatorOverrideController;
+        _animator = GetComponent<Animator>();
+        _animatorOverrideController = new AnimatorOverrideController(_animator.runtimeAnimatorController);
+        _animator.runtimeAnimatorController = _animatorOverrideController;
 
-        defaultAnimationClips = new AnimationClipOverrides(animatorOverrideController.overridesCount);
-        animatorOverrideController.GetOverrides(defaultAnimationClips);
+        _defaultAnimationClips = new AnimationClipOverrides(_animatorOverrideController.overridesCount);
+        _animatorOverrideController.GetOverrides(_defaultAnimationClips);
 
         UpdatePlayerParts();
     }
@@ -31,7 +31,7 @@ public class PlayerEquipmentController : MonoBehaviour
         for (int partIndex = 0; partIndex < _bodyPartTypes.Length; partIndex++)
         {
             string partType = _bodyPartTypes[partIndex];
-            string partID = playerBody.playerBodyParts[partIndex].playerPart.partAnimationID.ToString();
+            string partID = _playerBody.playerBodyParts[partIndex].playerPart.partAnimationID.ToString();
 
             for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
             {
@@ -41,15 +41,15 @@ public class PlayerEquipmentController : MonoBehaviour
                 {
                     string state = _playerStates[stateIndex];
 
-                    animationClip = Resources.Load<AnimationClip>(
+                    _animationClip = Resources.Load<AnimationClip>(
                         "PlayerAnimations/" + state + "/" + partType + "/" + partType + "_" + partID + "_" + state + "_" + direction);
 
-                    defaultAnimationClips[partType + "_" + 0 + "_" + state + "_" + direction] = animationClip;
+                    _defaultAnimationClips[partType + "_" + 0 + "_" + state + "_" + direction] = _animationClip;
                 }
             }
         }
 
-        animatorOverrideController.ApplyOverrides(defaultAnimationClips);
+        _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
     }
 }
 

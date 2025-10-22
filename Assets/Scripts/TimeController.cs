@@ -6,10 +6,10 @@ public class TimeController : MonoBehaviour
 {
     const float secondsInDay = 86400f;
 
-    [SerializeField] private Color nightLightColor;
-    [SerializeField] private Color dayLightColor;
-    [SerializeField] private AnimationCurve lightColorCurve;
-    [SerializeField] private Light2D globalLight;
+    [SerializeField] private Color _nightLightColor;
+    [SerializeField] private Color _dayLightColor;
+    [SerializeField] private AnimationCurve _lightColorCurve;
+    [SerializeField] private Light2D _globalLight;
 
     [SerializeField] private float _timeScale = 60f; // 1 real second = 1 in-game minute
 
@@ -22,9 +22,9 @@ public class TimeController : MonoBehaviour
     private void Update()
     {
         _time += Time.deltaTime * _timeScale;
-        float v = lightColorCurve.Evaluate(Hours);
-        Color c = Color.Lerp(dayLightColor, nightLightColor, v);
-        globalLight.color = c;
+        float v = _lightColorCurve.Evaluate(Hours);
+        Color c = Color.Lerp(_dayLightColor, _nightLightColor, v);
+        _globalLight.color = c;
         if (_time > secondsInDay)
         {
             NextDay();
