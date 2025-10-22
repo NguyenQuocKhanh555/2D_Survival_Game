@@ -328,6 +328,8 @@ MonoBehaviour:
   - Legs
   _playerStates:
   - idle
+  - action
+  - run
   _playerDirections:
   - down
   - left
