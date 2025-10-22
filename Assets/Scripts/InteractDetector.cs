@@ -3,28 +3,28 @@ using UnityEngine;
 
 public class InteractDetector : MonoBehaviour
 {
-    private List<Interactable> interactablesInRange = new List<Interactable>();
+    private List<Interactable> _interactablesInRange = new List<Interactable>();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Interactable interactable = collision.GetComponent<Interactable>();
-        if (interactable != null && !interactablesInRange.Contains(interactable))
+        if (interactable != null && !_interactablesInRange.Contains(interactable))
         {
-            interactablesInRange.Add(interactable);
+            _interactablesInRange.Add(interactable);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         Interactable interactable = collision.GetComponent<Interactable>();
-        if (interactable != null && interactablesInRange.Contains(interactable))
+        if (interactable != null && _interactablesInRange.Contains(interactable))
         {
-            interactablesInRange.Remove(interactable);
+            _interactablesInRange.Remove(interactable);
         }
     }
 
     public List<Interactable> GetInteractablesInRange()
     {
-        return interactablesInRange;
+        return _interactablesInRange;
     }
 }

@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer[] spriteRenderers;
-    [SerializeField] private Material[] highlightMats;
+    [SerializeField] private SpriteRenderer[] _spriteRenderers;
+    [SerializeField] private Material[] _highlightMats;
 
-    private List<Material> originalMats = new List<Material>();
+    private List<Material> _originalMats = new List<Material>();
 
     private bool _isSelected = false;
 
     private void Awake()
     {
-        for (int i = 0; i < spriteRenderers.Length; i++)
+        for (int i = 0; i < _spriteRenderers.Length; i++)
         {
-            originalMats.Add(spriteRenderers[i].material);
+            _originalMats.Add(_spriteRenderers[i].material);
         }
     }
 
@@ -22,11 +22,11 @@ public class Interactable : MonoBehaviour
     {
         if (!_isSelected)
         {
-            for (int i = 0; i < spriteRenderers.Length; i++)
+            for (int i = 0; i < _spriteRenderers.Length; i++)
             {
-                if (spriteRenderers[i] != null && highlightMats[i] != null)
+                if (_spriteRenderers[i] != null && _highlightMats[i] != null)
                 {
-                    spriteRenderers[i].material = highlightMats[i];
+                    _spriteRenderers[i].material = _highlightMats[i];
                 }
             }
             _isSelected = true;
@@ -37,11 +37,11 @@ public class Interactable : MonoBehaviour
     {
         if (_isSelected)
         {
-            for (int i = 0; i < spriteRenderers.Length; i++)
+            for (int i = 0; i < _spriteRenderers.Length; i++)
             {
-                if (spriteRenderers[i] != null && originalMats[i] != null)
+                if (_spriteRenderers[i] != null && _originalMats[i] != null)
                 {
-                    spriteRenderers[i].material = originalMats[i];
+                    _spriteRenderers[i].material = _originalMats[i];
                 }
             }
             _isSelected = false;

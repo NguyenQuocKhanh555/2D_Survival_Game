@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerInteractController : MonoBehaviour
 {
-    private Interactable currentSelectedObject = null;
+    private Interactable _currentSelectedObject = null;
 
-    [SerializeField] private InteractDetector interactDetector;
+    [SerializeField] private InteractDetector _interactDetector;
 
     public bool isInteracting = false;
 
@@ -15,7 +15,7 @@ public class PlayerInteractController : MonoBehaviour
 
     private void Check()
     {
-        var interactable = interactDetector.GetInteractablesInRange();
+        var interactable = _interactDetector.GetInteractablesInRange();
 
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D[] colliders = Physics2D.OverlapPointAll(mousePosition);
@@ -37,27 +37,27 @@ public class PlayerInteractController : MonoBehaviour
             }
         }
 
-        if (closestInteractable != null && closestInteractable != currentSelectedObject)
+        if (closestInteractable != null && closestInteractable != _currentSelectedObject)
         {
-            if (currentSelectedObject != null)
+            if (_currentSelectedObject != null)
             {
-                currentSelectedObject.Deselect();
+                _currentSelectedObject.Deselect();
             }
-            currentSelectedObject = closestInteractable;
-            currentSelectedObject.Select();
+            _currentSelectedObject = closestInteractable;
+            _currentSelectedObject.Select();
         }
-        else if (closestInteractable == null && currentSelectedObject != null)
+        else if (closestInteractable == null && _currentSelectedObject != null)
         {
-            currentSelectedObject.Deselect();
-            currentSelectedObject = null;
+            _currentSelectedObject.Deselect();
+            _currentSelectedObject = null;
             isInteracting = false;
         }
     }
 
     public void Interact(Player player)
     {
-        if (currentSelectedObject == null) { return; }
+        if (_currentSelectedObject == null) { return; }
 
-        currentSelectedObject.Interact(player);
+        _currentSelectedObject.Interact(player);
     }
 }
