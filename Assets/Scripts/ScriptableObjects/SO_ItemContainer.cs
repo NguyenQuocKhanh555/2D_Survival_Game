@@ -15,18 +15,18 @@ public class ItemSlot
 
 }
 
-[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory")]
-public class SO_Inventory : ScriptableObject
+[CreateAssetMenu(fileName = "New Item Container", menuName = "Item Container")]
+public class SO_ItemContainer : ScriptableObject
 {
-    public List<ItemSlot> items;
+    public List<ItemSlot> itemSlots;
 
     public int GetTotalItemCount()
     {
-        return items.Sum(slot => slot.quantity);
+        return itemSlots.Sum(slot => slot.quantity);
     }
 
     public List<ItemSlot> GetItemDetails()
     {
-        return items;
+        return itemSlots;
     }
 }

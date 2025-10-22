@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e941d2c0144a7244b7841ff2a4d6f8f, type: 3}
-  m_Name: New Inventory
+  m_Script: {fileID: 11500000, guid: 4c72bee7bb2c62b41b2b4b0492a5ab49, type: 3}
+  m_Name: Wood
   m_EditorClassIdentifier: 
-  items:
-  - item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
-    quantity: 13
+  itemName: Wood
+  isStackable: 1
+  itemSprite: {fileID: -845966638695772790, guid: 1b52a5bc2cdcabd49ba06d27a55ec135, type: 3}
+  itemType: 0
