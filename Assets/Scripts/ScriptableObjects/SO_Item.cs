@@ -5,7 +5,7 @@ public class SO_Item : ScriptableObject
 {
     public string itemName;
     public bool isStackable;
-    public Sprite itemSprite;
+    public Sprite itemIcon;
 
     public enum ItemType
     {

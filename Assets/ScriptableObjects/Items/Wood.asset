@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wood
   isStackable: 1
-  itemSprite: {fileID: -845966638695772790, guid: 1b52a5bc2cdcabd49ba06d27a55ec135, type: 3}
+  itemIcon: {fileID: 7079136875105633824, guid: 1b52a5bc2cdcabd49ba06d27a55ec135, type: 3}
   itemType: 0

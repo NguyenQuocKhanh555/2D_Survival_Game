@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stone
   isStackable: 1
-  itemSprite: {fileID: -3550421968513594277, guid: 9ed87efcb2dbe04418d2dbcfbf66e09f, type: 3}
+  itemIcon: {fileID: -3550421968513594277, guid: 9ed87efcb2dbe04418d2dbcfbf66e09f, type: 3}
   itemType: 0

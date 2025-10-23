@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private Player _player;
     private PlayerInteractController _interactController;
+    private PlayerInventoryController _inventoryController;
 
     private Vector2 _moveInput;
     private Vector2 _lastMotionVector;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _player = GetComponent<Player>();
         _interactController = GetComponent<PlayerInteractController>();
+        _inventoryController = GetComponent<PlayerInventoryController>();
     }
 
     private void OnEnable()
@@ -32,10 +34,12 @@ public class PlayerController : MonoBehaviour
         _playerControls.Enable();
         _playerControls.PlayerMovement.Interact.performed += OnInteract;
         _playerControls.PlayerMovement.Action.performed += OnAction;
+        _playerControls.UI.OpenInventory.performed += OnOpenInventory;
     }
 
     private void OnDisable()
     {
+        _playerControls.UI.OpenInventory.performed -= OnOpenInventory;
         _playerControls.PlayerMovement.Interact.performed -= OnInteract;
         _playerControls.PlayerMovement.Action.performed -= OnAction;
         _playerControls.Disable();
@@ -90,5 +94,14 @@ public class PlayerController : MonoBehaviour
     private void OnAction(InputAction.CallbackContext context)
     {
         _animator.SetTrigger("action");
+    }
+
+    private void OnOpenInventory(InputAction.CallbackContext context)
+    {
+        _inventoryController.ToggleInventory();
+        if (_inventoryController.IsInventoryOpen)
+            _playerControls.PlayerMovement.Disable();
+        else
+            _playerControls.PlayerMovement.Enable();
     }
 }
