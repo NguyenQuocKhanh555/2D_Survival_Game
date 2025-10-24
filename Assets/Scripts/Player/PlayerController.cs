@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private Player _player;
     private PlayerInteractController _interactController;
-    private PlayerInventoryController _inventoryController;
+    private PlayerUIInteractController _inventoryController;
+    private PlayerToolbarController _toolbarController;
 
     private Vector2 _moveInput;
     private Vector2 _lastMotionVector;
+    private float _scrollInput;
     private bool _isRunning;
     private bool _isMoving;
 
@@ -26,7 +28,8 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _player = GetComponent<Player>();
         _interactController = GetComponent<PlayerInteractController>();
-        _inventoryController = GetComponent<PlayerInventoryController>();
+        _inventoryController = GetComponent<PlayerUIInteractController>();
+        _toolbarController = GetComponent<PlayerToolbarController>();
     }
 
     private void OnEnable()
@@ -47,7 +50,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        PlayerInput();
+        PlayerMovementInput();
+        PlayerToolbarSelectInput();
     }
 
     private void FixedUpdate()
@@ -55,7 +59,7 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-    private void PlayerInput()
+    private void PlayerMovementInput()
     {
         _moveInput = _playerControls.PlayerMovement.Move.ReadValue<Vector2>();
         _isRunning = !_player.isExhausted &&
@@ -74,6 +78,13 @@ public class PlayerController : MonoBehaviour
             _animator.SetFloat("lastHorizontal", _lastMotionVector.x);
             _animator.SetFloat("lastVertical", _lastMotionVector.y);
         }
+    }
+
+    private void PlayerToolbarSelectInput()
+    {
+        _scrollInput = _playerControls.UI.SelectOnToolbar.ReadValue<float>();
+        if (_scrollInput != 0)
+            _toolbarController.SelectToolbarIndex(_scrollInput);
     }
 
     private void Move()

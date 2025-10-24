@@ -10,11 +10,11 @@ public class InventoryItemButton : MonoBehaviour, IItemButton, IPointerClickHand
 
     private int _inventoryIndex;
 
-    private InventoryItemPanel _itemPanel;
+    private InventoryItemPanel _inventoryItemPanel;
 
     public void SetItemPanel(InventoryItemPanel source)
     {
-        _itemPanel = source;
+        _inventoryItemPanel = source;
     }
 
     public void SetInventoryIndex(int index)
@@ -48,6 +48,6 @@ public class InventoryItemButton : MonoBehaviour, IItemButton, IPointerClickHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        _itemPanel.OnClick(_inventoryIndex);
+        _inventoryItemPanel.OnClick(_inventoryIndex);
     }
 }

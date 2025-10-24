@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class PlayerInventoryController : MonoBehaviour
+public class PlayerUIInteractController : MonoBehaviour
 {
     [SerializeField] private GameObject _inventoryUI;
+    [SerializeField] private GameObject _toolbarUI;
 
     public bool IsInventoryOpen
     {
@@ -12,5 +13,6 @@ public class PlayerInventoryController : MonoBehaviour
     public void ToggleInventory()
     {
         _inventoryUI.SetActive(!_inventoryUI.activeSelf);
+        _toolbarUI.SetActive(!_toolbarUI.activeSelf);
     }
 }
