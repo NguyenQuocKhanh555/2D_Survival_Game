@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 8b48ccdba86f71b45a0e62bedccce052
+guid: 31f88970495e7eb4b95628715567e83b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8380501566739521325
-    second: Swords_0_R_0
+      213: -1031943985199120166
+    second: Axe_1_U_0
   - first:
-      213: -1455896651740656724
-    second: Swords_0_R_1
+      213: -1210463492609409676
+    second: Axe_1_U_1
   - first:
-      213: 6259168988581869090
-    second: Swords_0_R_2
+      213: 4323193808817496399
+    second: Axe_1_U_2
   - first:
-      213: -4195365430130921648
-    second: Swords_0_R_3
+      213: -6795519630720862120
+    second: Axe_1_U_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Swords_0_R_0
+      name: Axe_1_U_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2f1d1de5c58d4470800000000000000
-      internalID: 8380501566739521325
+      spriteID: ad00b16b96ccda1f0800000000000000
+      internalID: -1031943985199120166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swords_0_R_1
+      name: Axe_1_U_1
       rect:
         serializedVersion: 2
         x: 48
@@ -146,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cab415b75bd9bcbe0800000000000000
-      internalID: -1455896651740656724
+      spriteID: 47dff65edd1933fe0800000000000000
+      internalID: -1210463492609409676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swords_0_R_2
+      name: Axe_1_U_2
       rect:
         serializedVersion: 2
         x: 96
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 226309958090dd650800000000000000
-      internalID: 6259168988581869090
+      spriteID: f412cb52dd11ffb30800000000000000
+      internalID: 4323193808817496399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swords_0_R_3
+      name: Axe_1_U_3
       rect:
         serializedVersion: 2
         x: 144
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05fa71a8e5117c5c0800000000000000
-      internalID: -4195365430130921648
+      spriteID: 85870ba66e671b1a0800000000000000
+      internalID: -6795519630720862120
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c8a9b9cd07429804db726b1edc32f697
+    spriteID: c01ec24d35b45c542967eee02cefee15
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Swords_0_R_0: 8380501566739521325
-      Swords_0_R_1: -1455896651740656724
-      Swords_0_R_2: 6259168988581869090
-      Swords_0_R_3: -4195365430130921648
+      Axe_1_U_0: -1031943985199120166
+      Axe_1_U_1: -1210463492609409676
+      Axe_1_U_2: 4323193808817496399
+      Axe_1_U_3: -6795519630720862120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
