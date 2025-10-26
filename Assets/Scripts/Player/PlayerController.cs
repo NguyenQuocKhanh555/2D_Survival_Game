@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     private PlayerInteractController _interactController;
     private PlayerUIInteractController _inventoryController;
     private PlayerToolbarController _toolbarController;
+    private PlayerPickupItemController _pickupItemController;
 
     private Vector2 _moveInput;
     private Vector2 _lastMotionVector;
     private float _scrollInput;
-    private bool _isRunning;
-    private bool _isMoving;
+    private float _pickupAroundInput;
+    private bool _isInputRunning;
+    private bool _isInputMoving;
 
     private void Awake()
     {
@@ -30,13 +32,15 @@ public class PlayerController : MonoBehaviour
         _interactController = GetComponent<PlayerInteractController>();
         _inventoryController = GetComponent<PlayerUIInteractController>();
         _toolbarController = GetComponent<PlayerToolbarController>();
+        _pickupItemController = GetComponent<PlayerPickupItemController>();
     }
 
     private void OnEnable()
     {
         _playerControls.Enable();
         _playerControls.PlayerMovement.Interact.performed += OnInteract;
-        _playerControls.PlayerMovement.Action.performed += OnAction;
+        //_playerControls.PlayerMovement.Action.performed += OnAction;
+        _playerControls.PlayerMovement.PickupSingleItem.performed += OnPickupItem;
         _playerControls.UI.OpenInventory.performed += OnOpenInventory;
     }
 
@@ -44,7 +48,8 @@ public class PlayerController : MonoBehaviour
     {
         _playerControls.UI.OpenInventory.performed -= OnOpenInventory;
         _playerControls.PlayerMovement.Interact.performed -= OnInteract;
-        _playerControls.PlayerMovement.Action.performed -= OnAction;
+        //_playerControls.PlayerMovement.Action.performed -= OnAction;
+        _playerControls.PlayerMovement.PickupSingleItem.performed -= OnPickupItem;
         _playerControls.Disable();
     }
 
@@ -52,28 +57,32 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovementInput();
         PlayerToolbarSelectInput();
+        PlayerPickupAroundInput();
+        _pickupItemController.SetStateToMoving(_animator);
     }
 
     private void FixedUpdate()
     {
         Move();
+        _pickupItemController.MoveToTargetPickupItem(_walkSpeed, _animator);
     }
 
     private void PlayerMovementInput()
     {
         _moveInput = _playerControls.PlayerMovement.Move.ReadValue<Vector2>();
-        _isRunning = !_player.isExhausted &&
+        _isInputRunning = !_player.isExhausted &&
             (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed);
 
         _animator.SetFloat("horizontal", _moveInput.x);
         _animator.SetFloat("vertical", _moveInput.y);
 
-        _isMoving = _moveInput.x != 0 || _moveInput.y != 0;
-        _animator.SetBool("moving", _isMoving);
+        _isInputMoving = _moveInput.x != 0 || _moveInput.y != 0;
+        _animator.SetBool("moving", _isInputMoving);
 
-        if (_moveInput.x != 0 || _moveInput.y != 0)
+        if (_isInputMoving)
         {
             _lastMotionVector = _moveInput.normalized;
+            _pickupItemController.isMovingToPickupItem = false;
 
             _animator.SetFloat("lastHorizontal", _lastMotionVector.x);
             _animator.SetFloat("lastVertical", _lastMotionVector.y);
@@ -87,10 +96,20 @@ public class PlayerController : MonoBehaviour
             _toolbarController.SelectToolbarIndex(_scrollInput);
     }
 
+    private void PlayerPickupAroundInput()
+    {
+        _pickupAroundInput = _playerControls.PlayerMovement.PickupItemAround.ReadValue<float>();
+        if (_pickupAroundInput != 0)
+        {
+            _pickupItemController.FindNearestPickupItem();
+            _pickupItemController.SetTargetPickupItem();
+        }          
+    }
+
     private void Move()
     {
-        float currentSpeed = _isRunning ? _runSpeed : _walkSpeed;
-        if (_isRunning) {
+        float currentSpeed = _isInputRunning ? _runSpeed : _walkSpeed;
+        if (_isInputRunning) {
             _player.UseStamina(_staminaConsumptionRate * Time.fixedDeltaTime);
         }
         Vector2 movement = _moveInput * currentSpeed * Time.fixedDeltaTime;
@@ -105,6 +124,11 @@ public class PlayerController : MonoBehaviour
     private void OnAction(InputAction.CallbackContext context)
     {
         _animator.SetTrigger("action");
+    }
+
+    private void OnPickupItem(InputAction.CallbackContext context)
+    {
+        _pickupItemController.PickupSingleItem();
     }
 
     private void OnOpenInventory(InputAction.CallbackContext context)

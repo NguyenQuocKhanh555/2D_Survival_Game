@@ -118,6 +118,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickupSingleItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""529387d0-4c07-445e-bf16-0eceefe4d24a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickupItemAround"",
+                    ""type"": ""Value"",
+                    ""id"": ""9a2e7984-0db7-4ccb-b31e-e4bcebef6913"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -197,6 +215,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e9a3dc7-f9f5-4d27-92a9-7c7fc897af38"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickupSingleItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92851bc0-499c-446e-bded-f9dfbd4e88b3"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickupItemAround"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -256,6 +296,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
         m_PlayerMovement_Interact = m_PlayerMovement.FindAction("Interact", throwIfNotFound: true);
         m_PlayerMovement_Action = m_PlayerMovement.FindAction("Action", throwIfNotFound: true);
+        m_PlayerMovement_PickupSingleItem = m_PlayerMovement.FindAction("PickupSingleItem", throwIfNotFound: true);
+        m_PlayerMovement_PickupItemAround = m_PlayerMovement.FindAction("PickupItemAround", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_OpenInventory = m_UI.FindAction("OpenInventory", throwIfNotFound: true);
@@ -344,6 +386,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_Move;
     private readonly InputAction m_PlayerMovement_Interact;
     private readonly InputAction m_PlayerMovement_Action;
+    private readonly InputAction m_PlayerMovement_PickupSingleItem;
+    private readonly InputAction m_PlayerMovement_PickupItemAround;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerMovement".
     /// </summary>
@@ -367,6 +411,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerMovement/Action".
         /// </summary>
         public InputAction @Action => m_Wrapper.m_PlayerMovement_Action;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerMovement/PickupSingleItem".
+        /// </summary>
+        public InputAction @PickupSingleItem => m_Wrapper.m_PlayerMovement_PickupSingleItem;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerMovement/PickupItemAround".
+        /// </summary>
+        public InputAction @PickupItemAround => m_Wrapper.m_PlayerMovement_PickupItemAround;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -402,6 +454,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Action.started += instance.OnAction;
             @Action.performed += instance.OnAction;
             @Action.canceled += instance.OnAction;
+            @PickupSingleItem.started += instance.OnPickupSingleItem;
+            @PickupSingleItem.performed += instance.OnPickupSingleItem;
+            @PickupSingleItem.canceled += instance.OnPickupSingleItem;
+            @PickupItemAround.started += instance.OnPickupItemAround;
+            @PickupItemAround.performed += instance.OnPickupItemAround;
+            @PickupItemAround.canceled += instance.OnPickupItemAround;
         }
 
         /// <summary>
@@ -422,6 +480,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Action.started -= instance.OnAction;
             @Action.performed -= instance.OnAction;
             @Action.canceled -= instance.OnAction;
+            @PickupSingleItem.started -= instance.OnPickupSingleItem;
+            @PickupSingleItem.performed -= instance.OnPickupSingleItem;
+            @PickupSingleItem.canceled -= instance.OnPickupSingleItem;
+            @PickupItemAround.started -= instance.OnPickupItemAround;
+            @PickupItemAround.performed -= instance.OnPickupItemAround;
+            @PickupItemAround.canceled -= instance.OnPickupItemAround;
         }
 
         /// <summary>
@@ -590,6 +654,20 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAction(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PickupSingleItem" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPickupSingleItem(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PickupItemAround" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPickupItemAround(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
