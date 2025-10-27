@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private PlayerUIInteractController _inventoryController;
     private PlayerToolbarController _toolbarController;
     private PlayerPickupItemController _pickupItemController;
+    private PlayerUseItemController _useItemController;
 
     private Vector2 _moveInput;
     private Vector2 _lastMotionVector;
@@ -33,13 +35,14 @@ public class PlayerController : MonoBehaviour
         _inventoryController = GetComponent<PlayerUIInteractController>();
         _toolbarController = GetComponent<PlayerToolbarController>();
         _pickupItemController = GetComponent<PlayerPickupItemController>();
+        _useItemController = GetComponent<PlayerUseItemController>();
     }
 
     private void OnEnable()
     {
         _playerControls.Enable();
         _playerControls.PlayerMovement.Interact.performed += OnInteract;
-        //_playerControls.PlayerMovement.Action.performed += OnAction;
+        _playerControls.PlayerMovement.Action.performed += OnAction;
         _playerControls.PlayerMovement.PickupSingleItem.performed += OnPickupItem;
         _playerControls.UI.OpenInventory.performed += OnOpenInventory;
     }
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         _playerControls.UI.OpenInventory.performed -= OnOpenInventory;
         _playerControls.PlayerMovement.Interact.performed -= OnInteract;
-        //_playerControls.PlayerMovement.Action.performed -= OnAction;
+        _playerControls.PlayerMovement.Action.performed -= OnAction;
         _playerControls.PlayerMovement.PickupSingleItem.performed -= OnPickupItem;
         _playerControls.Disable();
     }
@@ -123,7 +126,22 @@ public class PlayerController : MonoBehaviour
 
     private void OnAction(InputAction.CallbackContext context)
     {
-        _animator.SetTrigger("action");
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+        switch (_toolbarController.GetToolbarSelectedItem.itemType)
+        {
+            case ItemTypes.Weapon:
+                // Plant seed action
+                break;
+            case ItemTypes.Tool:
+                _useItemController.UseTool();
+                // Use tool action
+                break;
+            case ItemTypes.Consumable:
+                // Consume item action
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnPickupItem(InputAction.CallbackContext context)
