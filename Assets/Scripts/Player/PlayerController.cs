@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private PlayerUIInteractController _inventoryController;
     private PlayerToolbarController _toolbarController;
     private PlayerPickupItemController _pickupItemController;
-    private PlayerUseItemController _useItemController;
+    private PlayerUseItemController _useToolController; 
 
     private Vector2 _moveInput;
     private Vector2 _lastMotionVector;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         _inventoryController = GetComponent<PlayerUIInteractController>();
         _toolbarController = GetComponent<PlayerToolbarController>();
         _pickupItemController = GetComponent<PlayerPickupItemController>();
-        _useItemController = GetComponent<PlayerUseItemController>();
+        _useToolController = GetComponent<PlayerUseItemController>();
     }
 
     private void OnEnable()
@@ -126,18 +126,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnAction(InputAction.CallbackContext context)
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+        if (_toolbarController.GetToolbarSelectedItem == null) return;
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
             case ItemTypes.Weapon:
-                // Plant seed action
+                _useToolController.UseWeapon(_animator);
                 break;
             case ItemTypes.Tool:
-                _useItemController.UseTool();
-                // Use tool action
+                _useToolController.UseTool(_animator);
                 break;
             case ItemTypes.Consumable:
-                // Consume item action
+                _useToolController.UseConsumableItem(_animator);
                 break;
             default:
                 break;

@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerEquipmentController : MonoBehaviour
 {
     [SerializeField] private SO_PlayerBody _playerBody;
+    [SerializeField] private PlayerToolbarController _toolbarController;
 
     [SerializeField] private string[] _bodyPartTypes;
     [SerializeField] private string[] _playerStates;
@@ -13,6 +14,8 @@ public class PlayerEquipmentController : MonoBehaviour
     private AnimationClip _animationClip;
     private AnimatorOverrideController _animatorOverrideController;
     private AnimationClipOverrides _defaultAnimationClips;
+
+    public SO_Tool currentToolData;
 
     private void Start()
     {
@@ -24,6 +27,9 @@ public class PlayerEquipmentController : MonoBehaviour
         _animatorOverrideController.GetOverrides(_defaultAnimationClips);
 
         UpdatePlayerParts();
+        UpdateUseTool();
+
+        _toolbarController.onToolbarSelectedChanged += UseToolChanged;
     }
 
     private void UpdatePlayerParts()
@@ -50,6 +56,36 @@ public class PlayerEquipmentController : MonoBehaviour
         }
 
         _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
+    }
+
+    private void UpdateUseTool()
+    {
+        if (currentToolData == null) return;
+
+        string toolName = currentToolData.toolName;
+        string toolID = currentToolData.toolAnimationID.ToString();
+
+        for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
+        {
+            string direction = _playerDirections[directionIndex];
+            _animationClip = Resources.Load<AnimationClip>(
+                "PlayerAnimations/Tools/" + toolName + "s/" + toolName + "_" + toolID + "_" + direction);
+
+            _defaultAnimationClips["Pickaxe_" + 0 + "_" + direction] = _animationClip;
+        }
+
+        _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
+    }
+
+    private void UseToolChanged()
+    {
+        if (_toolbarController.GetToolbarSelectedItem == null) return;
+        SO_Tool selectedTool = _toolbarController.GetToolbarSelectedItem.toolData;
+        if (selectedTool != currentToolData && selectedTool != null)
+        {
+            currentToolData = selectedTool;
+            UpdateUseTool();
+        }
     }
 }
 

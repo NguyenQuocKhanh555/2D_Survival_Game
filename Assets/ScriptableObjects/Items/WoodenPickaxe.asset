@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c72bee7bb2c62b41b2b4b0492a5ab49, type: 3}
-  m_Name: Wood
+  m_Name: WoodenPickaxe
   m_EditorClassIdentifier: 
-  itemName: Wood
-  isStackable: 1
-  itemIcon: {fileID: 7079136875105633824, guid: 1b52a5bc2cdcabd49ba06d27a55ec135, type: 3}
-  itemType: 4
-  toolData: {fileID: 0}
+  itemName: Wooden Pickaxe
+  isStackable: 0
+  itemIcon: {fileID: -1249368450, guid: 95515805b1096e6449da717584a95910, type: 3}
+  itemType: 0
+  toolData: {fileID: 11400000, guid: 06aeb314406370246983f3cc3746f3d6, type: 2}
