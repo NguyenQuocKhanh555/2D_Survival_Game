@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 59f2ab68f4357314dbf4a777357e01e1
+guid: 67faa56b0ecbc844ebe26441b6d68aab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7959394640336102995
-    second: Sword_1_U_0
-  - first:
-      213: 3749497749667243774
-    second: Sword_1_U_1
-  - first:
-      213: 8158291098116253005
-    second: Sword_1_U_2
-  - first:
-      213: -6337996644640654435
-    second: Sword_1_U_3
-  - first:
-      213: 7771779629964515157
-    second: Sword_1_U_4
+      213: 2572236292851511218
+    second: Trees_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -112,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sword_1_U_0
+      name: Trees_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 48
-        height: 48
+        width: 74
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da95e9bcebc8a8190800000000000000
-      internalID: -7959394640336102995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_U_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef6ea0f6654e80430800000000000000
-      internalID: 3749497749667243774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_U_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d45637d7782183170800000000000000
-      internalID: 8158291098116253005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_U_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9b7390c1a9ea08a0800000000000000
-      internalID: -6337996644640654435
+      spriteID: 2bf28c1b74b62b320800000000000000
+      internalID: 2572236292851511218
       vertices: []
       indices: 
       edges: []
@@ -203,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ed70935e31ad6264f8905f23028a9c4d
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -213,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sword_1_U_0: -7959394640336102995
-      Sword_1_U_1: 3749497749667243774
-      Sword_1_U_2: 8158291098116253005
-      Sword_1_U_3: -6337996644640654435
+      Trees_0: 2572236292851511218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

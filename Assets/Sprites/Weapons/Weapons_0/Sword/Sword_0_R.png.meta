@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 17fc44a759b06084b942b0b6619559c5
+guid: d57291d0dd6a61340816ed983ace8ba7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8968548435439302877
-    second: Sword_1_D_0
+      213: 738726723712859253
+    second: Sword_0_R_0
   - first:
-      213: 5684723319986069799
-    second: Sword_1_D_1
+      213: 9178669251724116894
+    second: Sword_0_R_1
   - first:
-      213: 2215678166520525074
-    second: Sword_1_D_2
+      213: 2577673520121264747
+    second: Sword_0_R_2
   - first:
-      213: -4871363049673300329
-    second: Sword_1_D_3
+      213: -1979176751256854143
+    second: Sword_0_R_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sword_1_D_0
+      name: Sword_0_R_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32741c227b0598380800000000000000
-      internalID: -8968548435439302877
+      spriteID: 57c3ef09a0c704a00800000000000000
+      internalID: 738726723712859253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_D_1
+      name: Sword_0_R_1
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72126269db134ee40800000000000000
-      internalID: 5684723319986069799
+      spriteID: e9301d3cd0f216f70800000000000000
+      internalID: 9178669251724116894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_D_2
+      name: Sword_0_R_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2117b04ad8bafbe10800000000000000
-      internalID: 2215678166520525074
+      spriteID: b6a32c1d86cb5c320800000000000000
+      internalID: 2577673520121264747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_D_3
+      name: Sword_0_R_3
       rect:
         serializedVersion: 2
         x: 144
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 796624cad11756cb0800000000000000
-      internalID: -4871363049673300329
+      spriteID: 181af991b3d8884e0800000000000000
+      internalID: -1979176751256854143
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4fb6d38e6c9a56640a7396b1d1567ccc
+    spriteID: 44e70a76f7aeb444cb30b5aa05f5674e
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sword_1_D_0: -8968548435439302877
-      Sword_1_D_1: 5684723319986069799
-      Sword_1_D_2: 2215678166520525074
-      Sword_1_D_3: -4871363049673300329
+      Sword_0_R_0: 738726723712859253
+      Sword_0_R_1: 9178669251724116894
+      Sword_0_R_2: 2577673520121264747
+      Sword_0_R_3: -1979176751256854143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
