@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
-  m_Name: WoodenPickaxe
+  m_Name: WoodenAxe
   m_EditorClassIdentifier: 
-  toolName: Pickaxe
+  toolName: Axe
   toolAnimationID: 0
   allToolAnimations:
-  - {fileID: 7400000, guid: b4d34febc45682541a7cbf52d1a66684, type: 2}
-  - {fileID: 7400000, guid: 923f6f66e59b93b4a88d556e3a2a8746, type: 2}
-  - {fileID: 7400000, guid: 2c34c19c52c624d418b69f0b1ac5b326, type: 2}
-  - {fileID: 7400000, guid: 661d8d6e6ee9550408f871ae8800b60a, type: 2}
+  - {fileID: 7400000, guid: 820f054c5c662824788c19e5faab59ee, type: 2}
+  - {fileID: 7400000, guid: e62bd205877e9c14aa4ad34223fdeae6, type: 2}
+  - {fileID: 7400000, guid: 4c40355fae3ff404c9b9ea57bad9dfce, type: 2}
+  - {fileID: 7400000, guid: c497cf886874ce54dbdc86decef56d49, type: 2}

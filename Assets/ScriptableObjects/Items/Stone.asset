@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Stone
   isStackable: 1
   itemIcon: {fileID: -3550421968513594277, guid: 9ed87efcb2dbe04418d2dbcfbf66e09f, type: 3}
-  itemType: 0
+  itemType: 4
+  toolData: {fileID: 0}

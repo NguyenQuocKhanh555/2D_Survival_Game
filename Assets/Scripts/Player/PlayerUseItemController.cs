@@ -2,59 +2,28 @@ using UnityEngine;
 
 public class PlayerUseItemController : MonoBehaviour
 {
-    [SerializeField] private PlayerToolbarController _toolbarController;
-    [SerializeField] private string[] _directions;
+    [SerializeField] private PlayerEquipmentController _equipmentController;
 
-    private Animator _animator;
-    private AnimationClip _animationClip;
-    private AnimatorOverrideController _animatorOverrideController;
-    private AnimationClipOverrides _defaultAnimationClips;
-
-    private SO_Tool _currentTool;
-
-    private void Start()
+    public void UseTool(Animator animator)
     {
-        _animator = GetComponent<Animator>();
-        _animatorOverrideController = new AnimatorOverrideController(_animator.runtimeAnimatorController);
-        _animator.runtimeAnimatorController = _animatorOverrideController;
-
-        _defaultAnimationClips = new AnimationClipOverrides(_animatorOverrideController.overridesCount);
-        _animatorOverrideController.GetOverrides(_defaultAnimationClips);
-
-        UpdateUseTool();
+        if (_equipmentController.currentToolData == null) return;
+        animator.SetTrigger("action");
     }
 
-    private void Update()
+    public void UseWeapon(Animator animator)
     {
-        SO_Tool selectedTool = _toolbarController.GetToolbarSelectedItem.toolData;
-        if (selectedTool != _currentTool)
-        {
-            _currentTool = selectedTool;
-            UpdateUseTool();
-        }
+        if (_equipmentController.currentToolData == null) return;
+        animator.SetTrigger("attack");
     }
 
-    private void UpdateUseTool()
+    public void UseFishingRod(Animator animator)
     {
-        if (_currentTool == null) return;
-
-        string toolName = _currentTool.toolName;
-        string toolID = _currentTool.toolAnimationID.ToString();
-
-        for (int directionIndex = 0; directionIndex < _directions.Length; directionIndex++)
-        {
-            string direction = _directions[directionIndex];
-            _animationClip = Resources.Load<AnimationClip>(
-                "PlayerAnimations/Tools/" + toolName + "s/" + toolName + "_" + toolID + "_" + direction);
-            
-            _defaultAnimationClips["Pickaxe_" + 0 + "_" + direction] = _animationClip;
-        }
-
-        _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
+        if (_equipmentController.currentToolData == null) return;
+        animator.SetTrigger("fish");
     }
 
-    public void UseTool()
+    public void UseConsumableItem(Animator animator)
     {
-        _animator.SetTrigger("action");
+        
     }
 }
