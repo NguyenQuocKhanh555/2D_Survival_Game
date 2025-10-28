@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private float _pickupAroundInput;
     private bool _isInputRunning;
     private bool _isInputMoving;
+    private bool _isPointerOverUI;
 
     private void Awake()
     {
@@ -62,6 +63,9 @@ public class PlayerController : MonoBehaviour
         PlayerToolbarSelectInput();
         PlayerPickupAroundInput();
         _pickupItemController.SetStateToMoving(_animator);
+        _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
+        _useToolController.CanSelectCheck();
+        _useToolController.SelectTile();
     }
 
     private void FixedUpdate()
@@ -126,6 +130,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnAction(InputAction.CallbackContext context)
     {
+        if (_isPointerOverUI) return;
         if (_toolbarController.GetToolbarSelectedItem == null) return;
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
@@ -133,7 +138,7 @@ public class PlayerController : MonoBehaviour
                 _useToolController.UseWeapon(_animator);
                 break;
             case ItemTypes.Tool:
-                _useToolController.UseTool(_animator);
+                _useToolController.UseTool(_animator, _lastMotionVector);
                 break;
             case ItemTypes.Consumable:
                 _useToolController.UseConsumableItem(_animator);

@@ -9,4 +9,9 @@ public class SO_Tool : ScriptableObject
     public int toolAnimationID;
 
     public List<AnimationClip> allToolAnimations = new List<AnimationClip>();
+
+    public SO_ToolAction toolWorldAction;
+    public SO_ToolAction toolTileMapAction;
+
+    public float toolPower;
 }

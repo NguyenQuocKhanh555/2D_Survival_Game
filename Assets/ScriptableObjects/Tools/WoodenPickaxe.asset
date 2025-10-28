@@ -19,3 +19,6 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 923f6f66e59b93b4a88d556e3a2a8746, type: 2}
   - {fileID: 7400000, guid: 2c34c19c52c624d418b69f0b1ac5b326, type: 2}
   - {fileID: 7400000, guid: 661d8d6e6ee9550408f871ae8800b60a, type: 2}
+  toolWorldAction: {fileID: 11400000, guid: 5de3864d6a5fb0040a29d90960f43ff8, type: 2}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 10
