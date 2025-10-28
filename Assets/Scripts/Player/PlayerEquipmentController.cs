@@ -16,6 +16,7 @@ public class PlayerEquipmentController : MonoBehaviour
     private AnimationClipOverrides _defaultAnimationClips;
 
     public SO_Tool currentToolData;
+    public SO_Weapon currentWeaponData;
 
     private void Start()
     {
@@ -28,8 +29,10 @@ public class PlayerEquipmentController : MonoBehaviour
 
         UpdatePlayerParts();
         UpdateUseTool();
+        UpdateUseWeapon();
 
         _toolbarController.onToolbarSelectedChanged += UseToolChanged;
+        _toolbarController.onToolbarSelectedChanged += UseWeaponChanged;
     }
 
     private void UpdatePlayerParts()
@@ -63,15 +66,34 @@ public class PlayerEquipmentController : MonoBehaviour
         if (currentToolData == null) return;
 
         string toolName = currentToolData.toolName;
-        string toolID = currentToolData.toolAnimationID.ToString();
+        string toolAnimationID = currentToolData.toolAnimationID.ToString();
 
         for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
         {
             string direction = _playerDirections[directionIndex];
             _animationClip = Resources.Load<AnimationClip>(
-                "PlayerAnimations/Tools/" + toolName + "s/" + toolName + "_" + toolID + "_" + direction);
+                "PlayerAnimations/Tools/" + toolName + "s/" + toolName + "_" + toolAnimationID + "_" + direction);
 
             _defaultAnimationClips["Pickaxe_" + 0 + "_" + direction] = _animationClip;
+        }
+
+        _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
+    }
+
+    private void UpdateUseWeapon()
+    {
+        if (currentWeaponData == null) return;
+
+        string weaponName = currentWeaponData.weaponName;
+        string weaponAnimationID = currentWeaponData.weaponAnimationID.ToString();
+
+        for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
+        {
+            string direction = _playerDirections[directionIndex];
+            _animationClip = Resources.Load<AnimationClip>(
+                "PlayerAnimations/Weapons/" + weaponName + "s/" + weaponName + "_" + weaponAnimationID + "_" + direction);
+
+            _defaultAnimationClips["Sword_" + 0 + "_" + direction] = _animationClip;
         }
 
         _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
@@ -85,6 +107,17 @@ public class PlayerEquipmentController : MonoBehaviour
         {
             currentToolData = selectedTool;
             UpdateUseTool();
+        }
+    }
+
+    private void UseWeaponChanged()
+    {
+        if (_toolbarController.GetToolbarSelectedItem == null) return;
+        SO_Weapon selectedWeapon = _toolbarController.GetToolbarSelectedItem.weaponData;
+        if (selectedWeapon != currentToolData && selectedWeapon != null)
+        {
+            currentWeaponData = selectedWeapon;
+            UpdateUseWeapon();
         }
     }
 }

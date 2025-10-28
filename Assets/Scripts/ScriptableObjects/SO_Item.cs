@@ -17,4 +17,5 @@ public class SO_Item : ScriptableObject
     public Sprite itemIcon;
     public ItemTypes itemType;
     public SO_Tool toolData;
+    public SO_Weapon weaponData;
 }

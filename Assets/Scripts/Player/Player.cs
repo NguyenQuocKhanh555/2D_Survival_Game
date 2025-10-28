@@ -38,7 +38,7 @@ public class Stat
     }
 }
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     [SerializeField] private SO_PlayerStats _playerStats;
     [SerializeField] private float _regenStaminaRate = 2f;
@@ -73,5 +73,32 @@ public class Player : MonoBehaviour
         }
 
         _lastStaminaUseTime = Time.time;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (isDead) return;
+
+        float damageTaken = damage;
+        _playerStats.health.Subtract(damageTaken);
+        if (_playerStats.health.currentValue <= 0 && !isDead)
+        {
+            isDead = true;
+        }
+    }
+
+    public void CalculateDamage(ref float damage)
+    {
+
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        TakeDamage(damage);
+    }
+
+    public void CheckState()
+    {
+
     }
 }

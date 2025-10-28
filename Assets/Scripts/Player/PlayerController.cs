@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
             case ItemTypes.Weapon:
-                _useToolController.UseWeapon(_animator);
+                _useToolController.UseWeapon(_animator, _lastMotionVector);
                 break;
             case ItemTypes.Tool:
                 _useToolController.UseTool(_animator, _lastMotionVector);

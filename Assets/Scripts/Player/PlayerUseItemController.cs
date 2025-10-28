@@ -4,6 +4,7 @@ public class PlayerUseItemController : MonoBehaviour
 {
     [SerializeField] private TilemapReadController _tilemapReadController;
     [SerializeField] private PlayerEquipmentController _equipmentController;
+    [SerializeField] private PlayerAttackController _attackController;
     [SerializeField] private float _offSetDistance = 1f;
     [SerializeField] private float _selectableDistance = 1f;
 
@@ -42,10 +43,13 @@ public class PlayerUseItemController : MonoBehaviour
         _isSelectable = Vector2.Distance(playerPosition, cameraPosition) < _selectableDistance;
     }
 
-    public void UseWeapon(Animator animator)
+    public void UseWeapon(Animator animator, Vector2 lastMotionVector)
     {
-        if (_equipmentController.currentToolData == null) return;
+        if (_equipmentController.currentWeaponData == null) return;
         animator.SetTrigger("attack");
+        animator.SetInteger("weaponId", _equipmentController.currentWeaponData.weaponID);
+        _attackController.MeleeAttack(
+            _equipmentController.currentWeaponData.weaponDamage, lastMotionVector);
     }
 
     public void UseFishingRod(Animator animator)

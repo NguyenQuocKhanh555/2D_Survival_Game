@@ -79,6 +79,7 @@ public class PlayerPickupItemController : MonoBehaviour
                 PickupItem();
                 animator.SetFloat("lastHorizontal", _directionToPickupItem.x);
                 animator.SetFloat("lastVertical", _directionToPickupItem.y);
+                animator.SetTrigger("pickupItem");
             }
         }
     }
