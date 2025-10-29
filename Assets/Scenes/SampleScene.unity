@@ -195,7 +195,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1809693869674295032, guid: 7fedd067f53f51140b1e4073124925e4, type: 3}
+  m_Sprite: {fileID: 5507878133471946274, guid: adf14df3049108e4bbbbd091379bc079, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2203,6 +2203,7 @@ MonoBehaviour:
   - right
   - up
   currentToolData: {fileID: 0}
+  currentWeaponData: {fileID: 0}
 --- !u!114 &413895679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,6 +2281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilemapReadController: {fileID: 127653483}
   _equipmentController: {fileID: 413895678}
+  _attackController: {fileID: 0}
   _offSetDistance: 1
   _selectableDistance: 1
 --- !u!1001 &443568454
@@ -4504,7 +4506,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3795074569865809341, guid: f7170c393530c974cbb9d37c8faaa89c, type: 3}
+  m_Sprite: {fileID: 1559627280163575332, guid: 0fcbe8fc411635f468469cfda28e6529, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4591,7 +4593,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8202911725044289312, guid: 22e7db766649f754eb8c6fa71f78812e, type: 3}
+  m_Sprite: {fileID: 1068481813371224725, guid: 646fedca5f6f2fb4dbe1e32a69becab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
