@@ -136,6 +136,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""92ec0267-44a0-41b0-8b53-dd3879426ea2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -237,6 +246,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""PickupItemAround"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1faa6750-9b1a-48e5-bd0b-b70f6b9732a0"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -298,6 +318,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerMovement_Action = m_PlayerMovement.FindAction("Action", throwIfNotFound: true);
         m_PlayerMovement_PickupSingleItem = m_PlayerMovement.FindAction("PickupSingleItem", throwIfNotFound: true);
         m_PlayerMovement_PickupItemAround = m_PlayerMovement.FindAction("PickupItemAround", throwIfNotFound: true);
+        m_PlayerMovement_Dodge = m_PlayerMovement.FindAction("Dodge", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_OpenInventory = m_UI.FindAction("OpenInventory", throwIfNotFound: true);
@@ -388,6 +409,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_Action;
     private readonly InputAction m_PlayerMovement_PickupSingleItem;
     private readonly InputAction m_PlayerMovement_PickupItemAround;
+    private readonly InputAction m_PlayerMovement_Dodge;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerMovement".
     /// </summary>
@@ -419,6 +441,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerMovement/PickupItemAround".
         /// </summary>
         public InputAction @PickupItemAround => m_Wrapper.m_PlayerMovement_PickupItemAround;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerMovement/Dodge".
+        /// </summary>
+        public InputAction @Dodge => m_Wrapper.m_PlayerMovement_Dodge;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -460,6 +486,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @PickupItemAround.started += instance.OnPickupItemAround;
             @PickupItemAround.performed += instance.OnPickupItemAround;
             @PickupItemAround.canceled += instance.OnPickupItemAround;
+            @Dodge.started += instance.OnDodge;
+            @Dodge.performed += instance.OnDodge;
+            @Dodge.canceled += instance.OnDodge;
         }
 
         /// <summary>
@@ -486,6 +515,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @PickupItemAround.started -= instance.OnPickupItemAround;
             @PickupItemAround.performed -= instance.OnPickupItemAround;
             @PickupItemAround.canceled -= instance.OnPickupItemAround;
+            @Dodge.started -= instance.OnDodge;
+            @Dodge.performed -= instance.OnDodge;
+            @Dodge.canceled -= instance.OnDodge;
         }
 
         /// <summary>
@@ -668,6 +700,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPickupItemAround(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Dodge" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDodge(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

@@ -2151,8 +2151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkSpeed: 2.5
-  _runSpeed: 5
-  _staminaConsumptionRate: 20
+  _dodgeSpeed: 5
+  _dodgeDistance: 2
+  _dodgeCooldown: 1
+  _staminaDodgeConsumption: 10
 --- !u!95 &413895677
 Animator:
   serializedVersion: 7
