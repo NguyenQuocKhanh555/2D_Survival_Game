@@ -5,6 +5,7 @@ public class PlayerUseItemController : MonoBehaviour
     [SerializeField] private TilemapReadController _tilemapReadController;
     [SerializeField] private PlayerEquipmentController _equipmentController;
     [SerializeField] private PlayerAttackController _attackController;
+    [SerializeField] private PlayerApplyEffectController _applyEffectController;
     [SerializeField] private float _offSetDistance = 1f;
     [SerializeField] private float _selectableDistance = 1f;
 
@@ -58,8 +59,14 @@ public class PlayerUseItemController : MonoBehaviour
         animator.SetTrigger("fish");
     }
 
-    public void UseConsumableItem(Animator animator)
+    public void UseConsumableItem(Animator animator, Vector2 lastMotionVector, PlayerToolbarController toolbarController)
     {
-        
+        SO_Item consumeItem = toolbarController.GetToolbarSelectedItem;
+
+        if (consumeItem == null || consumeItem.itemType != ItemTypes.Consumable) return;
+
+        animator.SetTrigger("consume");
+        _applyEffectController.ApplyEffect(consumeItem.itemEffect);
+        toolbarController.RemoveItem(consumeItem);
     }
 }

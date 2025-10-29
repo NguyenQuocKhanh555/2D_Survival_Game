@@ -2151,8 +2151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkSpeed: 2.5
-  _runSpeed: 5
-  _staminaConsumptionRate: 20
+  _dodgeSpeed: 5
+  _dodgeDistance: 2
+  _dodgeCooldown: 1
+  _staminaDodgeConsumption: 10
 --- !u!95 &413895677
 Animator:
   serializedVersion: 7
@@ -2203,6 +2205,7 @@ MonoBehaviour:
   - right
   - up
   currentToolData: {fileID: 0}
+  currentWeaponData: {fileID: 0}
 --- !u!114 &413895679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,6 +2283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilemapReadController: {fileID: 127653483}
   _equipmentController: {fileID: 413895678}
+  _attackController: {fileID: 0}
   _offSetDistance: 1
   _selectableDistance: 1
 --- !u!1001 &443568454

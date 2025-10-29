@@ -22,6 +22,11 @@ public class PlayerToolbarController : MonoBehaviour
         get { return _inventoryContainer.slots[_selectedToolbarIndex].item; }
     }
 
+    public void RemoveItem(SO_Item itemToRemove)
+    {
+        _inventoryContainer.RemoveItem(itemToRemove);
+    }
+
     public void SelectToolbarIndex(float delta)
     {
         if (delta < 0)
