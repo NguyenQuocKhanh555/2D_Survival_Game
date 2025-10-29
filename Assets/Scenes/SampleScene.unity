@@ -2203,6 +2203,7 @@ MonoBehaviour:
   - right
   - up
   currentToolData: {fileID: 0}
+  currentWeaponData: {fileID: 0}
 --- !u!114 &413895679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,6 +2281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilemapReadController: {fileID: 127653483}
   _equipmentController: {fileID: 413895678}
+  _attackController: {fileID: 0}
   _offSetDistance: 1
   _selectableDistance: 1
 --- !u!1001 &443568454
