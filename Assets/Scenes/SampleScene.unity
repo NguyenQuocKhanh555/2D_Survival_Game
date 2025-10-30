@@ -2284,6 +2284,7 @@ MonoBehaviour:
   _tilemapReadController: {fileID: 127653483}
   _equipmentController: {fileID: 413895678}
   _attackController: {fileID: 0}
+  _applyEffectController: {fileID: 0}
   _offSetDistance: 1
   _selectableDistance: 1
 --- !u!1001 &443568454
