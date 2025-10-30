@@ -6,6 +6,7 @@ public class PlayerUseItemController : MonoBehaviour
     [SerializeField] private PlayerEquipmentController _equipmentController;
     [SerializeField] private PlayerAttackController _attackController;
     [SerializeField] private PlayerApplyEffectController _applyEffectController;
+    [SerializeField] private MarkerManager _markerManager;
     [SerializeField] private float _offSetDistance = 1f;
     [SerializeField] private float _selectableDistance = 1f;
 
@@ -15,12 +16,12 @@ public class PlayerUseItemController : MonoBehaviour
     public void UseTool(Animator animator, Vector2 lastMotionVector)
     {
         if (_equipmentController.currentToolData == null) return;
-        Vector2 position = (Vector2)transform.position + lastMotionVector * _offSetDistance;
-
+        
         animator.SetTrigger("action");
 
         if (_equipmentController.currentToolData.toolWorldAction != null)
         {
+            Vector2 position = (Vector2)transform.position + lastMotionVector * _offSetDistance;
             _equipmentController.currentToolData.toolWorldAction.OnApply(
                 position, _equipmentController.currentToolData.toolPower);
         }
@@ -42,6 +43,12 @@ public class PlayerUseItemController : MonoBehaviour
         Vector2 playerPosition = transform.position;
         Vector2 cameraPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _isSelectable = Vector2.Distance(playerPosition, cameraPosition) < _selectableDistance;
+        _markerManager.ShowMarker(_isSelectable);
+    }
+
+    public void Marker()
+    {
+        _markerManager.markedCellPosition = _selectedTilePosition;
     }
 
     public void UseWeapon(Animator animator, Vector2 lastMotionVector)

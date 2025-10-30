@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.PlayerMovement.PickupSingleItem.performed += OnPickupItem;
         _playerControls.UI.OpenInventory.performed += OnOpenInventory;
         _playerControls.PlayerMovement.Dodge.performed += OnDodge;
+        _playerControls.PlayerMovement.Consume.performed += OnConsumeItem;
     }
 
     private void OnDisable()
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.PlayerMovement.Action.performed -= OnAction;
         _playerControls.PlayerMovement.PickupSingleItem.performed -= OnPickupItem;
         _playerControls.PlayerMovement.Dodge.performed -= OnDodge;
+        _playerControls.PlayerMovement.Consume.performed -= OnConsumeItem;
         _playerControls.Disable();
     }
 
@@ -73,6 +75,7 @@ public class PlayerController : MonoBehaviour
         _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
         _useToolController.CanSelectCheck();
         _useToolController.SelectTile();
+        _useToolController.Marker();
     }
 
     private void FixedUpdate()
@@ -151,12 +154,18 @@ public class PlayerController : MonoBehaviour
             case ItemTypes.Tool:
                 _useToolController.UseTool(_animator, _lastMotionVector);
                 break;
-            case ItemTypes.Consumable:
-                _useToolController.UseConsumableItem(_animator, _lastMotionVector, _toolbarController);
-                break;
             default:
                 break;
         }
+    }
+
+    private void OnConsumeItem(InputAction.CallbackContext context)
+    {
+        if (_isDodging) return;
+        if (_isPointerOverUI) return;
+        if (_toolbarController.GetToolbarSelectedItem == null) return;
+        if (_toolbarController.GetToolbarSelectedItem.itemType != ItemTypes.Consumable) return;
+        _useToolController.UseConsumableItem(_animator, _lastMotionVector, _toolbarController);
     }
 
     private void OnPickupItem(InputAction.CallbackContext context)

@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b2568d256e1dd4ea6e8f09ed1004f0, type: 3}
-  m_Name: AxeGatherResourceNode
+  m_Script: {fileID: 11500000, guid: 033c3776d4bd4454f8676592e9c4e2a5, type: 3}
+  m_Name: CarrotItemEffect
   m_EditorClassIdentifier: 
-  _sizeOfInteractableArea: 1
-  _canHitNodesOfType: 00000000
+  itemEffects:
+  - effectType: 0
+    effectMethod: 0
+    effectValue: 10
+    effectDuration: 0

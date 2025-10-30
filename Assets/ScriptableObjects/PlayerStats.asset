@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health:
     maxValue: 100
-    currentValue: 100
+    currentValue: 10
   stamina:
     maxValue: 100
     currentValue: 100

@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b2568d256e1dd4ea6e8f09ed1004f0, type: 3}
-  m_Name: AxeGatherResourceNode
+  m_Script: {fileID: 11500000, guid: f2364976389e6784ba4ede8ad2839664, type: 3}
+  m_Name: HoePlowTile
   m_EditorClassIdentifier: 
-  _sizeOfInteractableArea: 1
-  _canHitNodesOfType: 00000000
+  _canPlow:
+  - {fileID: 11400000, guid: 98e2cd967b37cd14da237731578ed653, type: 2}
+  _plowedTile: {fileID: 11400000, guid: cf18d5d5436fc344d823bdf9d331b0ec, type: 2}

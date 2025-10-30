@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b2568d256e1dd4ea6e8f09ed1004f0, type: 3}
   m_Name: PickaxeGatherResourceNode
   m_EditorClassIdentifier: 
-  sizeOfInteractableArea: 1
-  canHitNodesOfType: 01000000
+  _sizeOfInteractableArea: 1
+  _canHitNodesOfType: 01000000

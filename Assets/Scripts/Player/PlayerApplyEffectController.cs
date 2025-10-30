@@ -7,10 +7,10 @@ public class PlayerApplyEffectController : MonoBehaviour
 {
     [SerializeField] private SO_PlayerStats _playerStats;
 
-    private readonly Dictionary<ItemEffectTypes, Action<ItemEffect>> _instantHandlers;
-    private readonly Dictionary<ItemEffectTypes, Action<ItemEffect>> _overTimeHandlers;
+    private Dictionary<ItemEffectTypes, Action<ItemEffect>> _instantHandlers;
+    private Dictionary<ItemEffectTypes, Action<ItemEffect>> _overTimeHandlers;
 
-    public PlayerApplyEffectController()
+    private void Start()
     {
         _instantHandlers = new Dictionary<ItemEffectTypes, Action<ItemEffect>>
         {
@@ -62,7 +62,6 @@ public class PlayerApplyEffectController : MonoBehaviour
     }
 
     // Over Time
-
     private void ApplyHealthOverTime(ItemEffect effect)
     {
         StartCoroutine(ApplyOverTime(effect,

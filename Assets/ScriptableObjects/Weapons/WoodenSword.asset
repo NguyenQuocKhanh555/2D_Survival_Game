@@ -15,5 +15,9 @@ MonoBehaviour:
   weaponName: Sword
   weaponAnimationID: 0
   weaponID: 0
-  allWeaponAnimations: []
+  allWeaponAnimations:
+  - {fileID: 7400000, guid: 607a5d7032356f54b80415e6d11fb9f3, type: 2}
+  - {fileID: 7400000, guid: 8db851ff54f5a8f44ac9bdf0e3cc5cda, type: 2}
+  - {fileID: 7400000, guid: ecdc310662328c84180e6573abce6342, type: 2}
+  - {fileID: 7400000, guid: b3bdb35f3339b1543b1e2ac6b826a0f5, type: 2}
   weaponDamage: 10
