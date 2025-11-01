@@ -2300,7 +2300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkSpeed: 2.5
-  _dodgeSpeed: 5
+  _dodgeSpeed: 10
   _dodgeDistance: 2
   _dodgeCooldown: 1
   _staminaDodgeConsumption: 10
@@ -2955,7 +2955,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.2
+  orthographic size: 7.53125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
