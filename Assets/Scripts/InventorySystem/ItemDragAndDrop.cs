@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,6 +9,19 @@ public class ItemDragAndDrop : MonoBehaviour
     [SerializeField] private ItemSlot _dragAndDropItem = new ItemSlot();
     [SerializeField] private RectTransform _dragAndDropIconTransform;
     [SerializeField] private Image _dragAndDropIconImage;
+
+    private Dictionary<int, string> _equipmentPartMap;
+
+    private void Start()
+    {
+        _equipmentPartMap = new Dictionary<int, string>()
+        {
+            { 0, "Head" },
+            { 1, "Torso" },
+            { 2, "Legs" },
+            { 3, "Backpack" }
+        };
+    }
 
     private void Update()
     {
@@ -44,12 +59,35 @@ public class ItemDragAndDrop : MonoBehaviour
             }
             else
             {
-                SO_Item item = itemSlot.item;
-                int quantity = itemSlot.quantity;
-
-                itemSlot.Copy(_dragAndDropItem);
-                _dragAndDropItem.Set(item, quantity);
+                SwapItem(itemSlot);
             }
+        }
+        UpdateIcon();
+    }
+
+    private void SwapItem(ItemSlot itemSlot)
+    {
+        SO_Item item = itemSlot.item;
+        int quantity = itemSlot.quantity;
+
+        itemSlot.Copy(_dragAndDropItem);
+        _dragAndDropItem.Set(item, quantity);
+    }
+
+    public void OnClickOnEquipmentPanel(ItemSlot itemSlot, int id)
+    {
+        if (_dragAndDropItem.item == null)
+        {
+            _dragAndDropItem.Copy(itemSlot);
+            itemSlot.Clear();
+        }
+        else
+        {
+            if (itemSlot.item.itemType != ItemTypes.Armor) return;
+            if (!_equipmentPartMap.TryGetValue(id, out string expectedPart)) return;
+            if (_dragAndDropItem.item.armorData.partName != expectedPart) return;
+
+            SwapItem(itemSlot);
         }
         UpdateIcon();
     }
