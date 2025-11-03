@@ -19,4 +19,5 @@ public class SO_Item : ScriptableObject
     public SO_Tool toolData;
     public SO_Weapon weaponData;
     public SO_ItemEffect itemEffect;
+    public SO_PlayerBodyPart armorData;
 }

@@ -5,6 +5,7 @@ public class PlayerEquipmentController : MonoBehaviour
 {
     [SerializeField] private SO_PlayerBody _playerBody;
     [SerializeField] private PlayerToolbarController _toolbarController;
+    [SerializeField] private EquipmentItemSlotsPanel _equipmentItemSlotsPanel;
 
     [SerializeField] private string[] _bodyPartTypes;
     [SerializeField] private string[] _playerStates;
@@ -31,6 +32,7 @@ public class PlayerEquipmentController : MonoBehaviour
         UpdateUseTool();
         UpdateUseWeapon();
 
+        _equipmentItemSlotsPanel.onChangeEquipment += UpdatePlayerParts;
         _toolbarController.onToolbarSelectedChanged += UseToolChanged;
         _toolbarController.onToolbarSelectedChanged += UseWeaponChanged;
     }
@@ -40,6 +42,8 @@ public class PlayerEquipmentController : MonoBehaviour
         for (int partIndex = 0; partIndex < _bodyPartTypes.Length; partIndex++)
         {
             string partType = _bodyPartTypes[partIndex];
+
+            if (_playerBody.playerBodyParts[partIndex].playerPart == null) continue;
             string partID = _playerBody.playerBodyParts[partIndex].playerPart.partAnimationID.ToString();
 
             for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
