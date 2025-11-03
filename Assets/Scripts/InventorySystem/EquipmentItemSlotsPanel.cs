@@ -38,7 +38,6 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
         {
             Show();
             UpdatePlayerParts();
-            onChangeEquipment?.Invoke();
             _equipmentContainer.isChange = false;
         }
     }
@@ -47,9 +46,16 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     {
         for (int i = 0; i < _playerBody.playerBodyParts.Length; i++)
         {
-            if (_equipmentContainer.slots[i].item == null) continue;
-            _playerBody.playerBodyParts[i].playerPart = _equipmentContainer.slots[i].item.armorData;
+            if (_equipmentContainer.slots[i].item == null)
+            {
+                _playerBody.playerBodyParts[i].playerPart = null;
+            }
+            else
+            {
+                _playerBody.playerBodyParts[i].playerPart = _equipmentContainer.slots[i].item.armorData;
+            }
         }
+        onChangeEquipment?.Invoke();
     }
 
     public void SetSourcePanel()
@@ -71,6 +77,7 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     public void OnClick(int id)
     {
         _itemDragAndDrop.OnClickOnEquipmentPanel(_equipmentContainer.slots[id], id);
+        _equipmentContainer.isChange = true;
         Show();
     }
 

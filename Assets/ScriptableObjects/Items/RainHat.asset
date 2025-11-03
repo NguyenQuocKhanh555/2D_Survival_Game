@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c72bee7bb2c62b41b2b4b0492a5ab49, type: 3}
+  m_Name: RainHat
+  m_EditorClassIdentifier: 
+  itemName: Rain Hat
+  isStackable: 0
+  itemIcon: {fileID: 218104963, guid: 95515805b1096e6449da717584a95910, type: 3}
+  itemType: 2
+  toolData: {fileID: 0}
+  weaponData: {fileID: 0}
+  itemEffect: {fileID: 0}
+  armorData: {fileID: 11400000, guid: 1006f4408c9a7bc409846f2eda895933, type: 2}

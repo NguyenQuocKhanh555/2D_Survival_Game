@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: RaincoatHead
   m_EditorClassIdentifier: 
-  partName: RaincoatHead
+  partName: 0
   partAnimationID: 1
   allPartAnimations:
   - {fileID: 7400000, guid: 51867c2879f56094896aa070a5783e72, type: 2}
@@ -43,3 +43,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 8087fb4cf0410b2468f3dfe36661737b, type: 2}
   - {fileID: 7400000, guid: 249a41460243fce49876d88b53bea74b, type: 2}
   - {fileID: 7400000, guid: 7c440b98d061a9840983b27df420de24, type: 2}
+  previewPartIdleAnimation: {fileID: 7400000, guid: 8590d27c2cf8fc5458c475e17cca0360, type: 2}

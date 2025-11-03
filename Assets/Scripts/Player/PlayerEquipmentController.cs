@@ -42,9 +42,16 @@ public class PlayerEquipmentController : MonoBehaviour
         for (int partIndex = 0; partIndex < _bodyPartTypes.Length; partIndex++)
         {
             string partType = _bodyPartTypes[partIndex];
+            string partID = "";
 
-            if (_playerBody.playerBodyParts[partIndex].playerPart == null) continue;
-            string partID = _playerBody.playerBodyParts[partIndex].playerPart.partAnimationID.ToString();
+            if (_playerBody.playerBodyParts[partIndex].playerPart == null) 
+            {
+                partID = "0";
+            }
+            else
+            {
+                partID = _playerBody.playerBodyParts[partIndex].playerPart.partAnimationID.ToString();
+            }
 
             for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
             {
