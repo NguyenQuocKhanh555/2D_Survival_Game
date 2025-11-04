@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: RaincoatTorso
   m_EditorClassIdentifier: 
-  partName: Torso
+  partName: 1
   partAnimationID: 1
   allPartAnimations:
   - {fileID: 7400000, guid: 355fdcc9a0feebe4eb87636a4fd08636, type: 2}
@@ -43,3 +43,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 0cd224d97dadd0f49a71e0a1e98e4562, type: 2}
   - {fileID: 7400000, guid: 100de0bf5a7fde045b8e15e8c9cb8710, type: 2}
   - {fileID: 7400000, guid: 011df1a283b604e4a850c7cc0cc99cdc, type: 2}
+  previewPartIdleAnimation: {fileID: 7400000, guid: 7cbc3b75317c7e7459b1e370e371e3ac, type: 2}

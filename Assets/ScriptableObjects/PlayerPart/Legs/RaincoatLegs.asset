@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: RaincoatLegs
   m_EditorClassIdentifier: 
-  partName: Legs
+  partName: 2
   partAnimationID: 1
   allPartAnimations:
   - {fileID: 7400000, guid: b96ebc354baf6f24a914ce775e472757, type: 2}
@@ -43,3 +43,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: b2b119644f415b246a92756a925aadde, type: 2}
   - {fileID: 7400000, guid: f3ed62982ef290a419f60d1efd7ebd5d, type: 2}
   - {fileID: 7400000, guid: 2b2600d0e0f3cf24196dfda0701aed7d, type: 2}
+  previewPartIdleAnimation: {fileID: 7400000, guid: b770d860f6295e64fb56ce05f8598f1f, type: 2}

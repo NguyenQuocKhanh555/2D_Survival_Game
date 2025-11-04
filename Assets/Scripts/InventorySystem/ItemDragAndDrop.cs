@@ -10,16 +10,16 @@ public class ItemDragAndDrop : MonoBehaviour
     [SerializeField] private RectTransform _dragAndDropIconTransform;
     [SerializeField] private Image _dragAndDropIconImage;
 
-    private Dictionary<int, string> _equipmentPartMap;
+    private Dictionary<int, PlayerBodyPartType> _equipmentPartMap;
 
     private void Start()
     {
-        _equipmentPartMap = new Dictionary<int, string>()
+        _equipmentPartMap = new Dictionary<int, PlayerBodyPartType>()
         {
-            { 0, "Head" },
-            { 1, "Torso" },
-            { 2, "Legs" },
-            { 3, "Backpack" }
+            { 0, PlayerBodyPartType.Head },
+            { 1, PlayerBodyPartType.Torso },
+            { 2, PlayerBodyPartType.Legs },
+            { 3, PlayerBodyPartType.Backpack }
         };
     }
 
@@ -83,8 +83,8 @@ public class ItemDragAndDrop : MonoBehaviour
         }
         else
         {
-            if (itemSlot.item.itemType != ItemTypes.Armor) return;
-            if (!_equipmentPartMap.TryGetValue(id, out string expectedPart)) return;
+            if (_dragAndDropItem.item.itemType != ItemTypes.Armor) return;
+            if (!_equipmentPartMap.TryGetValue(id, out PlayerBodyPartType expectedPart)) return;
             if (_dragAndDropItem.item.armorData.partName != expectedPart) return;
 
             SwapItem(itemSlot);

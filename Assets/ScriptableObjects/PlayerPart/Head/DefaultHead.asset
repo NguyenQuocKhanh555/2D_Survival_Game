@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: DefaultHead
   m_EditorClassIdentifier: 
-  partName: Head
+  partName: 0
   partAnimationID: 0
   allPartAnimations:
   - {fileID: 7400000, guid: 7c6d52da2aaabfb4ab6bb861cbfc3769, type: 2}
@@ -43,3 +43,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 1fb65399be46a7a459372e39f8e96248, type: 2}
   - {fileID: 7400000, guid: 00bd1cbcb36130d47a81e95885ad47d7, type: 2}
   - {fileID: 7400000, guid: 2d2759beab3976940961c089e9ef3f36, type: 2}
+  previewPartIdleAnimation: {fileID: 7400000, guid: 773c64b7114fdd341b43afee71b9ee79, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: DefaultLegs
   m_EditorClassIdentifier: 
-  partName: Legs
+  partName: 2
   partAnimationID: 0
   allPartAnimations:
   - {fileID: 7400000, guid: 2ced0e1d17c902246af8ca307eb54ed0, type: 2}
@@ -43,3 +43,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 50f051e59395dee42bd096c42380b28c, type: 2}
   - {fileID: 7400000, guid: 985e67e5c29121b47a43d8f52cdcf1cc, type: 2}
   - {fileID: 7400000, guid: c377505ab9debf44698457e263e9d768, type: 2}
+  previewPartIdleAnimation: {fileID: 7400000, guid: 24979bc4f74bae74e869cc1cac9a5db6, type: 2}

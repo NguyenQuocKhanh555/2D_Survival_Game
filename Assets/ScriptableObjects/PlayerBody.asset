@@ -16,6 +16,6 @@ MonoBehaviour:
   - bodyPartName: Head
     playerPart: {fileID: 0}
   - bodyPartName: Torso
-    playerPart: {fileID: 0}
+    playerPart: {fileID: 11400000, guid: 41c00c9c75eb7dd4b8014e66c4822e0d, type: 2}
   - bodyPartName: Legs
     playerPart: {fileID: 0}

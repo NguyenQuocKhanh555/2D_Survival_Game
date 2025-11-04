@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: DefaultTorso
   m_EditorClassIdentifier: 
-  partName: Torso
+  partName: 1
   partAnimationID: 0
   allPartAnimations:
   - {fileID: 7400000, guid: a459799ff12013f4db10a31dfdf9f048, type: 2}
@@ -43,3 +43,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: d0077ec20fe064e4998f65a6d3ba7e18, type: 2}
   - {fileID: 7400000, guid: 976142f473fcb994ca30b81b928679b0, type: 2}
   - {fileID: 7400000, guid: 2f774a50b8a3773408bf234a8863b832, type: 2}
+  previewPartIdleAnimation: {fileID: 7400000, guid: bea15c64251936342b371c5b459828b4, type: 2}
