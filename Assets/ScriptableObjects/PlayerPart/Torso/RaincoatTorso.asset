@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: RaincoatTorso
   m_EditorClassIdentifier: 
-  partName: RaincoatTorso
+  partName: Torso
   partAnimationID: 1
   allPartAnimations:
   - {fileID: 7400000, guid: 355fdcc9a0feebe4eb87636a4fd08636, type: 2}

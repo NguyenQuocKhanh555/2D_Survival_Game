@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
   m_Name: DefaultHead
   m_EditorClassIdentifier: 
-  partName: DefaultHead
+  partName: Head
   partAnimationID: 0
   allPartAnimations:
   - {fileID: 7400000, guid: 7c6d52da2aaabfb4ab6bb861cbfc3769, type: 2}
