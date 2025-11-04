@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wooden Sword
   isStackable: 0
-  itemIcon: {fileID: 1135401610, guid: 95515805b1096e6449da717584a95910, type: 3}
+  itemIcon: {fileID: 8281648266282253441, guid: b75d6c17b1080364b9e568af3df83b24, type: 3}
   itemType: 1
   toolData: {fileID: 0}
   weaponData: {fileID: 11400000, guid: 4f4d0c2fdbe67804f923042b2fea8b5d, type: 2}
+  itemEffect: {fileID: 0}
+  armorData: {fileID: 0}

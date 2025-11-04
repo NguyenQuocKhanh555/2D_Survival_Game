@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wooden Hoe
   isStackable: 0
-  itemIcon: {fileID: -1617439910, guid: 95515805b1096e6449da717584a95910, type: 3}
+  itemIcon: {fileID: 8045601131872652222, guid: b75d6c17b1080364b9e568af3df83b24, type: 3}
   itemType: 0
   toolData: {fileID: 11400000, guid: c14d93acec067b24996484715db3309c, type: 2}
   weaponData: {fileID: 0}
   itemEffect: {fileID: 0}
+  armorData: {fileID: 0}

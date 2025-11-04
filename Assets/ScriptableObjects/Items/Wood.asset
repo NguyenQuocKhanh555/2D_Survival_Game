@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wood
   isStackable: 1
-  itemIcon: {fileID: 7079136875105633824, guid: 1b52a5bc2cdcabd49ba06d27a55ec135, type: 3}
+  itemIcon: {fileID: -488481000111687822, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 4
   toolData: {fileID: 0}
+  weaponData: {fileID: 0}
+  itemEffect: {fileID: 0}
+  armorData: {fileID: 0}

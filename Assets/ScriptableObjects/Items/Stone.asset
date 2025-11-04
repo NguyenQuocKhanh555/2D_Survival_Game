@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stone
   isStackable: 1
-  itemIcon: {fileID: -3550421968513594277, guid: 9ed87efcb2dbe04418d2dbcfbf66e09f, type: 3}
+  itemIcon: {fileID: 7865193545131395349, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 4
   toolData: {fileID: 0}
+  weaponData: {fileID: 0}
+  itemEffect: {fileID: 0}
+  armorData: {fileID: 0}
