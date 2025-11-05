@@ -154,6 +154,9 @@ public class PlayerController : MonoBehaviour
             case ItemTypes.Tool:
                 _useToolController.UseTool(_animator, _lastMotionVector);
                 break;
+            case ItemTypes.Placeable:
+                _useToolController.UsePlaceableItem(_animator ,_toolbarController);
+                break;
             default:
                 break;
         }

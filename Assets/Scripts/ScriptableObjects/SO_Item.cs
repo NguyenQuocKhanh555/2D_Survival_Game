@@ -6,7 +6,8 @@ public enum ItemTypes
     Weapon,
     Armor,
     Consumable,
-    Material
+    Material,
+    Placeable
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
@@ -20,4 +21,5 @@ public class SO_Item : ScriptableObject
     public SO_Weapon weaponData;
     public SO_ItemEffect itemEffect;
     public SO_PlayerBodyPart armorData;
+    public SO_PlaceableObject placeableData;
 }
