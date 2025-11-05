@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerUseItemController : MonoBehaviour
 {
     [SerializeField] private TilemapReadController _tilemapReadController;
+    [SerializeField] private PlaceableObjectsManager _placeableObjectsManager;
     [SerializeField] private PlayerEquipmentController _equipmentController;
     [SerializeField] private PlayerAttackController _attackController;
     [SerializeField] private PlayerApplyEffectController _applyEffectController;
@@ -75,5 +76,26 @@ public class PlayerUseItemController : MonoBehaviour
         animator.SetTrigger("consume");
         _applyEffectController.ApplyEffect(consumeItem.itemEffect);
         toolbarController.RemoveItem(consumeItem);
+    }
+
+    public void UsePlaceableItem(Animator animator,PlayerToolbarController toolbarController)
+    {
+        SO_Item placeableItem = toolbarController.GetToolbarSelectedItem;
+        
+        if (placeableItem == null || placeableItem.itemType != ItemTypes.Placeable) return;
+        if (!_isSelectable) return;
+        if (_placeableObjectsManager.Check(_selectedTilePosition)) return;
+
+        CalculatePlayerFaceDirection(animator);
+        animator.SetTrigger("action");
+        _placeableObjectsManager.Place(placeableItem, _selectedTilePosition);
+        toolbarController.RemoveItem(placeableItem);
+    }
+
+    private void CalculatePlayerFaceDirection(Animator animator)
+    {
+        Vector2 direction = (Vector2)(_selectedTilePosition - transform.position).normalized;
+        animator.SetFloat("lastHorizontal", direction.x);
+        animator.SetFloat("lastVertical", direction.y);
     }
 }

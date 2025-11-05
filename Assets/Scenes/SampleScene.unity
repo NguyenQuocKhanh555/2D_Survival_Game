@@ -2512,6 +2512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tilemapReadController: {fileID: 127653483}
+  _placeableObjectsManager: {fileID: 0}
   _equipmentController: {fileID: 413895678}
   _attackController: {fileID: 413895685}
   _applyEffectController: {fileID: 413895684}
