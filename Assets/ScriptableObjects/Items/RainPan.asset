@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Rain Pan
   isStackable: 0
-  itemIcon: {fileID: -1881079627, guid: 95515805b1096e6449da717584a95910, type: 3}
+  itemIcon: {fileID: -4942271725622483658, guid: b75d6c17b1080364b9e568af3df83b24, type: 3}
   itemType: 2
   toolData: {fileID: 0}
   weaponData: {fileID: 0}

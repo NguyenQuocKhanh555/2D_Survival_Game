@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Rain Hat
   isStackable: 0
-  itemIcon: {fileID: 218104963, guid: 95515805b1096e6449da717584a95910, type: 3}
+  itemIcon: {fileID: -8687766832248539796, guid: b75d6c17b1080364b9e568af3df83b24, type: 3}
   itemType: 2
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
