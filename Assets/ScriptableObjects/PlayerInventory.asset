@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: dacd4fde84663624bb3bbe2cfd70c370, type: 2}
-    quantity: 10
-  - item: {fileID: 11400000, guid: 1de7963060b80bc4cbcd4f605f51a095, type: 2}
+  - item: {fileID: 11400000, guid: d3e587fb056c6ef4eadbaa61e67f6e43, type: 2}
     quantity: 0
-  - item: {fileID: 11400000, guid: f081ea5510b20f44d84e01b088e13ab9, type: 2}
+  - item: {fileID: 0}
     quantity: 0
-  - item: {fileID: 11400000, guid: 6758b16ce3f6d414fb8bde2c4024305a, type: 2}
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 11400000, guid: a12ea46fbdf1d72449d84e993297a2f5, type: 2}
     quantity: 0

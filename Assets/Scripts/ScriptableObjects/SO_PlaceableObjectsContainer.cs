@@ -8,13 +8,20 @@ public class PlaceableObject
 {
     public SO_Item placeableItem;
     public Transform targetObject;
-    public Vector3Int positionOnGrid;
+    //public Vector3Int positionOnGrid;
+    public List<Vector3Int> occupiedGridPositions;
     public string objectState;
 
-    public PlaceableObject(SO_Item item, Vector3Int position)
+    public PlaceableObject(SO_Item item/*, Vector3Int position*/, List<Vector3Int> occupiedPosition)
     {
         placeableItem = item;
-        positionOnGrid = position;
+        //positionOnGrid = position;
+        occupiedGridPositions = new List<Vector3Int>(occupiedPosition);
+    }
+
+    public bool OccupiesPosition(Vector3Int position)
+    {
+        return occupiedGridPositions.Contains(position);
     }
 }
 
@@ -30,7 +37,7 @@ public class SO_PlaceableObjectsContainer : ScriptableObject
 
     public PlaceableObject GetPlaceableObject(Vector3Int position)
     {
-        return placeableObjectsList.Find(obj => obj.positionOnGrid == position);
+        return placeableObjectsList.Find(obj => obj.OccupiesPosition(position));
     }
 
     public void RemovePlaceableObject(PlaceableObject placeableObject)

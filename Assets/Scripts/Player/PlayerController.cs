@@ -74,8 +74,8 @@ public class PlayerController : MonoBehaviour
         _pickupItemController.SetStateToMoving(_animator);
         _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
         _useToolController.CanSelectCheck();
-        _useToolController.SelectTile();
-        _useToolController.Marker();
+        _useToolController.SelectTile(_toolbarController);
+        _useToolController.Marker(_toolbarController);
     }
 
     private void FixedUpdate()

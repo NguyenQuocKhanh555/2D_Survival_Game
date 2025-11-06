@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6aa08130548fe479c03a17f0c3e2e0, type: 3}
+  m_Name: ResearchTable
+  m_EditorClassIdentifier: 
+  placeableItemPrefab: {fileID: 8236646265411913404, guid: de872cd5b4fb6b0458dfcf2091f96a3f, type: 3}
+  spritePlacementPreview: {fileID: -3624886782884156041, guid: 523c95bd07c965545a33e6e078423298, type: 3}
+  sizeOnGrid: {x: 2, y: 1}
