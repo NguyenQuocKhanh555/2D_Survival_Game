@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c747dbf9c17e444c8314b39bd2e368d, type: 3}
-  m_Name: PlayerBody
+  m_Script: {fileID: 11500000, guid: eb3b33cdbc89b9d498a7c7a2311a4d5b, type: 3}
+  m_Name: GlobalPlaceableObjectsContainer
   m_EditorClassIdentifier: 
-  playerBodyParts:
-  - bodyPartName: Head
-    playerPart: {fileID: 0}
-  - bodyPartName: Torso
-    playerPart: {fileID: 0}
-  - bodyPartName: Legs
-    playerPart: {fileID: 0}
+  placeableObjectsList: []

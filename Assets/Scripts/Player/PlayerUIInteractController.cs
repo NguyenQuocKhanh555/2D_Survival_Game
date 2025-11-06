@@ -4,7 +4,6 @@ public class PlayerUIInteractController : MonoBehaviour
 {
     [SerializeField] private GameObject _inventoryUI;
     [SerializeField] private GameObject _toolbarUI;
-    [SerializeField] private GameObject _equipmentUI;
 
     public bool IsInventoryOpen
     {
@@ -15,6 +14,5 @@ public class PlayerUIInteractController : MonoBehaviour
     {
         _inventoryUI.SetActive(!_inventoryUI.activeSelf);
         _toolbarUI.SetActive(!_toolbarUI.activeSelf);
-        _equipmentUI.SetActive(!_equipmentUI.activeSelf);
     }
 }

@@ -2,33 +2,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
-{
-    [SerializeField] private SpriteRenderer[] _spriteRenderers;
-    [SerializeField] private Material[] _highlightMats;
+{  
+    [SerializeField] private Material _highlightMats;
 
-    private List<Material> _originalMats = new List<Material>();
+    private SpriteRenderer _spriteRenderers;
+    private Material _originalMats;
 
     private bool _isSelected = false;
 
     private void Awake()
     {
-        for (int i = 0; i < _spriteRenderers.Length; i++)
-        {
-            _originalMats.Add(_spriteRenderers[i].material);
-        }
+        _spriteRenderers = GetComponent<SpriteRenderer>();
+        _originalMats = _spriteRenderers.material;
     }
 
     public void Select()
     {
         if (!_isSelected)
         {
-            for (int i = 0; i < _spriteRenderers.Length; i++)
-            {
-                if (_spriteRenderers[i] != null && _highlightMats[i] != null)
-                {
-                    _spriteRenderers[i].material = _highlightMats[i];
-                }
-            }
+            _spriteRenderers.material = _highlightMats;
             _isSelected = true;
         }
     }
@@ -37,13 +29,7 @@ public class Interactable : MonoBehaviour
     {
         if (_isSelected)
         {
-            for (int i = 0; i < _spriteRenderers.Length; i++)
-            {
-                if (_spriteRenderers[i] != null && _originalMats[i] != null)
-                {
-                    _spriteRenderers[i].material = _originalMats[i];
-                }
-            }
+            _spriteRenderers.material = _originalMats;
             _isSelected = false;
         }
     }

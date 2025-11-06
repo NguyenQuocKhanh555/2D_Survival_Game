@@ -4,4 +4,6 @@ using UnityEngine;
 public class SO_PlaceableObject : ScriptableObject
 {
     public GameObject placeableItemPrefab;
+    public Sprite spritePlacementPreview;
+    public Vector2Int sizeOnGrid;
 }

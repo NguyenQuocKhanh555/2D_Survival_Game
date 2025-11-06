@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -24,9 +25,12 @@ public class PlaceableObjectsManager : MonoBehaviour
         GameObject obj =  Instantiate(placeableObject.placeableItem.placeableData.placeableItemPrefab);
         obj.transform.parent = this.transform;
 
-        Vector3 worldPosition = _targetTilemap.CellToWorld(placeableObject.positionOnGrid);
-        worldPosition -= Vector3.forward * 0.1f;
-        obj.transform.position = worldPosition;
+        if (placeableObject.occupiedGridPositions.Count > 0)
+        {
+            Vector3 worldPosition = _targetTilemap.CellToWorld(placeableObject.occupiedGridPositions[0]);
+            worldPosition -= Vector3.forward * 0.1f;
+            obj.transform.position = worldPosition;
+        }
 
         IPersistant persistant = obj.GetComponent<IPersistant>();
         if (persistant != null)
@@ -37,16 +41,21 @@ public class PlaceableObjectsManager : MonoBehaviour
         placeableObject.targetObject = obj.transform;
     }
 
-    public bool Check(Vector3Int position)
+    public bool Check(List<Vector3Int> occupiedPositions)
     {
-        return _placeableObjectsContainer.GetPlaceableObject(position) != null;
+        foreach (var pos in occupiedPositions)
+        {
+            if (_placeableObjectsContainer.GetPlaceableObject(pos) != null)
+                return true;
+        }
+        return false;
     }
 
-    public void Place(SO_Item item, Vector3Int position)
+    public void Place(SO_Item item, List<Vector3Int> occupiedPositions)
     {
-        if (Check(position)) return;
+        if (Check(occupiedPositions)) return;
 
-        PlaceableObject newPlaceableObject = new PlaceableObject(item, position);
+        PlaceableObject newPlaceableObject = new PlaceableObject(item, occupiedPositions);
         _placeableObjectsContainer.AddPlaceableObject(newPlaceableObject);
         VisualizeItem(newPlaceableObject);
     }

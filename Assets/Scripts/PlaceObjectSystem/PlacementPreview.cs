@@ -4,13 +4,16 @@ using UnityEngine.Tilemaps;
 public class PlacementPreview : MonoBehaviour
 {
     [SerializeField] private Tilemap _targetTilemap;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private PlayerToolbarController _playerToolbarController;
 
-    private Vector3Int _cellPosition;
+    
     private Vector3 _targetPosition;
-    private SpriteRenderer _spriteRenderer;
     private bool _canSelect;
     private bool _show;
-    
+
+    public Vector3Int cellPosition;
+
     public bool CanSelect
     {
         set
@@ -29,18 +32,29 @@ public class PlacementPreview : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Start()
     {
-        _targetPosition = _targetTilemap.CellToWorld(_cellPosition);
-        transform.position = _cellPosition;
+        _playerToolbarController.onToolbarSelectedChanged += UpdatePlacementPreview;
+        UpdatePlacementPreview();
     }
 
-    private void Set(Sprite placementPreviewSprite)
+    private void Update()
     {
-        if (_spriteRenderer == null)
+        _targetPosition = _targetTilemap.CellToWorld(cellPosition);
+        transform.position = cellPosition;
+    }
+
+    private void UpdatePlacementPreview()
+    {
+        SO_Item item = _playerToolbarController.GetToolbarSelectedItem;
+
+        if (item == null || item.itemType != ItemTypes.Placeable)
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            Show = false;
+            return;
         }
-        _spriteRenderer.sprite = placementPreviewSprite;
+        
+        Show = true;
+        _spriteRenderer.sprite = item.placeableData.spritePlacementPreview;
     }
 }
