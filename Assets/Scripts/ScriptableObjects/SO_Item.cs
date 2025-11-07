@@ -17,6 +17,7 @@ public class SO_Item : ScriptableObject
     public bool isStackable;
     public Sprite itemIcon;
     public ItemTypes itemType;
+    public string itemDescription;
     public SO_Tool toolData;
     public SO_Weapon weaponData;
     public SO_ItemEffect itemEffect;

@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class ResearchTableInteract : Interactable
 {
-    [SerializeField] private ResearchTablePanel _researchingUI;
+    private GameObject _researchingUI;
 
     public override void Interact(Player player)
     {
-        _researchingUI.gameObject.SetActive(true);
+        if (_researchingUI == null)
+        {
+            _researchingUI = player.GetComponent<PlayerUIInteractController>().researchTableUI;
+        }
+        _researchingUI.SetActive(!_researchingUI.activeSelf);
     }
 }

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c72bee7bb2c62b41b2b4b0492a5ab49, type: 3}
-  m_Name: Stone
+  m_Name: WhiteWood
   m_EditorClassIdentifier: 
-  itemName: Stone
+  itemName: White Wood
   isStackable: 1
-  itemIcon: {fileID: 7865193545131395349, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
+  itemIcon: {fileID: 2179391731949555486, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 4
-  itemDescription: Small stone
+  itemDescription: Wood with white color
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
   itemEffect: {fileID: 0}

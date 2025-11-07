@@ -8,10 +8,29 @@ public class ItemSlot
     public SO_Item item;
     public int quantity;
     
+    public ItemSlot() { }
+
+    public ItemSlot(SO_Item item, int quantity)
+    {
+        this.item = item;
+        this.quantity = quantity;
+    }
+
     public void Copy(ItemSlot other)
     {
         item = other.item;
         quantity = other.quantity;
+    }
+
+    public void TakeOne(ItemSlot other)
+    {
+        item = other.item;
+        quantity = 1;
+        other.quantity -= 1;
+        if (other.quantity <= 0)
+        {
+            other.Clear();
+        }
     }
 
     public void Set(SO_Item item, int quantity)
@@ -89,5 +108,22 @@ public class SO_ItemContainer : ScriptableObject
                 itemSlot.Clear();
             }
         }
+    }
+
+    public void AddItemSlot(ItemSlot itemSlotToAdd) 
+    {
+        slots.Add(new ItemSlot(itemSlotToAdd.item, itemSlotToAdd.quantity));
+    }
+
+    public bool CheckItem(ItemSlot itemToCheck) 
+    {
+        if (itemToCheck == null) return true;
+        if (itemToCheck.item == null) return true;
+
+        ItemSlot itemSlot = slots.Find(x => x.item == itemToCheck.item);
+
+        if (itemSlot == null) return false;
+        
+        return true;
     }
 }

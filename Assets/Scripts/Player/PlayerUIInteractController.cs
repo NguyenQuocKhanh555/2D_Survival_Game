@@ -5,6 +5,8 @@ public class PlayerUIInteractController : MonoBehaviour
     [SerializeField] private GameObject _inventoryUI;
     [SerializeField] private GameObject _toolbarUI;
 
+    public GameObject researchTableUI;
+
     public bool IsInventoryOpen
     {
         get { return _inventoryUI.activeSelf; }

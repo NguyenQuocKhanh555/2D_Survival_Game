@@ -52,7 +52,7 @@ public class ItemDragAndDrop : MonoBehaviour
         }
         else
         {
-            if (_dragAndDropItem.item == itemSlot.item) 
+            if (_dragAndDropItem.item == itemSlot.item && itemSlot.item.isStackable) 
             {
                 itemSlot.quantity += _dragAndDropItem.quantity;
                 _dragAndDropItem.Clear();
@@ -90,6 +90,55 @@ public class ItemDragAndDrop : MonoBehaviour
             SwapItem(itemSlot);
         }
         UpdateIcon();
+    }
+
+    public void OnClickOnResearchTablePanel(ItemSlot itemSlot)
+    {
+        SO_Item dragItem = _dragAndDropItem.item;
+        if (dragItem == null)
+        {
+            _dragAndDropItem.Copy(itemSlot);
+            itemSlot.Clear();
+            UpdateIcon();
+            return;
+        }
+
+        if (dragItem.itemType != ItemTypes.Material) return;
+
+        SO_Item slotItem = itemSlot.item;
+        bool isDragItemStackable = dragItem.isStackable;
+
+        if (slotItem == null)
+        {
+            if (isDragItemStackable)
+            {
+                itemSlot.TakeOne(_dragAndDropItem);
+            }      
+            else
+            {
+                itemSlot.Copy(_dragAndDropItem);
+                _dragAndDropItem.Clear();
+                UpdateIcon();
+            }
+            UpdateIcon();
+            return;
+        }
+
+        if (slotItem == dragItem)
+        {
+            if (isDragItemStackable)
+            {
+                _dragAndDropItem.quantity += 1;
+                itemSlot.Clear();
+            }
+            return;
+        }
+
+        if (!isDragItemStackable)
+        {
+            SwapItem(itemSlot);
+            UpdateIcon();
+        }      
     }
 
     private void UpdateIcon()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Research Table
   isStackable: 0
-  itemIcon: {fileID: -3624886782884156041, guid: 523c95bd07c965545a33e6e078423298, type: 3}
+  itemIcon: {fileID: 1496208883702376374, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 5
   toolData: {fileID: 0}
   weaponData: {fileID: 0}

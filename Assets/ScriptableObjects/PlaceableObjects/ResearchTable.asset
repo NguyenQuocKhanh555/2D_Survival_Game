@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ResearchTable
   m_EditorClassIdentifier: 
   placeableItemPrefab: {fileID: 8236646265411913404, guid: de872cd5b4fb6b0458dfcf2091f96a3f, type: 3}
-  spritePlacementPreview: {fileID: -3624886782884156041, guid: 523c95bd07c965545a33e6e078423298, type: 3}
+  spritePlacementPreview: {fileID: 8521921022370706814, guid: 5cb0a2202a8b1fc41820cda875af3791, type: 3}
   sizeOnGrid: {x: 2, y: 1}
