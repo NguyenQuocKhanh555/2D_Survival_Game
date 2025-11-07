@@ -3,6 +3,7 @@ using UnityEngine;
 public class ResearchButton : MonoBehaviour
 {
     [SerializeField] private ResearchItemButton _researchItemButton;
+    [SerializeField] private ResearchRecipePanel _researchRecipePanel;
 
     private ItemSlot _researchItemSlot = new ItemSlot();
 
@@ -16,6 +17,7 @@ public class ResearchButton : MonoBehaviour
         _researchItemButton.researchedItem.AddItemSlot(_researchItemSlot);
         _researchItemButton.itemSlot.Clear();
         _researchItemButton.UpdateResearchInfo();
+        _researchRecipePanel.OnClickResearchItemButton();
         this.gameObject.SetActive(false);
     }
 }
