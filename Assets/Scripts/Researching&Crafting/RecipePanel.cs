@@ -9,24 +9,27 @@ public class RecipePanel : MonoBehaviour
     [SerializeField] private List<RecipeMaterialImage> _recipeMaterialImages;
     [SerializeField] private GameObject _learnButton;
 
-    public void Show(SO_CraftingRecipe recipe, SO_ItemContainer researchItems)
+    public CraftingRecipeSlot craftingRecipeSlot = new CraftingRecipeSlot();
+
+    public void Show(CraftingRecipeSlot recipe, SO_ItemContainer researchItems)
     {
         int numOfResearchedMaterials = 0;
         _resultItemIcon.gameObject.SetActive(true);
 
-        for (int i = 0; i < recipe.craftMaterials.Count; i++) 
+        for (int i = 0; i < recipe.craftingRecipe.craftMaterials.Count; i++) 
         {         
             _recipeMaterialImages[i].gameObject.SetActive(true);
-            if (researchItems.CheckItem(recipe.craftMaterials[i]))
+            if (researchItems.CheckItem(recipe.craftingRecipe.craftMaterials[i]))
             {
-                _recipeMaterialImages[i].Show(recipe.craftMaterials[i].item.itemIcon);
+                _recipeMaterialImages[i].Show(recipe.craftingRecipe.craftMaterials[i].item.itemIcon);
                 numOfResearchedMaterials++;
             }   
         }
 
-        if (numOfResearchedMaterials >= recipe.craftMaterials.Count)
+        if (numOfResearchedMaterials >= recipe.craftingRecipe.craftMaterials.Count)
         {
-            _resultItemIcon.sprite = recipe.resultItem.item.itemIcon;
+            _resultItemIcon.sprite = recipe.craftingRecipe.resultItem.item.itemIcon;
+            craftingRecipeSlot.Copy(recipe);
             _learnButton.SetActive(true);
         }
     }
