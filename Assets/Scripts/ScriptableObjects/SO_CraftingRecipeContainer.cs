@@ -46,10 +46,35 @@ public class SO_CraftingRecipeContainer : ScriptableObject
 
     public void LearnCraftingRecipe(SO_CraftingRecipe learnCraftingRecipe)
     {
-        CraftingRecipeSlot recipeSlot = craftingRecipes.Find(x => x.craftingRecipe = learnCraftingRecipe);
+        CraftingRecipeSlot recipeSlot = craftingRecipes.Find(x => x.craftingRecipe == learnCraftingRecipe);
         if (recipeSlot != null)
         {
             recipeSlot.isLearn = true;
         }
+    }
+
+    public void AddCraftingRecipe(SO_CraftingRecipe recipeToAdd)
+    {
+        CraftingRecipeSlot emptyCraftingRecipeSlot = craftingRecipes.Find(x => x.craftingRecipe == null);
+        if (emptyCraftingRecipeSlot == null) return;
+        emptyCraftingRecipeSlot.Set(recipeToAdd, true);
+    }
+
+    public List<SO_CraftingRecipe> GetAllRecipesWithItemType(ItemTypes itemTypes)
+    {
+        List<SO_CraftingRecipe> recipes = new List<SO_CraftingRecipe>();
+        
+        for (int i = 0; i < craftingRecipes.Count; i++) 
+        {
+            SO_CraftingRecipe craftingRecipe = craftingRecipes[i].craftingRecipe;
+
+            if (craftingRecipe == null) { break; }
+            if (craftingRecipe.resultItem.item.itemType == itemTypes) 
+            {
+                recipes.Add(craftingRecipe);
+            }
+        }
+
+        return recipes;
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class LearnButton : MonoBehaviour
 {
     [SerializeField] private RecipePanel _recipePanel;
-    [SerializeField] private SO_CraftingRecipeContainer _recipeContainer;
+    [SerializeField] private SO_CraftingRecipeContainer _learnedCraftingRecipeContainer;
 
     private CraftingRecipeSlot _craftingRecipeSlot = new CraftingRecipeSlot();
 
@@ -14,7 +14,9 @@ public class LearnButton : MonoBehaviour
 
     public void OnClick()
     {
-        _recipeContainer.LearnCraftingRecipe(_craftingRecipeSlot.craftingRecipe);
+        _recipePanel.researchRecipePanel.recipeContainer.LearnCraftingRecipe(_craftingRecipeSlot.craftingRecipe);
+        _learnedCraftingRecipeContainer.AddCraftingRecipe(_craftingRecipeSlot.craftingRecipe);
         this.gameObject.SetActive(false);
+        _recipePanel.researchRecipePanel.OnClickResearchButton();
     }
 }
