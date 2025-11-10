@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _recipePanel: {fileID: 3580094290412269102}
-  _recipeContainer: {fileID: 11400000, guid: f6f6fe6fd6a628249a6bbfe8b7c1408f, type: 2}
+  _learnedCraftingRecipeContainer: {fileID: 11400000, guid: 67c6fa10982adef4291e9110313573e5, type: 2}
 --- !u!1 &2234152185202990271
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5079110797054615549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -327,6 +327,7 @@ MonoBehaviour:
   craftingRecipeSlot:
     craftingRecipe: {fileID: 0}
     isLearn: 0
+  researchRecipePanel: {fileID: 0}
 --- !u!1 &4430162091193470723
 GameObject:
   m_ObjectHideFlags: 0

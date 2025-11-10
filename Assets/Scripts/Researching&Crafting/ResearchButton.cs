@@ -17,7 +17,7 @@ public class ResearchButton : MonoBehaviour
         _researchItemButton.researchedItem.AddItemSlot(_researchItemSlot);
         _researchItemButton.itemSlot.Clear();
         _researchItemButton.UpdateResearchInfo();
-        _researchRecipePanel.OnClickResearchItemButton();
+        _researchRecipePanel.OnClickResearchButton();
         this.gameObject.SetActive(false);
     }
 }
