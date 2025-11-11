@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _craftItemIcon: {fileID: 3389816848854596365}
+  _craftRecipeButton: {fileID: 568565354578338858}
 --- !u!1 &8083354596975628525
 GameObject:
   m_ObjectHideFlags: 0

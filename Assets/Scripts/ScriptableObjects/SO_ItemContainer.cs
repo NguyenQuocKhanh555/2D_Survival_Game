@@ -52,61 +52,91 @@ public class SO_ItemContainer : ScriptableObject
     public List<ItemSlot> slots;
     public bool isChange;
 
-    public void AddItem(SO_Item itemToAdd, int quantity = 1) 
+    public void AddItem(SO_Item itemToAdd, int addQuantity) 
     {
         isChange = true;
 
         if (itemToAdd.isStackable)
         {
-            ItemSlot itemSlot = slots.Find(x => x.item == itemToAdd);
-            if (itemSlot != null)
+            List<ItemSlot> itemSlots = slots.FindAll(x => x.item == itemToAdd);
+            if (itemSlots.Count > 0)
             {
-                itemSlot.quantity += quantity;
+                for (int i = 0; i < itemSlots.Count; i++)
+                {
+                    if (addQuantity <= 0) return;
+                    if (itemSlots[i].quantity + addQuantity > itemToAdd.maxStack)
+                    {
+                        addQuantity -= (itemToAdd.maxStack - itemSlots[i].quantity);
+                        itemSlots[i].quantity = itemToAdd.maxStack;
+                    }
+                    else
+                    {
+                        itemSlots[i].quantity += addQuantity;
+                        addQuantity = 0;
+                    }
+                }
+
+                ItemSlot itemSlot = slots.Find(x => x.item == null);
+                if (itemSlot != null)
+                {
+                    itemSlot.Set(itemToAdd, addQuantity);
+                }
             }
             else
             {
-                itemSlot = slots.Find(x => x.item == null);
+                ItemSlot itemSlot = slots.Find(x => x.item == null);
                 if (itemSlot != null)
                 {
-                    itemSlot.Set(itemToAdd, quantity);
+                    itemSlot.Set(itemToAdd, addQuantity);
                 }
             }
         }
         else
         {
-            ItemSlot itemSlot = slots.Find(x => x.item == null);
-            if (itemSlot != null)
+            List<ItemSlot> itemSlots = slots.FindAll(x => x.item == null);
+
+            for (int i = 0; i < addQuantity; i++)
             {
-                itemSlot.Set(itemToAdd, 1);
+                itemSlots[i].Set(itemToAdd, 0);
             }
         }
     }
 
-    public void RemoveItem(SO_Item itemToRemove, int quantity = 1) 
+    public void RemoveItem(SO_Item itemToRemove, int removeQuantity) 
     {
-        isChange = true;
+        List<ItemSlot> itemSlots = slots.FindAll(x => x.item == itemToRemove);
+
+        if (itemSlots.Count <= 0) return;
 
         if (itemToRemove.isStackable)
-        {
-            ItemSlot itemSlot = slots.Find(x => x.item == itemToRemove);
-            if (itemSlot == null) return;
-
-            itemSlot.quantity -= quantity;
-            if (itemSlot.quantity <= 0)
+        {      
+            for (int i = 0; i < itemSlots.Count; i++)
             {
-                itemSlot.Clear();
+                if (removeQuantity <= 0) break;
+                if (itemSlots[i].quantity <= removeQuantity)
+                {
+                    itemSlots[i].Clear();
+                    removeQuantity -= itemSlots[i].quantity;
+                }
+                else
+                {
+                    itemSlots[i].quantity -= removeQuantity;
+                    removeQuantity = 0;
+                }
             }
+
+            isChange = true;
         }
         else
         {
-            while (quantity > 0)
+            if (slots.Count <= removeQuantity) return;
+            
+            for (int i = 0; i < removeQuantity; i++)
             {
-                quantity--;
-
-                ItemSlot itemSlot = slots.Find(x => x.item == itemToRemove);
-                if (itemSlot == null) return;
-                itemSlot.Clear();
+                itemSlots[i].Clear();
             }
+
+            isChange = true;
         }
     }
 
@@ -125,5 +155,73 @@ public class SO_ItemContainer : ScriptableObject
         if (itemSlot == null) return false;
         
         return true;
+    }
+
+    public int GetItemQuantity(SO_Item item)
+    {
+        List<ItemSlot> itemSlots = slots.FindAll(x => x.item == item);
+        int count = 0;
+
+        if (item.isStackable) 
+        {
+            if (itemSlots.Count <= 0) { return count; }
+            
+            for (int i = 0; i < itemSlots.Count; i++)
+            {
+                count += itemSlots[i].quantity;
+            }
+        }
+        else
+        {
+            if (itemSlots.Count <= 0) { return count; }
+
+            for (int i = 0; i < itemSlots.Count; i++)
+            {
+                count += 1;
+            }
+        }
+
+        return count;
+    }
+
+    public bool CheckFreeSpaceForNonStackableItem(int checkQuantity)
+    {
+        List<ItemSlot> itemSlots = slots.FindAll(x => x.item == null);
+
+        if (itemSlots.Count >= checkQuantity) return true;
+
+        return false;
+    }
+
+    public bool CheckFreeSpaceForStackableItem(SO_Item item, int checkAmount)
+    {
+        if (checkAmount > item.maxStack) return true;
+
+        List<ItemSlot> itemSlots = slots.FindAll(x => x.item == item);
+        
+        if (itemSlots.Count > 0)
+        {
+            int itemQuantity = 0;
+
+            for (int i = 0; i < itemSlots.Count; i++)
+            {
+                itemQuantity += itemSlots[i].quantity;
+            }
+
+            if ((item.maxStack * itemSlots.Count) - itemQuantity >= checkAmount)
+            {
+                return true;
+            }
+
+            ItemSlot itemSlot = slots.Find(x => x.item == null);
+            if (itemSlot != null) return true;
+        }
+        else
+        {
+            ItemSlot itemSlot = slots.Find(x => x.item == null);
+            if (itemSlot != null) return true;
+        }
+
+        return false;
     }
 }

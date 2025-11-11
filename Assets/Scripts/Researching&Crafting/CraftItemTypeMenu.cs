@@ -10,6 +10,7 @@ public class CraftItemTypeMenu : MonoBehaviour
     [SerializeField] private Button _armorType;
 
     [SerializeField] private CraftRecipeMenu _recipeMenu;
+    [SerializeField] private GameObject _craftingInfosUI;
 
     private void Start()
     {
@@ -23,5 +24,6 @@ public class CraftItemTypeMenu : MonoBehaviour
     private void OnClickItemTypeButton(ItemTypes itemTypes)
     {
         _recipeMenu.ShowRecipe(itemTypes);
+        _craftingInfosUI.SetActive(false);
     }
 }

@@ -11,6 +11,7 @@ public class CraftRecipeMenu : MonoBehaviour
     [SerializeField] private RectTransform _recipeMenuContent;
 
     public SO_CraftingRecipeContainer _playerLearnedRecipes;
+    public CraftingPanel craftingPanel;
  
     public void ShowRecipe(ItemTypes itemTypes)
     {
@@ -28,7 +29,7 @@ public class CraftRecipeMenu : MonoBehaviour
 
         for (int i = 0; i < recipes.Count; i++)
         {
-            _recipeButtons[i].Show(recipes[i].resultItem.item);
+            _recipeButtons[i].Show(recipes[i]);
         }
 
         _recipeMenuContent.sizeDelta = new Vector2(_recipeMenuContent.sizeDelta.x, 90 * (int)(recipes.Count / 4));

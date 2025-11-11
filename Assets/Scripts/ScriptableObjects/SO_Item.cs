@@ -15,6 +15,7 @@ public class SO_Item : ScriptableObject
 {
     public string itemName;
     public bool isStackable;
+    public int maxStack;
     public Sprite itemIcon;
     public ItemTypes itemType;
     public string itemDescription;
