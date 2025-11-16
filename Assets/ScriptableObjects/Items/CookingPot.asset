@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cooking Pot
   isStackable: 0
+  maxStack: 0
   itemIcon: {fileID: -4896012953526795659, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 5
   itemDescription: 
@@ -21,4 +22,4 @@ MonoBehaviour:
   weaponData: {fileID: 0}
   itemEffect: {fileID: 0}
   armorData: {fileID: 0}
-  placeableData: {fileID: 0}
+  placeableData: {fileID: 11400000, guid: 51297d0fb8b8ea14c8b170f1ee2b555c, type: 2}
