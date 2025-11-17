@@ -11,13 +11,12 @@ public class ItemConvertorMaterialButton : MonoBehaviour
     [SerializeField] private ItemDragAndDrop _dragAndDrop;
     [SerializeField] private Button _materialButton;
 
-    [SerializeField] private ItemSlot _materialSlot;
+    [SerializeField] private ItemSlot _materialSlot = new ItemSlot();
     [SerializeField] private int _materialSlotIndex; 
 
     private void Start()
     {
         _materialButton.onClick.AddListener(OnClick);
-        _materialSlot = new ItemSlot();
     }
 
     public void SetIndex(int index)

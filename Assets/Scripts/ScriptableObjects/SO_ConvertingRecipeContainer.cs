@@ -6,7 +6,7 @@ public class SO_ConvertingRecipeContainer : ScriptableObject
 {
     public List<SO_ConvertingRecipe> recipes;
 
-    public SO_ConvertingRecipe FindRecipeWithMaterials(List<ItemSlot> itemSlots)
+    public SO_ConvertingRecipe FindRecipeWithMaterials(ItemSlot[] itemSlots)
     {
         foreach (SO_ConvertingRecipe recipe in recipes)
         {
@@ -14,7 +14,16 @@ public class SO_ConvertingRecipeContainer : ScriptableObject
 
             foreach (ItemSlot material in recipe.materials)
             {
-                ItemSlot slot = itemSlots.Find(x => x.item = material.item);
+                ItemSlot slot = null;
+
+                for (int i = 0; i < itemSlots.Length; i++)
+                {
+                    if (material.item == itemSlots[i].item)
+                    {
+                        slot = material;
+                        break;
+                    }
+                }
 
                 if (slot == null || slot.quantity < material.quantity)
                 {

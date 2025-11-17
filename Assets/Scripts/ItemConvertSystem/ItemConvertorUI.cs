@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemConvertorUI : MonoBehaviour
@@ -6,7 +7,12 @@ public class ItemConvertorUI : MonoBehaviour
     [SerializeField] private ItemConvertorMaterialButton[] _materialButtons;
     [SerializeField] private ItemConvertorResultButton _resultButton;
 
-    public ItemConvertorInteract itemConvertorInteract;
+    public ItemConvertorInteract convertorInteract;
+
+    private void OnDisable()
+    {
+        convertorInteract.onCompleteProcess -= UpdateUI;
+    }
 
     private void Start()
     {
@@ -23,22 +29,28 @@ public class ItemConvertorUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        for (int i = 0; i < itemConvertorInteract.data.currentMaterials.Count; i++)
+        for (int i = 0; i < convertorInteract.convertMaterials.Length; i++)
         {
             _materialButtons[i].Clear();
-            if (itemConvertorInteract.data.currentMaterials[i].item == null) { continue; }
-            _materialButtons[i].Show(itemConvertorInteract.data.currentMaterials[i]);
+            if (convertorInteract.convertMaterials[i].item == null) { continue; }
+            _materialButtons[i].Show(convertorInteract.convertMaterials[i]);
         }
 
         _resultButton.Clear();
-        if (itemConvertorInteract.data.currentResult.item == null) { return; }
-        _resultButton.Show(itemConvertorInteract.data.currentResult);
+        if (convertorInteract.convertResult.item == null) { return; }
+        _resultButton.Show(convertorInteract.convertResult);
     }
 
     public void OnClickMaterialButton(int index, ItemSlot slot)
     {
-        Debug.Log(itemConvertorInteract.data.currentMaterials[index]);
-        itemConvertorInteract.data.currentMaterials[index].Copy(slot);
+        convertorInteract.convertMaterials[index].Copy(slot);
+        UpdateUI();
+        convertorInteract.StopProcess();
+    }
+
+    public void OnClickResultButton(ItemSlot slot)
+    {
+        convertorInteract.convertResult.Copy(slot);
         UpdateUI();
     }
 }

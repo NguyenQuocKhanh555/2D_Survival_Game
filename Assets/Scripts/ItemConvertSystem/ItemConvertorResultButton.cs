@@ -10,20 +10,20 @@ public class ItemConvertorResultButton : MonoBehaviour
     [SerializeField] private ItemDragAndDrop _dragAndDrop;
     [SerializeField] private Button _resultButton;
 
-    private ItemSlot _materialSlot = new ItemSlot();
+    [SerializeField] private ItemSlot _resultSlot = new ItemSlot();
 
     private void Start()
     {
-        _resultButton.onClick.AddListener(() => OnClick(_materialSlot));
+        _resultButton.onClick.AddListener(OnClick);
     }
 
     public void Show(ItemSlot slot)
     {
-        _materialSlot.Copy(slot);
+        _resultSlot.Copy(slot);
         _resultIcon.gameObject.SetActive(true);
-        _resultIcon.sprite = _materialSlot.item.itemIcon;
+        _resultIcon.sprite = _resultSlot.item.itemIcon;
         _quantity.gameObject.SetActive(true);
-        _quantity.text = _materialSlot.quantity.ToString();
+        _quantity.text = _resultSlot.quantity.ToString();
     }
 
     public void Clear()
@@ -34,8 +34,9 @@ public class ItemConvertorResultButton : MonoBehaviour
         _quantity.gameObject.SetActive(false);
     }
 
-    public void OnClick(ItemSlot itemSlot)
+    public void OnClick()
     {
-        _dragAndDrop.OnClick(itemSlot);
+        _dragAndDrop.OnClick(_resultSlot);
+        _itemConvertorUI.OnClickResultButton(_resultSlot);
     }
 }

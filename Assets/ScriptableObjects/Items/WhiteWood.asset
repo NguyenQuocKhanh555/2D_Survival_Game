@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: White Wood
   isStackable: 1
-  maxStack: 100
-  itemIcon: {fileID: 2179391731949555486, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
+  maxStack: 10
+  itemIcon: {fileID: -1301541254, guid: 9fe2914df29957441acf0d61f143b729, type: 3}
   itemType: 4
-  itemDescription: Wood with white color
+  itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
   itemEffect: {fileID: 0}
