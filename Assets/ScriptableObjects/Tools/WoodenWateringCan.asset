@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolName: WateringCan
   toolAnimationID: 0
+  toolID: 1
   allToolAnimations:
   - {fileID: 7400000, guid: b8558801d3e004149b5ba66fd70a6e70, type: 2}
   - {fileID: 7400000, guid: 37933a791d1182b4e99917ef79636100, type: 2}
   - {fileID: 7400000, guid: 3f2535f1887293140b387bcb994393fa, type: 2}
   - {fileID: 7400000, guid: 732ddbb92ebebc14dab51acd3a1d85f1, type: 2}
   toolWorldAction: {fileID: 0}
-  toolTileMapAction: {fileID: 0}
+  toolTileMapAction: {fileID: 11400000, guid: c0f25e2c9ebe7804f9b7b1302fc4069c, type: 2}
   toolPower: 0

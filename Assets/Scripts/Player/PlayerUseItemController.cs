@@ -24,6 +24,7 @@ public class PlayerUseItemController : MonoBehaviour
         if (_equipmentController.currentToolData == null) return;
         
         animator.SetTrigger("action");
+        animator.SetInteger("toolId", _equipmentController.currentToolData.toolID);
 
         if (_equipmentController.currentToolData.toolWorldAction != null)
         {

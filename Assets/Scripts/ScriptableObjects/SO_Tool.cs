@@ -7,6 +7,7 @@ public class SO_Tool : ScriptableObject
 {
     public string toolName;
     public int toolAnimationID;
+    public int toolID;
 
     public List<AnimationClip> allToolAnimations = new List<AnimationClip>();
 
