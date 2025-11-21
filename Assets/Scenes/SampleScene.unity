@@ -1326,6 +1326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5985e2674418e094f813d603548c84d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cropsManager: {fileID: 2036703810}
   _tilemap: {fileID: 1906000416}
 --- !u!1001 &143427708
 PrefabInstance:
@@ -4974,6 +4975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilemapReadController: {fileID: 127653483}
   _placeableObjectsManager: {fileID: 1184392064}
+  _cropsManager: {fileID: 2036703810}
   _equipmentController: {fileID: 413895678}
   _attackController: {fileID: 413895685}
   _applyEffectController: {fileID: 413895684}
@@ -5548,7 +5550,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.296875
+  orthographic size: 6.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17037,6 +17039,7 @@ Transform:
   - {fileID: 127653482}
   - {fileID: 1887536508}
   - {fileID: 1184392063}
+  - {fileID: 2036703809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1802110329 stripped
@@ -21202,6 +21205,70 @@ MonoBehaviour:
   _craftItemTypeMenu: {fileID: 1417068767}
   _craftRecipeMenu: {fileID: 180720647}
   _craftInfosUI: {fileID: 898548553}
+--- !u!1 &2036703808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036703809}
+  - component: {fileID: 2036703810}
+  - component: {fileID: 2036703811}
+  m_Layer: 0
+  m_Name: CropsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036703809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036703808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1796968426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036703810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036703808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc98f5e0f883ff54d8bd41359c4f586a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropContainer: {fileID: 11400000, guid: 48e0c5a8e4c27274692cab64feae5620, type: 2}
+  _plowedTile: {fileID: 11400000, guid: d28ee9e2124360f46be73b30f4501414, type: 2}
+  _wateredTile: {fileID: 11400000, guid: 29c7459ff29578540ac60971582cffe2, type: 2}
+  _tilemap: {fileID: 1906000416}
+  _tilemapReadController: {fileID: 127653483}
+  _cropPrefab: {fileID: 2538209481523223889, guid: 2286696a26f93c649b1196a208acbf80, type: 3}
+  _scheduler: {fileID: 2036703811}
+--- !u!114 &2036703811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036703808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e83a8232c3470a429648d9225d37af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2038389870
 GameObject:
   m_ObjectHideFlags: 0

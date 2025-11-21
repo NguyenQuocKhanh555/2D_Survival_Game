@@ -6,15 +6,13 @@ using UnityEngine.Tilemaps;
 public class SO_ToolActionPlowTile : SO_ToolAction
 {
     [SerializeField] private List<TileBase> _canPlow;
-    [SerializeField] private TileBase _plowedTile;
 
     public override void OnApplyToTileMap(Vector3Int gridPosition, TilemapReadController tilemapRead)
     {
         TileBase targetTile = tilemapRead.GetTileAtGridPosition(gridPosition);
         
-        if (_canPlow.Contains(targetTile))
-        {
-            Debug.Log("Plowing tile at " + gridPosition);
-        }
+        if (!_canPlow.Contains(targetTile)) return;
+
+        tilemapRead.cropsManager.Plow(gridPosition);
     }
 }

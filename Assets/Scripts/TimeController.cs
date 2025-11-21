@@ -76,4 +76,9 @@ public class TimeController : MonoBehaviour
         _time -= secondsInDay;
         _days++;
     }
+
+    public float GetTime()
+    {
+        return _time;
+    }
 }

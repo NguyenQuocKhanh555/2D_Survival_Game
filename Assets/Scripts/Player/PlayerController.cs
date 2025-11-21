@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private PlayerUIInteractController _inventoryController;
     private PlayerToolbarController _toolbarController;
     private PlayerPickupItemController _pickupItemController;
-    private PlayerUseItemController _useToolController; 
+    private PlayerUseItemController _useItemController; 
 
     private Vector2 _moveInput;
     private Vector2 _lastMotionVector;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         _inventoryController = GetComponent<PlayerUIInteractController>();
         _toolbarController = GetComponent<PlayerToolbarController>();
         _pickupItemController = GetComponent<PlayerPickupItemController>();
-        _useToolController = GetComponent<PlayerUseItemController>();
+        _useItemController = GetComponent<PlayerUseItemController>();
     }
 
     private void OnEnable()
@@ -73,9 +73,9 @@ public class PlayerController : MonoBehaviour
         PlayerPickupAroundInput();
         _pickupItemController.SetStateToMoving(_animator);
         _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
-        _useToolController.CanSelectCheck();
-        _useToolController.SelectTile(_toolbarController);
-        _useToolController.Marker(_toolbarController);
+        _useItemController.CanSelectCheck();
+        _useItemController.SelectTile(_toolbarController);
+        _useItemController.Marker(_toolbarController);
     }
 
     private void FixedUpdate()
@@ -149,13 +149,10 @@ public class PlayerController : MonoBehaviour
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
             case ItemTypes.Weapon:
-                _useToolController.UseWeapon(_animator, _lastMotionVector);
+                _useItemController.UseWeapon(_animator, _lastMotionVector);
                 break;
             case ItemTypes.Tool:
-                _useToolController.UseTool(_animator, _lastMotionVector);
-                break;
-            case ItemTypes.Placeable:
-                _useToolController.UsePlaceableItem(_animator ,_toolbarController);
+                _useItemController.UseTool(_animator, _lastMotionVector);
                 break;
             default:
                 break;
@@ -167,8 +164,20 @@ public class PlayerController : MonoBehaviour
         if (_isDodging) return;
         if (_isPointerOverUI) return;
         if (_toolbarController.GetToolbarSelectedItem == null) return;
-        if (_toolbarController.GetToolbarSelectedItem.itemType != ItemTypes.Consumable) return;
-        _useToolController.UseConsumableItem(_animator, _lastMotionVector, _toolbarController);
+        switch (_toolbarController.GetToolbarSelectedItem.itemType)
+        {
+            case ItemTypes.Consumable:
+                _useItemController.UseConsumableItem(_animator, _lastMotionVector, _toolbarController);
+                break;
+            case ItemTypes.Seed:
+                _useItemController.UseSeedItem(_animator, _toolbarController);
+                break;
+            case ItemTypes.Placeable:
+                _useItemController.UsePlaceableItem(_animator, _toolbarController);
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnPickupItem(InputAction.CallbackContext context)

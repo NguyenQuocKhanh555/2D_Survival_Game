@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canPlow:
   - {fileID: 11400000, guid: 98e2cd967b37cd14da237731578ed653, type: 2}
-  _plowedTile: {fileID: 11400000, guid: cf18d5d5436fc344d823bdf9d331b0ec, type: 2}
+  - {fileID: 11400000, guid: 29c7459ff29578540ac60971582cffe2, type: 2}
+  - {fileID: 11400000, guid: d28ee9e2124360f46be73b30f4501414, type: 2}

@@ -4,6 +4,8 @@ using UnityEngine.Tilemaps;
 
 public class TilemapReadController : MonoBehaviour
 {
+    public CropsManager cropsManager;
+
     [SerializeField] private Tilemap _tilemap;
 
     public Vector3Int GetGridPosition(Vector2 position, bool mousePosition)

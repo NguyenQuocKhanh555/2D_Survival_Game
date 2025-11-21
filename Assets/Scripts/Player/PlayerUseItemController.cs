@@ -5,6 +5,7 @@ public class PlayerUseItemController : MonoBehaviour
 {
     [SerializeField] private TilemapReadController _tilemapReadController;
     [SerializeField] private PlaceableObjectsManager _placeableObjectsManager;
+    [SerializeField] private CropsManager _cropsManager;
     [SerializeField] private PlayerEquipmentController _equipmentController;
     [SerializeField] private PlayerAttackController _attackController;
     [SerializeField] private PlayerApplyEffectController _applyEffectController;
@@ -121,6 +122,21 @@ public class PlayerUseItemController : MonoBehaviour
         _placeableObjectsManager.Place(placeableItem, _selectedTileArea);
         toolbarController.RemoveItem(placeableItem);
         toolbarController.onToolbarSelectedChanged?.Invoke();
+    }
+
+    public void UseSeedItem(Animator animator, PlayerToolbarController toolbarController)
+    {
+        SO_Item seedItem = toolbarController.GetToolbarSelectedItem;
+
+        if (seedItem == null || seedItem.itemType != ItemTypes.Seed) return;
+        if (!_isOutRangeSelectable) return;
+        if (!_cropsManager.Check(_selectedTilePosition)) return;
+        if (_cropsManager.cropContainer.Get(_selectedTilePosition).cropData != null) return;
+
+        CalculatePlayerFaceDirection(animator);
+        animator.SetTrigger("place");
+        _cropsManager.Seed(_selectedTilePosition, seedItem.cropData);
+        toolbarController.RemoveItem(seedItem);
     }
 
     private void CalculatePlayerFaceDirection(Animator animator)
