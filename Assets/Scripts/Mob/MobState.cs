@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public abstract class AnimalState
+public abstract class MobState
 {
-    protected Animal animal;
+    protected Mob mob;
 
-    public AnimalState(Animal animal)
+    public MobState(Mob mob)
     {
-        this.animal = animal;
+        this.mob = mob;
     }
 
     public virtual void Enter() { }

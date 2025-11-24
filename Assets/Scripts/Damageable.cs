@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    private IDamageable _damageable;
+    [SerializeField] private IDamageable _damageable;
 
     public void TakeDamage(float damage)
     {
         if (_damageable == null)
         {
-            _damageable = GetComponent<IDamageable>();
+            _damageable = GetComponentInParent<IDamageable>();
         }
         
         _damageable.CalculateDamage(ref damage);
