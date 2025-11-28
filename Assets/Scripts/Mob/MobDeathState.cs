@@ -8,16 +8,16 @@ public class MobDieState : MobState
 
     public override void Enter()
     {
-        base.Enter();
+        mob.animator.SetTrigger("die");
     }
 
     public override void Update()
     {
-        base.Update();
+        
     }
 
     public override void Exit()
     {
-        base.Exit();
+        
     }
 }

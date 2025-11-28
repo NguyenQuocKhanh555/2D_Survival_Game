@@ -7,11 +7,23 @@ public class Projectile : MonoBehaviour
 
     private Animator _animator;
     private Rigidbody2D _rb;
+    private float _lifeTime = 3f;
+    private Damageable _damageable;
 
-    public void SetUp(Vector3 direction) 
+    private void Update()
+    {
+        _lifeTime -= Time.deltaTime;
+        if (_lifeTime <= 0 )
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void SetUp(Vector3 direction, Damageable damageable) 
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _damageable = damageable;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.eulerAngles = new Vector3(0, 0, angle);
         _rb.AddForce(direction * _moveSpeed, ForceMode2D.Impulse);
@@ -21,7 +33,7 @@ public class Projectile : MonoBehaviour
     { 
         Damageable damageable = collision.GetComponent<Damageable>();
 
-        if (damageable != null)
+        if (damageable != null && damageable != _damageable)
         {
             _rb.linearVelocity = Vector2.zero;
             _animator.SetTrigger("destroy");
@@ -31,6 +43,6 @@ public class Projectile : MonoBehaviour
 
     public void Disable()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject); 
     }
 }

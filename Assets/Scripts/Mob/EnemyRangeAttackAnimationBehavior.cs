@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class EnemyAttackAnimationBehavior : StateMachineBehaviour
+public class EnemyRangeAttackAnimationBehavior : StateMachineBehaviour
 {
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Mob>().isAttacking = true;
+        animator.GetComponent<EnemyRangeAttack>().isAttacking = true;
     }
 
     // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
@@ -17,7 +17,7 @@ public class EnemyAttackAnimationBehavior : StateMachineBehaviour
     // OnStateExit is called before OnStateExit is called on any state inside this state machine
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Mob>().isAttacking = false;
+        animator.GetComponent<EnemyRangeAttack>().isAttacking = false;
     }
 
     // OnStateMove is called before OnStateMove is called on any state inside this state machine

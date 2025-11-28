@@ -21,7 +21,7 @@ public class MobPatrolState : MobState
         mob.lastMotionVector = _chosenDirection;
         _patrolDistance = Random.Range(2f, 3f);
         _targetPosition = (Vector2)mob.transform.position + _chosenDirection * _patrolDistance;
-
+        mob.rb.linearVelocity = _chosenDirection * mob.mobPatrolSpeed;
         mob.animator.SetFloat("lastHorizontal", _chosenDirection.x);
         mob.animator.SetFloat("lastVertical", _chosenDirection.y);
         mob.animator.SetBool("isPatrol", true);
@@ -29,19 +29,41 @@ public class MobPatrolState : MobState
 
     public override void Update()
     {
-        if (mob.CanAttack() && mob.mobType == MobType.MeleeEnemy)
+        if (mob.isDead)
+        {
+            mob.ChangeState(new MobDieState(mob));
+            return;
+        }
+
+        if (mob.mobType == MobType.MeleeEnemy && mob.meleeAttack.CanAttack())
         {
             mob.ChangeState(new EnemyMeleeAttackState(mob));
             return;
         }
 
-        if (mob.CanAttack() && mob.mobType == MobType.RangeEnemy)
+        if (mob.mobType == MobType.MeleeEnemy && mob.detector.isPlayerInDectectRange)
+        {
+            mob.ChangeState(new EnemyChaseState(mob));
+            return;
+        }
+
+        if (mob.mobType == MobType.Animal && mob.isHit)
+        {
+            mob.ChangeState(new AnimalRunState(mob));
+            return;
+        }
+
+        if (mob.teleport != null && mob.teleport.CanTeleport())
+        {
+            mob.ChangeState(new ShadowMageTeleportState(mob));
+            return;
+        }
+
+        if (mob.mobType == MobType.RangeEnemy && mob.rangeAttack.CanAttack())
         {
             mob.ChangeState(new EnemyRangeAttackState(mob));
             return;
         }
-
-        mob.rb.linearVelocity = _chosenDirection * mob.mobPatrolSpeed;
 
         if (Vector2.Distance(mob.transform.position, _targetPosition) < 0.1f)
         {

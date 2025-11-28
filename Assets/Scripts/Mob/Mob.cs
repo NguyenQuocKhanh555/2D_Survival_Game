@@ -9,26 +9,25 @@ public enum MobType
     RangeEnemy
 }
 
-public class Mob : MonoBehaviour
+public class Mob : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float _mobAttackCooldown;
-    [SerializeField] private float _mobSpecialCooldown;
-
-    public EnemyAttackRange attackRange;
     public Animator animator;
     public Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
+    public MobDetector detector;
 
-    public Vector2 lastMotionVector = Vector2.down;
-    public string mobName;
-    public bool canAttack = true;
-    public bool isAttacking = false;
-    public bool canUseSpecial = true;
-    public bool isUsingSpecial = false;    
+    public EnemyRangeAttack rangeAttack;
+    public EnemyMeleeAttack meleeAttack;
+    public ShadowMageTeleport teleport;
+
+    public Vector2 lastMotionVector = Vector2.down;  
     public MobType mobType;
-    public int mobHealth;
+    public float mobHealth;
     public float mobPatrolSpeed;
     public float mobRunSpeed;
-    public GameObject projectilePrefab;
+    public bool canTakeDamage = true;
+    public bool isDead = false;
+    public bool isHit = false;
 
     private MobState _currentState;
 
@@ -36,12 +35,23 @@ public class Mob : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        rangeAttack = GetComponent<EnemyRangeAttack>();
+        meleeAttack = GetComponent<EnemyMeleeAttack>();
+        teleport = GetComponent<ShadowMageTeleport>();
+
         ChangeState(new MobIdleState(this));
     }
 
     private void Update()
     {
         _currentState.Update();
+
+        if (isDead)
+        {
+            ChangeState(new MobDieState(this));
+        }
     }
 
     public void ChangeState(MobState state)
@@ -53,37 +63,58 @@ public class Mob : MonoBehaviour
         _currentState.Enter();
     }
 
-    public bool CanAttack()
+    public void TakeDamage(float damage)
     {
-        return attackRange.isPlayerInAttackRange && canAttack && !isAttacking && !isUsingSpecial;
+        if (!canTakeDamage) return;
+        if (isDead) return;
+
+        mobHealth -= damage;
+        StartCoroutine(HitCoroutine());
+
+        if (mobHealth <= 0)
+        {
+            isDead = true;
+        }
     }
 
-    public bool ShadowMageCanUsingTeleport()
+    public IEnumerator HitCoroutine()
     {
-        float distance = Vector2.Distance(attackRange.playerPosition, (Vector2)transform.position);
-        bool isPlayerTooClose = distance <= 3f;
-        return isPlayerTooClose && canUseSpecial && !isUsingSpecial && mobName == "ShadowMage" && !isAttacking; 
+        spriteRenderer.color = Color.gray;
+        isHit = true;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
+        isHit = false;
     }
 
-    public void RangeAttack()
+    public Vector2 SnapToCardinal(Vector2 vector)
     {
-        Vector2 projectileSpawnPoint = (Vector2)transform.position + lastMotionVector * 1.5f;
-        GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint, Quaternion.identity);
-        Vector2 direction = (attackRange.playerPosition - projectileSpawnPoint).normalized;
-        projectile.GetComponent<Projectile>().SetUp(direction);
-        canAttack = false;
-        StartCoroutine(AttackCooldowCoroutine());
+        if (Mathf.Abs(vector.x) > Mathf.Abs(vector.y))
+        {
+            return (vector.x > 0) ? Vector2.right : Vector2.left;
+        }
+        else
+        {
+            return (vector.y > 0) ? Vector2.up : Vector2.down;
+        }
     }
 
-    private IEnumerator AttackCooldowCoroutine()
+    public void Dead()
     {
-        yield return new WaitForSeconds(_mobAttackCooldown);
-        canAttack = true;
+        Destroy(gameObject);
     }
 
-    private IEnumerator SpecialCooldowCoroutine()
+    public void CalculateDamage(ref float damage)
     {
-        yield return new WaitForSeconds(_mobAttackCooldown);
-        canAttack = true;
+        
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        TakeDamage(damage);
+    }
+
+    public void CheckState()
+    {
+        
     }
 }
