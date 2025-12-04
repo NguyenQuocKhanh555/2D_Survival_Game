@@ -47,4 +47,12 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 8ae11fb63e28b314c82c6360dec179a9, type: 2}
   - {fileID: 7400000, guid: 24e3a258edcdd5844b7ac943076a59e3, type: 2}
   - {fileID: 7400000, guid: 252fa2d5f34c4a9469df0fba28a8a502, type: 2}
+  - {fileID: 7400000, guid: a1ce26ecdb3f7744791963fd83081924, type: 2}
+  - {fileID: 7400000, guid: 7973f9c37ab2cf44fbcdf2b48b1b9fbf, type: 2}
+  - {fileID: 7400000, guid: 7af3efae9c916df4c81771ee4b0f053a, type: 2}
+  - {fileID: 7400000, guid: 482ac99273e5cf74696bef5820353a71, type: 2}
+  - {fileID: 7400000, guid: bdc7b1266f0cb4743ac36854397fcec3, type: 2}
+  - {fileID: 7400000, guid: e5792bc17f28f8a439938af82facbafb, type: 2}
+  - {fileID: 7400000, guid: 02f46f949d8b88a43bf23a680b91e183, type: 2}
+  - {fileID: 7400000, guid: 23a35390f0d8e5b479811e65429c8150, type: 2}
   previewPartIdleAnimation: {fileID: 7400000, guid: 17f1e635460014849810ceb7126289f8, type: 2}

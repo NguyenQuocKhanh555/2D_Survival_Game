@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
+  m_Name: WoodenFishingRod
+  m_EditorClassIdentifier: 
+  toolName: Fishing Rod
+  toolAnimationID: 0
+  toolID: 0
+  allToolAnimations:
+  - {fileID: 7400000, guid: 7cd4c330ec9582e43a9e1bcd83190c93, type: 2}
+  - {fileID: 7400000, guid: f1d2ad6430b6d2841a664fbac6413ced, type: 2}
+  - {fileID: 7400000, guid: a10b19f0e612511489b251b68754c05e, type: 2}
+  - {fileID: 7400000, guid: 4975a11e4cc215c41974581f531aa0ed, type: 2}
+  - {fileID: 7400000, guid: 385a1911ba604604bae4c1172bb1c6da, type: 2}
+  - {fileID: 7400000, guid: 041ea5cea6e866f4cb5310d255ea1ae5, type: 2}
+  - {fileID: 7400000, guid: 570a28b33a5c4944288f5773b2b07a53, type: 2}
+  - {fileID: 7400000, guid: 7fab05ad37494aa4dab29ba4f9d868e3, type: 2}
+  - {fileID: 7400000, guid: b967f14e98bedd149b69577d1763b1ea, type: 2}
+  - {fileID: 7400000, guid: 39fa43454fe93454cac36242830608bb, type: 2}
+  - {fileID: 7400000, guid: f295f0e741f054849b3191881bacaeb7, type: 2}
+  - {fileID: 7400000, guid: 8714960e40188144fa16d9cf0a5aa03d, type: 2}
+  - {fileID: 7400000, guid: b98708fc08f866f4ab2e7844b0abab9f, type: 2}
+  - {fileID: 7400000, guid: 06327f5d99039ea41b45485b04cc8b69, type: 2}
+  - {fileID: 7400000, guid: 19a4b4f1d3fb5c04bb601535d620a7f5, type: 2}
+  - {fileID: 7400000, guid: 393faddf6de98854f97924753f103349, type: 2}
+  toolWorldAction: {fileID: 0}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 0
