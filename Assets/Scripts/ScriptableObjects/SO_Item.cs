@@ -9,7 +9,7 @@ public enum ItemTypes
     Material,
     Placeable,
     Seed,
-    WateringCan
+    FishingRod
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]

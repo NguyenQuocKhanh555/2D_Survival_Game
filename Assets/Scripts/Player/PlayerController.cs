@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
 
     private bool _isDodging = false;
     private bool _canDodge = true;
-    
+
+    public bool isFishing = false;
+
     private void Awake()
     {
         _playerControls = new PlayerControls();
@@ -153,6 +155,9 @@ public class PlayerController : MonoBehaviour
                 break;
             case ItemTypes.Tool:
                 _useItemController.UseTool(_animator, _lastMotionVector);
+                break;
+            case ItemTypes.FishingRod:
+                _useItemController.UseFishingRod(_animator);
                 break;
             default:
                 break;
