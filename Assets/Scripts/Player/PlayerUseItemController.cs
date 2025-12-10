@@ -132,7 +132,7 @@ public class PlayerUseItemController : MonoBehaviour
         if (seedItem == null || seedItem.itemType != ItemTypes.Seed) return;
         if (!_isOutRangeSelectable) return;
         if (!_cropsManager.Check(_selectedTilePosition)) return;
-        if (_cropsManager.cropContainer.Get(_selectedTilePosition).cropData != null) return;
+        if (_cropsManager.GetCrop(_selectedTilePosition).cropData != null) return;
 
         CalculatePlayerFaceDirection(animator);
         animator.SetTrigger("place");

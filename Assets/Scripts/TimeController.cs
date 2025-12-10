@@ -79,6 +79,6 @@ public class TimeController : MonoBehaviour
 
     public float GetTime()
     {
-        return _time;
+        return oldPhase;
     }
 }
