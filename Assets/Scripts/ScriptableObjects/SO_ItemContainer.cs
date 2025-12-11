@@ -63,7 +63,8 @@ public class SO_ItemContainer : ScriptableObject
             {
                 for (int i = 0; i < itemSlots.Count; i++)
                 {
-                    if (addQuantity <= 0) return;
+                    if (itemSlots[i].quantity >= itemToAdd.maxStack) continue;
+
                     if (itemSlots[i].quantity + addQuantity > itemToAdd.maxStack)
                     {
                         addQuantity -= (itemToAdd.maxStack - itemSlots[i].quantity);
@@ -73,8 +74,11 @@ public class SO_ItemContainer : ScriptableObject
                     {
                         itemSlots[i].quantity += addQuantity;
                         addQuantity = 0;
+                        break;
                     }
                 }
+
+                if (addQuantity <= 0) return;
 
                 ItemSlot itemSlot = slots.Find(x => x.item == null);
                 if (itemSlot != null)

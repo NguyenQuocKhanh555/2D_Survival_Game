@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private bool _canDodge = true;
 
     public bool isFishing = false;
+    public bool isPickupItem = false;
 
     private void Awake()
     {
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.PlayerMovement.Interact.performed += OnInteract;
         _playerControls.PlayerMovement.Action.performed += OnAction;
         _playerControls.PlayerMovement.PickupSingleItem.performed += OnPickupItem;
+        _playerControls.PlayerMovement.PickupItemAround.performed += OnPickupAroundItem;
         _playerControls.UI.OpenInventory.performed += OnOpenInventory;
         _playerControls.PlayerMovement.Dodge.performed += OnDodge;
         _playerControls.PlayerMovement.Consume.performed += OnConsumeItem;
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.PlayerMovement.Interact.performed -= OnInteract;
         _playerControls.PlayerMovement.Action.performed -= OnAction;
         _playerControls.PlayerMovement.PickupSingleItem.performed -= OnPickupItem;
+        _playerControls.PlayerMovement.PickupItemAround.performed -= OnPickupAroundItem;
         _playerControls.PlayerMovement.Dodge.performed -= OnDodge;
         _playerControls.PlayerMovement.Consume.performed -= OnConsumeItem;
         _playerControls.Disable();
@@ -72,7 +75,6 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovementInput();
         PlayerToolbarSelectInput();
-        PlayerPickupAroundInput();
         _pickupItemController.SetStateToMoving(_animator);
         _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
         _useItemController.CanSelectCheck();
@@ -113,16 +115,16 @@ public class PlayerController : MonoBehaviour
             _toolbarController.SelectToolbarIndex(_scrollInput);
     }
 
-    private void PlayerPickupAroundInput()
+/*    private void PlayerPickupAroundInput()
     {
+        if (isPickupItem) return;
         if (_isDodging) return;
         _pickupAroundInput = _playerControls.PlayerMovement.PickupItemAround.ReadValue<float>();
         if (_pickupAroundInput != 0)
         {
             _pickupItemController.FindNearestPickupItem();
-            _pickupItemController.SetTargetPickupItem();
         }          
-    }
+    }*/
 
     private void Move()
     {
@@ -189,6 +191,12 @@ public class PlayerController : MonoBehaviour
     {
         if (_isDodging) return;
         _pickupItemController.PickupSingleItem();
+    }
+
+    private void OnPickupAroundItem(InputAction.CallbackContext context)
+    {
+        if (_isDodging) return;
+        _pickupItemController.FindNearestPickupItem();
     }
 
     private void OnOpenInventory(InputAction.CallbackContext context)

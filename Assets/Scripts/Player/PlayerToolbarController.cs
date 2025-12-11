@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 public class PlayerToolbarController : MonoBehaviour
 {
     [SerializeField] private int _toolbarSize = 12;
-    [SerializeField] private SO_ItemContainer _inventoryContainer;
 
     private int _selectedToolbarIndex;
 
@@ -14,17 +13,24 @@ public class PlayerToolbarController : MonoBehaviour
 
     public ItemSlot GetToolbarSelectedItemSlot
     {
-        get { return _inventoryContainer.slots[_selectedToolbarIndex]; }
+        get { return InventoryManager.instance.GetItemSlotInInventory(_selectedToolbarIndex); }
     }
 
     public SO_Item GetToolbarSelectedItem
     {
-        get { return _inventoryContainer.slots[_selectedToolbarIndex].item; }
+        get { return InventoryManager.instance.GetItemInSlot(_selectedToolbarIndex); }
     }
 
     public void RemoveItem(SO_Item itemToRemove)
     {
-        _inventoryContainer.RemoveItem(itemToRemove, 1);
+        InventoryManager.instance.RemoveItemFromInventory(itemToRemove, 1);
+    }
+
+    public void Set(int id)
+    {
+        _selectedToolbarIndex = id;
+        onToolbarIndexChanged?.Invoke(_selectedToolbarIndex);
+        onToolbarSelectedChanged?.Invoke();
     }
 
     public void SelectToolbarIndex(float delta)

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ToolbarItemButton : MonoBehaviour, IItemButton//, IPointerClickHandler
+public class ToolbarItemButton : MonoBehaviour, IItemButton, IPointerClickHandler
 {
     [SerializeField] private Image _itemIcon;
     [SerializeField] private TMP_Text _itemQuantity;
@@ -32,10 +32,10 @@ public class ToolbarItemButton : MonoBehaviour, IItemButton//, IPointerClickHand
         _itemQuantity.gameObject.SetActive(false);
     }
 
-/*    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
         _toolbarItemPanel.OnClick(_toolbarIndex);
-    }*/
+    }
 
     public void Set(ItemSlot itemSlot)
     {

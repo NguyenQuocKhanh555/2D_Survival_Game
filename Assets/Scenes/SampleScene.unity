@@ -4127,7 +4127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0d6f5be13dc5947b73d0daad7ec221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryContainer: {fileID: 11400000, guid: 407016f11f503cb4382f6a5d1f29b440, type: 2}
   _buttons:
   - {fileID: 321924763}
   - {fileID: 1992389882}
@@ -5303,6 +5302,7 @@ MonoBehaviour:
   _dodgeCooldown: 1
   _staminaDodgeConsumption: 10
   isFishing: 0
+  isPickupItem: 0
 --- !u!95 &413895677
 Animator:
   serializedVersion: 7
@@ -5410,7 +5410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toolbarSize: 10
-  _inventoryContainer: {fileID: 11400000, guid: 407016f11f503cb4382f6a5d1f29b440, type: 2}
 --- !u!114 &413895682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5423,8 +5422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4203c4a470ca6948a0936e649f2d34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryContainer: {fileID: 11400000, guid: 407016f11f503cb4382f6a5d1f29b440, type: 2}
-  _pickupRange: 1.5
+  _pickupRange: 0.5
+  _directionToPickupItem: {x: 0, y: 0}
+  _targetItem: {fileID: 0}
+  _lastNearestItem: {fileID: 0}
   isMovingToPickupItem: 0
 --- !u!114 &413895683
 MonoBehaviour:
@@ -5843,11 +5844,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickupItemDrop: {fileID: 8761779123943588426, guid: 540f056dacfb66e439db5ed6b9181ead, type: 3}
   _spread: 0.5
-  _item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
+  _item: {fileID: 11400000, guid: 735d73ee27f2c1541a140a0c89893c2c, type: 2}
   _itemCountInOneDrop: 1
   _dropCount: 5
   _nodeType: 0
-  _resourceNodeDurability: 100
+  _resourceNodeDurability: 10
 --- !u!212 &507624256
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7541,6 +7542,51 @@ MonoBehaviour:
   _damageable: {fileID: 334274918}
   isAttacking: 0
   detectRange: {fileID: 1141654109}
+--- !u!1 &669393609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669393610}
+  - component: {fileID: 669393611}
+  m_Layer: 0
+  m_Name: ItemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &669393610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669393609}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1796968426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &669393611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669393609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd1a48b77328db4db5d78aaf075a7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickupItemPrefab: {fileID: 8761779123943588426, guid: 540f056dacfb66e439db5ed6b9181ead, type: 3}
 --- !u!1 &670457590
 GameObject:
   m_ObjectHideFlags: 0
@@ -18466,7 +18512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de54fcca8d4b2348aa2531d9ed5460b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryContainer: {fileID: 11400000, guid: 407016f11f503cb4382f6a5d1f29b440, type: 2}
   _buttons:
   - {fileID: 176974417}
   - {fileID: 168246545}
@@ -18649,6 +18694,8 @@ Transform:
   - {fileID: 1887536508}
   - {fileID: 1184392063}
   - {fileID: 2036703809}
+  - {fileID: 2049385601}
+  - {fileID: 669393610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1802110329 stripped
@@ -23379,7 +23426,6 @@ MonoBehaviour:
   _wateringTilemap: {fileID: 1847621469}
   _tilemapReadController: {fileID: 127653483}
   _cropPrefab: {fileID: 2538209481523223889, guid: 2286696a26f93c649b1196a208acbf80, type: 3}
-  _cropOnMap: []
 --- !u!1 &2038389870
 GameObject:
   m_ObjectHideFlags: 0
@@ -23629,6 +23675,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040155747}
   m_CullTransparentMesh: 1
+--- !u!1 &2049385600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049385601}
+  - component: {fileID: 2049385602}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2049385601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049385600}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1796968426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049385602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049385600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b03bb90a918544b9a22f6353030a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInventory: {fileID: 11400000, guid: 407016f11f503cb4382f6a5d1f29b440, type: 2}
+  inventorySize: 40
 --- !u!1 &2063143513
 GameObject:
   m_ObjectHideFlags: 0

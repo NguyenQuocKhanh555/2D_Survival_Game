@@ -23,7 +23,7 @@ MonoBehaviour:
     quantity: 100
   - item: {fileID: 11400000, guid: ca1beb47be0453543bc5d0de7f591f8c, type: 2}
     quantity: 100
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 493ea37311107be48ab2019dcfc020de, type: 2}
     quantity: 0
   - item: {fileID: 0}
     quantity: 0
@@ -61,4 +61,36 @@ MonoBehaviour:
     quantity: 0
   - item: {fileID: 0}
     quantity: 0
-  isChange: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  isChange: 1

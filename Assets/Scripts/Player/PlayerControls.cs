@@ -130,9 +130,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""PickupItemAround"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""9a2e7984-0db7-4ccb-b31e-e4bcebef6913"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true

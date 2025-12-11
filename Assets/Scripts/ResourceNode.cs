@@ -20,11 +20,13 @@ public class ResourceNode : ToolHit
 
         while (_dropCount > 0)
         {
-            _dropCount--;
+            _dropCount -= _itemCountInOneDrop;
 
             Vector3 position = transform.position;
             position.x += _spread * UnityEngine.Random.value - _spread / 2;
             position.y += _spread * UnityEngine.Random.value - _spread / 2;
+
+            SpawnItemManager.instance.SpawnItem(position, _item, _itemCountInOneDrop);
         }
 
         Destroy(gameObject);

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class InventoryItemPanel : MonoBehaviour, IItemPanel
 {
-    [SerializeField] private SO_ItemContainer _inventoryContainer;
     [SerializeField] private List<InventoryItemButton> _buttons;
     [SerializeField] private ItemDragAndDrop _itemDragAndDrop;
 
@@ -23,17 +22,12 @@ public class InventoryItemPanel : MonoBehaviour, IItemPanel
     {
         Clear();
         Show();
+        InventoryManager.instance.onInventoryChange += Show;
     }
 
-    private void LateUpdate()
+    private void OnDisable()
     {
-        if (_inventoryContainer == null) return;
-
-        if (_inventoryContainer.isChange)
-        {
-            Show();
-            _inventoryContainer.isChange = false;
-        }
+        InventoryManager.instance.onInventoryChange -= Show;
     }
 
     public void SetSourcePanel()
@@ -54,23 +48,23 @@ public class InventoryItemPanel : MonoBehaviour, IItemPanel
 
     public void OnClick(int id)
     {
-        _itemDragAndDrop.OnClick(_inventoryContainer.slots[id]);
+        _itemDragAndDrop.OnClick(InventoryManager.instance.GetItemSlotInInventory(id));
         Show();
     }
 
     public void Show()
     {
-        if (_inventoryContainer == null) return;
+        int inventorySize = InventoryManager.instance.inventorySize;
 
-        for (int i = 0; i < _inventoryContainer.slots.Count; i++)
+        for (int i = 0; i < inventorySize; i++)
         {
-            if (_inventoryContainer.slots[i].item == null)
+            if (InventoryManager.instance.GetItemInSlot(i) == null)
             {
                 _buttons[i].Clear();
             }
             else
             {
-                _buttons[i].Set(_inventoryContainer.slots[i]);
+                _buttons[i].Set(InventoryManager.instance.GetItemSlotInInventory(i));
             }
         }
     }

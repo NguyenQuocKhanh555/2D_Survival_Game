@@ -8,7 +8,7 @@ public class PlayerFishingController : MonoBehaviour
     [SerializeField] private Transform _fishingBobberTransform;
     [SerializeField] private List<SO_FishPool> fishPools;
     [SerializeField] private TilemapReadController _tilemapReadController;
-    [SerializeField] private SO_ItemContainer _inventoryContainer;
+    //[SerializeField] private SO_ItemContainer _inventoryContainer;
  
     public void StartFishing()
     {
@@ -41,7 +41,7 @@ public class PlayerFishingController : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        _inventoryContainer.AddItem(fish, 1);
+        InventoryManager.instance.AddItemToInventory(fish, 1);
     }
 
     private SO_Item GetFish(List<Fish> fishes)

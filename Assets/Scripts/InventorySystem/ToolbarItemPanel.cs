@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 public class ToolbarItemPanel : MonoBehaviour, IItemPanel
 {
-    [SerializeField] private SO_ItemContainer _inventoryContainer;
     [SerializeField] private List<ToolbarItemButton> _buttons;
     [SerializeField] private PlayerToolbarController _toolbarController;
 
@@ -14,7 +13,7 @@ public class ToolbarItemPanel : MonoBehaviour, IItemPanel
     {
         Init();
         _toolbarController.onToolbarIndexChanged += SelectedHighlight;
-
+        InventoryManager.instance.onInventoryChange += Show;
         SelectedHighlight(0);
     }
 
@@ -25,21 +24,16 @@ public class ToolbarItemPanel : MonoBehaviour, IItemPanel
         Show();
     }
 
-    private void OnEnable()
+    public void EnableToolbar()
     {
         Clear();
         Show();
+        InventoryManager.instance.onInventoryChange += Show;
     }
 
-    private void LateUpdate()
+    private void OnDisable()
     {
-        if (_inventoryContainer == null) return;
-
-        if (_inventoryContainer.isChange)
-        {
-            Show();
-            _inventoryContainer.isChange = false;
-        }
+        InventoryManager.instance.onInventoryChange -= Show;
     }
 
     public void Clear()
@@ -52,7 +46,7 @@ public class ToolbarItemPanel : MonoBehaviour, IItemPanel
 
     public void OnClick(int id)
     {
-        
+        _toolbarController.Set(id);
     }
 
     public void SetIndex()
@@ -73,17 +67,17 @@ public class ToolbarItemPanel : MonoBehaviour, IItemPanel
 
     public void Show()
     {
-        if (_inventoryContainer == null) return;
+        int inventorySize = InventoryManager.instance.inventorySize;
 
-        for (int i = 0; i < _inventoryContainer.slots.Count && i < _buttons.Count; i++)
+        for (int i = 0; i < inventorySize && i < _buttons.Count; i++)
         {
-            if (_inventoryContainer.slots[i].item == null)
+            if (InventoryManager.instance.GetItemInSlot(i) == null)
             {
                 _buttons[i].Clear();
             }
             else
             {
-                _buttons[i].Set(_inventoryContainer.slots[i]);
+                _buttons[i].Set(InventoryManager.instance.GetItemSlotInInventory(i));
             }
         }
     }

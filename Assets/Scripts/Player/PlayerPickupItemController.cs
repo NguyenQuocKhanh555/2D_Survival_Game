@@ -5,13 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerPickupItemController : MonoBehaviour
 {
-    [SerializeField] private SO_ItemContainer _inventoryContainer;
     [SerializeField] private float _pickupRange = 1.5f;
-    
-    private Vector2 _directionToPickupItem;
-    private Transform _targetItem;
-    private (SO_Item item, int amount) _pickedUpItem;
-    private Transform _lastNearestItem;
+
+    [SerializeField] private Vector2 _directionToPickupItem;
+    [SerializeField] private Transform _targetItem;
+    [SerializeField] private Transform _lastNearestItem;
 
     public bool isMovingToPickupItem;
 
@@ -26,8 +24,6 @@ public class PlayerPickupItemController : MonoBehaviour
         {
             _targetItem = hit.collider.transform;
             isMovingToPickupItem = true;
-            PickupItem target = _targetItem.GetComponent<PickupItem>();
-            _pickedUpItem = (target.item, target.amount);
             _directionToPickupItem = (_targetItem.position - transform.position).normalized;
         }
     }
@@ -39,6 +35,7 @@ public class PlayerPickupItemController : MonoBehaviour
 
         float nearestDistance = Mathf.Infinity;
         _lastNearestItem = null;
+
         foreach (GameObject item in pickupItems)
         {
             float distance = Vector2.Distance(transform.position, item.transform.position);
@@ -48,6 +45,8 @@ public class PlayerPickupItemController : MonoBehaviour
                 _lastNearestItem = item.transform;
             }
         }
+
+        SetTargetPickupItem();
     }
 
     public void SetTargetPickupItem()
@@ -57,8 +56,6 @@ public class PlayerPickupItemController : MonoBehaviour
         if (_targetItem == null) return;
         
         isMovingToPickupItem = true;
-        PickupItem target = _targetItem.GetComponent<PickupItem>();
-        _pickedUpItem = (target.item, target.amount);
         _directionToPickupItem = (_targetItem.position - transform.position).normalized;
     }
 
@@ -76,10 +73,7 @@ public class PlayerPickupItemController : MonoBehaviour
             if (distance <= _pickupRange)
             {
                 isMovingToPickupItem = false;
-                PickupItem();
-                animator.SetFloat("lastHorizontal", _directionToPickupItem.x);
-                animator.SetFloat("lastVertical", _directionToPickupItem.y);
-                animator.SetTrigger("pickupItem");
+                PickupItem(animator);
             }
         }
     }
@@ -92,12 +86,19 @@ public class PlayerPickupItemController : MonoBehaviour
         animator.SetFloat("vertical", _directionToPickupItem.y);
     }
 
-    public void PickupItem()
+    public void PickupItem(Animator animator)
     {
-        if (_pickedUpItem.item != null)
-        {
-            _inventoryContainer.AddItem(_pickedUpItem.item, _pickedUpItem.amount);
-            Destroy(_targetItem.gameObject);
-        }
+        SO_Item pickupItem = _targetItem.GetComponent<PickupItem>().item;
+        int amount = _targetItem.GetComponent<PickupItem>().amount;
+
+        if (_targetItem == null) return;
+
+        animator.SetFloat("lastHorizontal", _directionToPickupItem.x);
+        animator.SetFloat("lastVertical", _directionToPickupItem.y);
+        animator.SetTrigger("pickupItem");
+
+        InventoryManager.instance.AddItemToInventory(pickupItem, amount);
+        Destroy(_targetItem.gameObject);
+        _targetItem = null;
     }
 }
