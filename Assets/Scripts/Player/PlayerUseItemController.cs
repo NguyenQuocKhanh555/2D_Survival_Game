@@ -26,6 +26,14 @@ public class PlayerUseItemController : MonoBehaviour
         animator.SetTrigger("action");
         animator.SetInteger("toolId", _equipmentController.currentToolData.toolID);
 
+        bool isToolHasWorldAction = _equipmentController.currentToolData.toolWorldAction != null;
+        bool isToolHasTileMapAction = _equipmentController.currentToolData.toolTileMapAction != null;
+
+        if (!isToolHasWorldAction && !isToolHasTileMapAction)
+        {
+            return;
+        }
+
         if (_equipmentController.currentToolData.toolWorldAction != null)
         {
             Vector2 position = (Vector2)transform.position + lastMotionVector * _offSetDistance;
@@ -38,6 +46,7 @@ public class PlayerUseItemController : MonoBehaviour
             _equipmentController.currentToolData.toolTileMapAction.OnApplyToTileMap(
                 _selectedTilePosition, _tilemapReadController);
         }
+
     }
 
     public void SelectTile(PlayerToolbarController playerToolbarController)
@@ -93,11 +102,11 @@ public class PlayerUseItemController : MonoBehaviour
             _equipmentController.currentWeaponData.weaponDamage, lastMotionVector);
     }
 
-    public void UseFishingRod(Animator animator)
+/*    public void UseFishingRod(Animator animator)
     {
         if (_equipmentController.currentToolData == null) return;
         animator.SetTrigger("fish");
-    }
+    }*/
 
     public void UseConsumableItem(Animator animator, Vector2 lastMotionVector, PlayerToolbarController toolbarController)
     {

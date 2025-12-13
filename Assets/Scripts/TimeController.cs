@@ -77,7 +77,7 @@ public class TimeController : MonoBehaviour
         _days++;
     }
 
-    public float GetTime()
+    public int GetTime()
     {
         return oldPhase;
     }

@@ -158,9 +158,9 @@ public class PlayerController : MonoBehaviour
             case ItemTypes.Tool:
                 _useItemController.UseTool(_animator, _lastMotionVector);
                 break;
-            case ItemTypes.FishingRod:
+/*            case ItemTypes.FishingRod:
                 _useItemController.UseFishingRod(_animator);
-                break;
+                break;*/
             default:
                 break;
         }

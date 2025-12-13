@@ -12,6 +12,7 @@ public class ItemConvertorInteract : Interactable
 
     [SerializeField] private int _timer = 0;
     [SerializeField] private SO_ConvertingRecipe _currentProcessRecipe = null;
+    [SerializeField] private int _lastOpenedTime;
 
     public ItemSlot convertResult = new ItemSlot();
     public ItemSlot[] convertMaterials;
@@ -20,28 +21,62 @@ public class ItemConvertorInteract : Interactable
 
     private void Start()
     {
-        TimeController.instance.onTimeTick += ItemConvertorProcess;
+        //TimeController.instance.onTimeTick += ItemConvertorProcess;
         _animator = GetComponent<Animator>();
     }
 
-    private void Update()
+/*    private void Update()
     {
         StartProcess();
-    }
+    }*/
 
     public override void Interact(Player player)
     {
-        if (_itemConvertName != null)
+        if (_itemConvertName != "" && _itemConvertUI == null)
         {
             player.GetComponent<PlayerUIInteractController>().itemConvertingUI.TryGetValue(
                 _itemConvertName, out _itemConvertUI);
         }
-        _itemConvertUI.SetActive(!_itemConvertUI.activeSelf);
 
+        _itemConvertUI.SetActive(!_itemConvertUI.activeSelf);
         ItemConvertorUI convertorUI = _itemConvertUI.GetComponent<ItemConvertorUI>();
+
+        if (_itemConvertUI.activeSelf)
+        {
+            SimulateProcess();
+            TimeController.instance.onTimeTick += ItemConvertorProcess;
+            convertorUI.convertorInteract = this;
+            convertorUI.UpdateUI();
+            onCompleteProcess += convertorUI.UpdateUI;
+        }
+        else
+        {
+            TimeController.instance.onTimeTick -= ItemConvertorProcess;
+            convertorUI.convertorInteract = null;
+            _lastOpenedTime = TimeController.instance.GetTime();
+        }
+
+        /*ItemConvertorUI convertorUI = _itemConvertUI.GetComponent<ItemConvertorUI>();
         convertorUI.convertorInteract = this;
         convertorUI.UpdateUI();
-        onCompleteProcess += convertorUI.UpdateUI;
+        onCompleteProcess += convertorUI.UpdateUI;*/
+    }
+
+    private void SimulateProcess()
+    {
+        if (!CheckMaterials()) return;
+        if (_currentProcessRecipe == null) return;
+
+        int currentTime = TimeController.instance.GetTime();
+        int timeDiff = currentTime - _lastOpenedTime;
+
+        if (timeDiff > 0)
+        {
+            int resultQuantity = timeDiff / _currentProcessRecipe.timeToProcess;
+            int timeRemainder = timeDiff % _currentProcessRecipe.timeToProcess;
+            _timer = _currentProcessRecipe.timeToProcess - timeRemainder;
+
+        }
     }
 
     private void ItemConvertorProcess()
@@ -59,11 +94,11 @@ public class ItemConvertorInteract : Interactable
         }
     }
 
-    private void StartProcess()
+    public void StartProcess()
     {
         if (!CheckMaterials()) return;
-        if (_timer > 0) return;
-        if (_currentProcessRecipe != null) return;
+        //if (_timer > 0) return;
+        //if (_currentProcessRecipe != null) return;
         if (convertResult.item != null && !convertResult.item.isStackable) return;
 
         SO_ConvertingRecipe convertingRecipe = _recipeContainer.FindRecipeWithMaterials(convertMaterials);
@@ -113,19 +148,20 @@ public class ItemConvertorInteract : Interactable
         _animator.SetBool("isProcessing", false);
         _currentProcessRecipe = null;
         onCompleteProcess?.Invoke();
+        StartProcess();
     }
 
     private bool CheckMaterials()
     {
         for (int i = 0; i < convertMaterials.Length; i++)
         {
-            if (convertMaterials[i].item != null)
+            if (convertMaterials[i].item == null)
             {
-                return true;
+                return false;
             }
         }
 
-        return false;
+        return true;
     }
 
     public void StopProcess()

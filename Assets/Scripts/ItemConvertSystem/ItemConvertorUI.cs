@@ -43,7 +43,12 @@ public class ItemConvertorUI : MonoBehaviour
 
     public void OnClickMaterialButton(int index, ItemSlot slot)
     {
+        SO_Item preMaterial = convertorInteract.convertMaterials[index].item;
         convertorInteract.convertMaterials[index].Copy(slot);
+        if (preMaterial != slot.item)
+        {
+            convertorInteract.StartProcess();
+        }
         UpdateUI();
         convertorInteract.StopProcess();
     }

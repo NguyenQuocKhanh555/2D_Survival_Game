@@ -162,6 +162,10 @@ public class CropsManager : MonoBehaviour
         crop.growState = 0;
         crop.gameObject.SetActive(true);
         crop.spriteRenderer.sprite = toSeed.sprites[0];
+
+        if (!crop.isWater) return;
+        crop.nextGrowthTime = TimeController.instance.GetTime() + toSeed.growthStateTime[crop.growState + 1];
+        ScheduleCrop(crop, crop.nextGrowthTime);
     }
 
     public void Watering(Vector3Int position)
@@ -173,6 +177,8 @@ public class CropsManager : MonoBehaviour
 
         crop.isWater = true;
         _wateringTilemap.SetTile(position, _wateredTile);
+
+        if (crop.cropData == null) return;
         crop.nextGrowthTime = TimeController.instance.GetTime() + crop.cropData.growthStateTime[crop.growState + 1];
         ScheduleCrop(crop, crop.nextGrowthTime);
     }
