@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1343ace0f559094458e88887d042eeb6, type: 3}
+  m_Name: IronBar
+  m_EditorClassIdentifier: 
+  convertingRecipeID: 0
+  materials:
+  - item: {fileID: 11400000, guid: 1930ba2c3cd596a41adbd39556f4b181, type: 2}
+    quantity: 2
+  result:
+    item: {fileID: 11400000, guid: dacd4fde84663624bb3bbe2cfd70c370, type: 2}
+    quantity: 1
+  timeToProcess: 5

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolName: Fishing Rod
   toolAnimationID: 0
-  toolID: 0
+  toolID: 2
   allToolAnimations:
   - {fileID: 7400000, guid: 7cd4c330ec9582e43a9e1bcd83190c93, type: 2}
   - {fileID: 7400000, guid: f1d2ad6430b6d2841a664fbac6413ced, type: 2}

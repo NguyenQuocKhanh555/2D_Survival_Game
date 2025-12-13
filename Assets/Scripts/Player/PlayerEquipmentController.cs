@@ -10,6 +10,7 @@ public class PlayerEquipmentController : MonoBehaviour
     [SerializeField] private string[] _bodyPartTypes;
     [SerializeField] private string[] _playerStates;
     [SerializeField] private string[] _playerDirections;
+    [SerializeField] private string[] _fishingAction;
 
     private Animator _animator;
     private AnimationClip _animationClip;
@@ -79,6 +80,12 @@ public class PlayerEquipmentController : MonoBehaviour
         string toolName = currentToolData.toolName;
         string toolAnimationID = currentToolData.toolAnimationID.ToString();
 
+        if (currentToolData.toolID == 2)
+        {
+            UpdateUseFishingRod(toolAnimationID);
+            return;
+        }
+
         for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
         {
             string direction = _playerDirections[directionIndex];
@@ -86,6 +93,26 @@ public class PlayerEquipmentController : MonoBehaviour
                 "PlayerAnimations/Tools/" + toolName + "s/" + toolName + "_" + toolAnimationID + "_" + direction);
 
             _defaultAnimationClips["Pickaxe_" + 0 + "_" + direction] = _animationClip;
+        }
+
+        _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
+    }
+
+    private void UpdateUseFishingRod(string toolAnimationID)
+    {
+        for (int directionIndex = 0; directionIndex < _playerDirections.Length; directionIndex++)
+        {
+            string direction = _playerDirections[directionIndex];
+
+            for (int actionIndex = 0; actionIndex < _fishingAction.Length; actionIndex++)
+            {
+                string action = _fishingAction[actionIndex];
+
+                _animationClip = Resources.Load<AnimationClip>(
+                "PlayerAnimations/FishingRod/" + action + "/" + action + "_" + toolAnimationID + "_" + direction);
+
+                _defaultAnimationClips[action + "_" + 0 + "_" + direction] = _animationClip;
+            }        
         }
 
         _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);

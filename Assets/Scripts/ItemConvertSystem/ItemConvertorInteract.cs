@@ -13,6 +13,7 @@ public class ItemConvertorInteract : Interactable
     [SerializeField] private int _timer = 0;
     [SerializeField] private SO_ConvertingRecipe _currentProcessRecipe = null;
     [SerializeField] private int _lastOpenedTime;
+    [SerializeField] private int _numOfProcessRecipe;
 
     public ItemSlot convertResult = new ItemSlot();
     public ItemSlot[] convertMaterials;
@@ -74,8 +75,27 @@ public class ItemConvertorInteract : Interactable
         {
             int resultQuantity = timeDiff / _currentProcessRecipe.timeToProcess;
             int timeRemainder = timeDiff % _currentProcessRecipe.timeToProcess;
-            _timer = _currentProcessRecipe.timeToProcess - timeRemainder;
 
+            if (resultQuantity == _numOfProcessRecipe)
+            {
+                convertResult.Set(_currentProcessRecipe.result.item, _numOfProcessRecipe);
+                convertMaterials[0].Set(null, 0);
+                _currentProcessRecipe = null;
+                _timer = 0;
+                _numOfProcessRecipe = 0;
+                _animator.SetBool("isProcessing", false);
+            }
+            else
+            {
+                if (convertResult.item == null)
+                {
+                    convertResult.Set(_currentProcessRecipe.result.item, 0);
+                }
+                convertResult.quantity += resultQuantity;
+                convertMaterials[0].quantity -= (_currentProcessRecipe.materials[0].quantity * resultQuantity);
+                _timer = _currentProcessRecipe.timeToProcess - timeRemainder;
+                _numOfProcessRecipe -= resultQuantity;
+            }
         }
     }
 
@@ -102,9 +122,10 @@ public class ItemConvertorInteract : Interactable
         if (convertResult.item != null && !convertResult.item.isStackable) return;
 
         SO_ConvertingRecipe convertingRecipe = _recipeContainer.FindRecipeWithMaterials(convertMaterials);
+        _currentProcessRecipe = convertingRecipe;
         if (convertingRecipe == null) return;
 
-        _currentProcessRecipe = convertingRecipe;
+        _numOfProcessRecipe = GetMaxResultQuantity();
         _timer = convertingRecipe.timeToProcess;
         _animator.SetBool("isProcessing", true);
     }
@@ -139,16 +160,20 @@ public class ItemConvertorInteract : Interactable
         if (convertResult.item == null)
         {
             convertResult.Set(_currentProcessRecipe.result.item, _currentProcessRecipe.result.quantity);
+            _numOfProcessRecipe -= 1;
         }
         else
         {
             convertResult.quantity += _currentProcessRecipe.result.quantity;
+            _numOfProcessRecipe -= 1;
         }
 
-        _animator.SetBool("isProcessing", false);
-        _currentProcessRecipe = null;
+        _currentProcessRecipe = _numOfProcessRecipe <= 0 ? null : _currentProcessRecipe;
         onCompleteProcess?.Invoke();
-        StartProcess();
+        if (_currentProcessRecipe == null)
+            _animator.SetBool("isProcessing", false);
+        else
+            _timer = _currentProcessRecipe.timeToProcess;
     }
 
     private bool CheckMaterials()
@@ -172,5 +197,29 @@ public class ItemConvertorInteract : Interactable
             _currentProcessRecipe = null;
             _animator.SetBool("isProcessing", false);
         }
+    }
+
+    private int GetMaxResultQuantity()
+    {
+        if (_currentProcessRecipe == null) { return 0; }
+
+        int quantity = 0;
+        foreach (ItemSlot material in _currentProcessRecipe.materials)
+        {
+            for (int i = 0; i < convertMaterials.Length; i++)
+            {
+                if (material.item == convertMaterials[i].item)
+                {
+                    int result = convertMaterials[i].quantity / material.quantity;
+                    if (i == 0)
+                    {
+                        quantity += result; 
+                    }
+                    quantity = result < quantity ? result : quantity;
+                }
+            }
+        }
+
+        return quantity;
     }
 }

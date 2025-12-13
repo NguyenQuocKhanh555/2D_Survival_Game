@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: SmelterRecipes
   m_EditorClassIdentifier: 
   recipes:
-  - {fileID: 11400000, guid: 299d0a03ad019f64b90d02ba4301c63e, type: 2}
-  - {fileID: 11400000, guid: 7ff26f121f144de4f9be797c670d194e, type: 2}
+  - {fileID: 11400000, guid: cca9d38a60b268b4a959a0ffa8dac232, type: 2}

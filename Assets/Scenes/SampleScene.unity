@@ -5352,11 +5352,18 @@ MonoBehaviour:
   - swordattack
   - dodge
   - pickup
+  - pull
+  - reel
   _playerDirections:
   - down
   - left
   - right
   - up
+  _fishingAction:
+  - Cast
+  - Idle
+  - Pull
+  - Reel
   currentToolData: {fileID: 0}
   currentWeaponData: {fileID: 0}
 --- !u!114 &413895679
@@ -8641,7 +8648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &759976612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9890,8 +9897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemConvertorUI: {fileID: 1923782858}
-  _resultIcon: {fileID: 0}
-  _quantity: {fileID: 0}
+  _resultIcon: {fileID: 251549114}
+  _quantity: {fileID: 1339672628}
   _dragAndDrop: {fileID: 1526801001}
   _resultButton: {fileID: 950535412}
   _resultSlot:

@@ -126,9 +126,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   rb: {fileID: 0}
-  patrolSpeed: 1
-  runSpeed: 1
+  spriteRenderer: {fileID: 0}
+  detector: {fileID: 0}
+  rangeAttack: {fileID: 0}
+  meleeAttack: {fileID: 0}
+  teleport: {fileID: 0}
   lastMotionVector: {x: 0, y: -1}
+  mobType: 0
+  mobHealth: 100
+  mobPatrolSpeed: 1
+  mobRunSpeed: 5
+  canTakeDamage: 1
+  isDead: 0
+  isHit: 0
 --- !u!50 &3608907049144189928
 Rigidbody2D:
   serializedVersion: 5
