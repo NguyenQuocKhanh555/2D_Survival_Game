@@ -160,7 +160,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crafted_Item_icons_0
+      name: Chest_0_Icon
       rect:
         serializedVersion: 2
         x: 0
@@ -182,7 +182,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_1
+      name: Camfire_Icon
       rect:
         serializedVersion: 2
         x: 48
@@ -204,7 +204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_2
+      name: Smelter_0_Icon
       rect:
         serializedVersion: 2
         x: 96
@@ -226,7 +226,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_3
+      name: Cooking_Pot_Icon
       rect:
         serializedVersion: 2
         x: 144
@@ -248,7 +248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_4
+      name: Research_Table_Icon
       rect:
         serializedVersion: 2
         x: 192
@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_5
+      name: Purifier_0_Icon
       rect:
         serializedVersion: 2
         x: 240
@@ -292,11 +292,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_6
+      name: Copper_Bar_Icon
       rect:
         serializedVersion: 2
-        x: 288
-        y: 192
+        x: 0
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -314,11 +314,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_7
+      name: Iron_Bar_Icon
       rect:
         serializedVersion: 2
-        x: 336
-        y: 192
+        x: 48
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -336,11 +336,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_8
+      name: Gold_Bar_Icon
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
+        x: 96
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -358,11 +358,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_9
+      name: Crop_0_Seed_Icon
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 48
         width: 48
         height: 48
       alignment: 0
@@ -380,11 +380,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_10
+      name: Crop_1_Seed_Icon
       rect:
         serializedVersion: 2
         x: 48
-        y: 144
+        y: 48
         width: 48
         height: 48
       alignment: 0
@@ -402,11 +402,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_11
+      name: Crop_2_Seed_Icon
       rect:
         serializedVersion: 2
         x: 96
-        y: 144
+        y: 48
         width: 48
         height: 48
       alignment: 0
@@ -428,7 +428,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 144
+        y: 48
         width: 48
         height: 48
       alignment: 0
@@ -450,7 +450,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 144
+        y: 48
         width: 48
         height: 48
       alignment: 0
@@ -468,77 +468,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cooking_Pot_Icon
+      name: Grilled_Crop_2_Icon
       rect:
         serializedVersion: 2
-        x: 240
-        y: 144
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5720351b82edd0cb0800000000000000
-      internalID: -4896012953526795659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Research_Table_Icon
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 144
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6b72dde6d0a93c410800000000000000
-      internalID: 1496208883702376374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water_Filter_Icon
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 144
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e6eb2cce55678c130800000000000000
-      internalID: 3587247214617083502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crafted_Item_icons_17
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
+        x: 384
+        y: 48
         width: 48
         height: 48
       alignment: 0
@@ -556,11 +490,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_18
+      name: Grilled_Fish_0_Icon
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 0
+        y: 0
         width: 48
         height: 48
       alignment: 0
@@ -578,11 +512,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_19
+      name: Grilled_Fish_1_Icon
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 48
+        y: 0
         width: 48
         height: 48
       alignment: 0
@@ -600,11 +534,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_20
+      name: Grilled_Fish_2_Icon
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
+        x: 96
+        y: 0
         width: 48
         height: 48
       alignment: 0
@@ -622,11 +556,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_21
+      name: Grilled_Fish_3_Icon
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
+        x: 144
+        y: 0
         width: 48
         height: 48
       alignment: 0
@@ -644,11 +578,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_22
+      name: Grilled_Fish_4_Icon
       rect:
         serializedVersion: 2
-        x: 240
-        y: 96
+        x: 192
+        y: 0
         width: 48
         height: 48
       alignment: 0
@@ -666,11 +600,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crafted_Item_icons_23
+      name: Grilled_Fish_5_Icon
       rect:
         serializedVersion: 2
-        x: 288
-        y: 96
+        x: 240
+        y: 0
         width: 48
         height: 48
       alignment: 0
@@ -683,6 +617,94 @@ TextureImporter:
       bones: []
       spriteID: 8936be30db8e3cf44840c06d59867194
       internalID: 1752452244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crafted_Item_icons_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88eae4ca79963348b6dc7bed5a928e0
+      internalID: 869277288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grilled_Crop_0_Icon
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a171fd2d13d8bf646ae95e472b1c1b5c
+      internalID: 977289631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grilled_Crop_1_Icon
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432bb7f68cdf42e4cadb4ebe031774aa
+      internalID: 2085889184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grilled_Meat_0_Icon
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7f1a4128a88e84f90f8e5ea5b9244a
+      internalID: -2024136753
       vertices: []
       indices: 
       edges: []
@@ -701,30 +723,32 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cooking_Pot_Icon: -4896012953526795659
-      Crafted_Item_icons_0: -5352437501824061611
-      Crafted_Item_icons_1: -7555643239729374919
-      Crafted_Item_icons_10: -5441114623140757822
-      Crafted_Item_icons_11: -5904143390914092619
+      Camfire_Icon: -7555643239729374919
+      Chest_0_Icon: -5352437501824061611
+      Cooking_Pot_Icon: -1142847948457980153
+      Copper_Bar_Icon: 8719062026180820668
       Crafted_Item_icons_12: -4682682352822717589
       Crafted_Item_icons_13: -425725902731181580
-      Crafted_Item_icons_17: -4738048182485962377
-      Crafted_Item_icons_18: -4539029923968175901
-      Crafted_Item_icons_19: 2564489008598311163
-      Crafted_Item_icons_2: -3457536095352515250
-      Crafted_Item_icons_20: -8036719679047390226
-      Crafted_Item_icons_21: -760095868
-      Crafted_Item_icons_22: -16185711
-      Crafted_Item_icons_23: 1752452244
-      Crafted_Item_icons_3: -1142847948457980153
-      Crafted_Item_icons_4: 8582592622733107648
-      Crafted_Item_icons_5: 1215902485465811832
-      Crafted_Item_icons_6: 8719062026180820668
-      Crafted_Item_icons_7: 7166279185356764023
-      Crafted_Item_icons_8: 2284650790839102386
-      Crafted_Item_icons_9: 1526399805640527283
-      Research_Table_Icon: 1496208883702376374
-      Water_Filter_Icon: 3587247214617083502
+      Crafted_Item_icons_14: 869277288
+      Crop_0_Seed_Icon: 1526399805640527283
+      Crop_1_Seed_Icon: -5441114623140757822
+      Crop_2_Seed_Icon: -5904143390914092619
+      Gold_Bar_Icon: 2284650790839102386
+      Grilled_Crop_0_Icon: 977289631
+      Grilled_Crop_1_Icon: 2085889184
+      Grilled_Crop_2_Icon: -4738048182485962377
+      Grilled_Fish_0_Icon: -4539029923968175901
+      Grilled_Fish_1_Icon: 2564489008598311163
+      Grilled_Fish_2_Icon: -8036719679047390226
+      Grilled_Fish_3_Icon: -760095868
+      Grilled_Fish_4_Icon: -16185711
+      Grilled_Fish_5_Icon: 1752452244
+      Grilled_Meat_0_Icon: -2024136753
+      Iron_Bar_Icon: 7166279185356764023
+      Purifier_0_Icon: 1215902485465811832
+      Research_Table_Icon: 8582592622733107648
+      Smelter_0_Icon: -3457536095352515250
+      _Icon: 8719062026180820668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -190,7 +190,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Equipment_icons_0
+      name: Raincoat_Bottom_Icon
       rect:
         serializedVersion: 2
         x: 0
@@ -198,7 +198,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_1
+      name: Raincoat_Top_Icon
       rect:
         serializedVersion: 2
         x: 48
@@ -220,7 +220,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,7 +234,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_2
+      name: Raincoat_Hat_Icon
       rect:
         serializedVersion: 2
         x: 96
@@ -242,7 +242,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,7 +256,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_3
+      name: CA_Bottom_Icon
       rect:
         serializedVersion: 2
         x: 144
@@ -264,7 +264,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_4
+      name: CA_Top_Icon
       rect:
         serializedVersion: 2
         x: 192
@@ -286,7 +286,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,7 +300,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_5
+      name: CA_Hat_Icon
       rect:
         serializedVersion: 2
         x: 240
@@ -308,7 +308,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,15 +322,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_6
+      name: WA_Bottom_Icon
       rect:
         serializedVersion: 2
-        x: 0
-        y: 144
+        x: 288
+        y: 192
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,15 +344,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_7
+      name: WA_Top_Icon
       rect:
         serializedVersion: 2
-        x: 48
-        y: 144
+        x: 336
+        y: 192
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,15 +366,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_8
+      name: WA_Hat_Icon
       rect:
         serializedVersion: 2
-        x: 96
-        y: 144
+        x: 384
+        y: 192
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,15 +388,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_9
+      name: Axe_0_Icon
       rect:
         serializedVersion: 2
-        x: 144
+        x: 0
         y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -410,15 +410,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_10
+      name: Axe_1_Icon
       rect:
         serializedVersion: 2
-        x: 192
+        x: 48
         y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -432,15 +432,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_11
+      name: Axe_2_Icon
       rect:
         serializedVersion: 2
-        x: 240
+        x: 96
         y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -454,15 +454,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_12
+      name: Pickaxe_0_Icon
       rect:
         serializedVersion: 2
-        x: 288
+        x: 144
         y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -476,15 +476,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_13
+      name: Pickaxe_1_Icon
       rect:
         serializedVersion: 2
-        x: 336
+        x: 192
         y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -498,15 +498,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_14
+      name: Pickaxe_2_Icon
       rect:
         serializedVersion: 2
-        x: 384
+        x: 240
         y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -520,15 +520,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_15
+      name: Hoe_0_Icon
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 288
+        y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -542,15 +542,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_16
+      name: Hoe_1_Icon
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 336
+        y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -564,15 +564,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_17
+      name: Hoe_2_Icon
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 384
+        y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -586,15 +586,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_18
+      name: Sword_0_Icon
       rect:
         serializedVersion: 2
-        x: 144
+        x: 0
         y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -608,15 +608,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_19
+      name: Sword_1_Icon
       rect:
         serializedVersion: 2
-        x: 192
+        x: 48
         y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -630,15 +630,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_20
+      name: Sword_2_Icon
       rect:
         serializedVersion: 2
-        x: 240
+        x: 96
         y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -652,15 +652,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_21
+      name: Watering_Can_0_Icon
       rect:
         serializedVersion: 2
-        x: 288
+        x: 144
         y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -674,15 +674,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_22
+      name: Watering_Can_1_Icon
       rect:
         serializedVersion: 2
-        x: 336
+        x: 192
         y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -696,15 +696,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_23
+      name: Watering_Can_2_Icon
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 240
+        y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -718,15 +718,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_24
+      name: Cup_0_Icon
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 288
+        y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -740,15 +740,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_25
+      name: Cup_1_Icon
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
+        x: 336
+        y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -762,15 +762,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_26
+      name: Cup_2_Icon
       rect:
         serializedVersion: 2
-        x: 144
-        y: 48
+        x: 384
+        y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -784,15 +784,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_27
+      name: Bow_0_Icon
       rect:
         serializedVersion: 2
-        x: 192
+        x: 0
         y: 48
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -806,15 +806,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_28
+      name: Bow_1_Icon
       rect:
         serializedVersion: 2
-        x: 240
+        x: 48
         y: 48
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -828,15 +828,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_29
+      name: Bow_2_Icon
       rect:
         serializedVersion: 2
-        x: 288
+        x: 96
         y: 48
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -850,15 +850,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment_icons_30
+      name: Fishing_Rod_0_Icon
       rect:
         serializedVersion: 2
-        x: 336
+        x: 144
         y: 48
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -867,6 +867,182 @@ TextureImporter:
       bones: []
       spriteID: c55948f219cda6130800000000000000
       internalID: 3560900971515385180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Rod_1_Icon
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83fde81e401dd6e4ab775c0df87cd4b6
+      internalID: -783319791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Rod_2_Icon
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1b0681a7022b54db5154da2eef67e1
+      internalID: -250354864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow_0_Icon
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6171bdd18a0a691469d1903aac2c6682
+      internalID: -419764158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow_1_Icon
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5da19ff3c0561749a1f6ba7e0113df4
+      internalID: 1380149583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow_2_Icon
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09080825ea8e070419b79c7382779e27
+      internalID: -14685021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Backpack_0_Icon
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8330a86663c292a4dbb125bafa9da7fe
+      internalID: -1033845888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Backpack_1_Icon
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69bf167cb833ef149a0cdb12d76b9f79
+      internalID: -1465164635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Backpack_2_Icon
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66af41510a19c024d927f85533eb0a37
+      internalID: 437360156
       vertices: []
       indices: 
       edges: []
@@ -885,37 +1061,46 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Equipment_icons_0: -4942271725622483658
-      Equipment_icons_1: -6395959260989295293
-      Equipment_icons_10: -4747939194589863670
-      Equipment_icons_11: 5060886532077664900
-      Equipment_icons_12: 8052171386615707421
-      Equipment_icons_13: 6196374089043037772
-      Equipment_icons_14: -7757181019172426142
-      Equipment_icons_15: 5101784624813958353
-      Equipment_icons_16: 3661240628232880579
-      Equipment_icons_17: -7646549922104770366
-      Equipment_icons_18: -1905108659950601940
-      Equipment_icons_19: 4455248897821184688
-      Equipment_icons_2: -8687766832248539796
-      Equipment_icons_20: -6409371346319446086
-      Equipment_icons_21: -2861713008577078331
-      Equipment_icons_22: -7452044178983567783
-      Equipment_icons_23: -7490527842315869969
-      Equipment_icons_24: 3199146957889424523
-      Equipment_icons_25: 8045601131872652222
-      Equipment_icons_26: 8281648266282253441
-      Equipment_icons_27: -8967182689341826499
-      Equipment_icons_28: -4830031093622243416
-      Equipment_icons_29: 7911177928209699344
-      Equipment_icons_3: 5925635491272323126
-      Equipment_icons_30: 3560900971515385180
-      Equipment_icons_4: 6819457405304805873
-      Equipment_icons_5: 8381443665336008435
-      Equipment_icons_6: -532807064004066464
-      Equipment_icons_7: -7444240926806323844
-      Equipment_icons_8: 6245926040579406826
-      Equipment_icons_9: 8487574728984205919
+      Arrow_0_Icon: -419764158
+      Arrow_1_Icon: 1380149583
+      Arrow_2_Icon: -14685021
+      Axe_0_Icon: 8487574728984205919
+      Axe_1_Icon: -4747939194589863670
+      Axe_2_Icon: 5060886532077664900
+      Backpack_0_Icon: -1033845888
+      Backpack_1_Icon: -1465164635
+      Backpack_2_Icon: 437360156
+      Bow_0_Icon: -8967182689341826499
+      Bow_1_Icon: -4830031093622243416
+      Bow_2_Icon: 7911177928209699344
+      CA_Bottom_Icon: 5925635491272323126
+      CA_Hat_Icon: 8381443665336008435
+      CA_Top_Icon: 6819457405304805873
+      Cup_0_Icon: 3199146957889424523
+      Cup_1_Icon: 8045601131872652222
+      Cup_2_Icon: 8281648266282253441
+      Fishing_Rod_0_Icon: 3560900971515385180
+      Fishing_Rod_1_Icon: -783319791
+      Fishing_Rod_2_Icon: -250354864
+      Hoe_0_Icon: 5101784624813958353
+      Hoe_1_Icon: 3661240628232880579
+      Hoe_2_Icon: -7646549922104770366
+      Pickaxe_0_Icon: 8052171386615707421
+      Pickaxe_1_Icon: 6196374089043037772
+      Pickaxe_2_Icon: -7757181019172426142
+      Raincoat_BoBH: -4942271725622483658
+      Raincoat_Bottom_Icon: -4942271725622483658
+      Raincoat_Hat_Icon: -8687766832248539796
+      Raincoat_Top_Icon: -6395959260989295293
+      Sword_0_Icon: -1905108659950601940
+      Sword_1_Icon: 4455248897821184688
+      Sword_2_Icon: -6409371346319446086
+      WA_Bottom_Icon: -532807064004066464
+      WA_Hat_Icon: 6245926040579406826
+      WA_Top_Icon: -7444240926806323844
+      Watering_Can_0_Icon: -2861713008577078331
+      Watering_Can_1_Icon: -7452044178983567783
+      Watering_Can_2_Icon: -7490527842315869969
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

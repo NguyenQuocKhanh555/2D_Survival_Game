@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Placeholder_icons_0
+      name: Bottom_Placeholder_Icon
       rect:
         serializedVersion: 2
         x: 0
@@ -129,7 +129,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,7 +143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_icons_1
+      name: Top_Placeholder_Icon
       rect:
         serializedVersion: 2
         x: 48
@@ -151,7 +151,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_icons_2
+      name: Hat_Placeholder_Icon
       rect:
         serializedVersion: 2
         x: 96
@@ -173,7 +173,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,7 +187,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_icons_3
+      name: Backpack_Placeholder_Icon
       rect:
         serializedVersion: 2
         x: 144
@@ -195,7 +195,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,7 +209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_icons_4
+      name: Ring_Placeholder_Icon
       rect:
         serializedVersion: 2
         x: 192
@@ -217,7 +217,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,7 +231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_icons_5
+      name: Question_Mark_Placeholder_Icon
       rect:
         serializedVersion: 2
         x: 240
@@ -239,7 +239,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,7 +253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_icons_6
+      name: Locker_Placeholder_Icon
       rect:
         serializedVersion: 2
         x: 288
@@ -261,7 +261,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -288,13 +288,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Placeholder_icons_0: 4741527606401634153
-      Placeholder_icons_1: -2649599714782270010
-      Placeholder_icons_2: 2726241243024814236
-      Placeholder_icons_3: -1472189016727826871
-      Placeholder_icons_4: 1931204663946247550
-      Placeholder_icons_5: 5844632467937228631
-      Placeholder_icons_6: -1528025487300390942
+      Backpack_Placeholder_Icon: -1472189016727826871
+      Bottom_Placeholder_Icon: 4741527606401634153
+      Hat_Placeholder_Icon: 2726241243024814236
+      Locker_Placeholder_Icon: -1528025487300390942
+      Question_Mark_Placeholder_Icon: 5844632467937228631
+      Ring_Placeholder_Icon: 1931204663946247550
+      Top_Placeholder_Icon: -2649599714782270010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

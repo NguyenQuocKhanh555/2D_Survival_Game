@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
+  m_Name: WarmingArmorLegs
+  m_EditorClassIdentifier: 
+  partName: 2
+  partAnimationID: 3
+  allPartAnimations:
+  - {fileID: 7400000, guid: f064e35a4d21ca64a9dcca3bc894d1fe, type: 2}
+  - {fileID: 7400000, guid: ee10fd4f1498d43439fb1dc5d235a802, type: 2}
+  - {fileID: 7400000, guid: 08c1dc93ab965194d8b13badf55ea52e, type: 2}
+  - {fileID: 7400000, guid: 0ff48ae866ee1304a949ec0e4214c651, type: 2}
+  - {fileID: 7400000, guid: 3bf457a27ceba6f4ebef2a9ec8a4b9a4, type: 2}
+  - {fileID: 7400000, guid: c56596cce85e51c4a8c2ed127d821429, type: 2}
+  - {fileID: 7400000, guid: fbb1d9099c9ec554c93c2b26e47ab277, type: 2}
+  - {fileID: 7400000, guid: 0b0f51be52697be4db568317cf98c67c, type: 2}
+  - {fileID: 7400000, guid: ce1d2f77f8893914cac176b37cc6c298, type: 2}
+  - {fileID: 7400000, guid: 8e5036cc05d47a548a2318b22694ec42, type: 2}
+  - {fileID: 7400000, guid: b0b3efe84d450724bbeec0579bf579f9, type: 2}
+  - {fileID: 7400000, guid: 0bd65e331ff10aa4fa7402eb60e81c75, type: 2}
+  - {fileID: 7400000, guid: 180c2374703f49b49b244b1a805d0f0f, type: 2}
+  - {fileID: 7400000, guid: d8964ac9041f41440b3c96ec157de0e8, type: 2}
+  - {fileID: 7400000, guid: fb732b7de40c1504ca5a1bbff3bcd69b, type: 2}
+  - {fileID: 7400000, guid: 6d10a7ad4fbc2dc44a3f0cf5fc5bd0c4, type: 2}
+  - {fileID: 7400000, guid: 831258b82b220224992ac85e9e99e4c3, type: 2}
+  - {fileID: 7400000, guid: 1ed107c919d1a7b4dac95b00081ecd35, type: 2}
+  - {fileID: 7400000, guid: cd44710476a0f6e46867c6f1ccf09e53, type: 2}
+  - {fileID: 7400000, guid: 394051bedee62ff4f8066b08e6556b02, type: 2}
+  - {fileID: 7400000, guid: e18d7d8a3c280a14f82001979b7a4a66, type: 2}
+  - {fileID: 7400000, guid: 637debdaf2f85174ab3d0b759efbc900, type: 2}
+  - {fileID: 7400000, guid: a7fbe4e1b86f9d3449cdfb47f029e15a, type: 2}
+  - {fileID: 7400000, guid: b7862ec884ab6094ba08bc37ca6f6b62, type: 2}
+  - {fileID: 7400000, guid: fd88919011095ce4393f17b07df8582f, type: 2}
+  - {fileID: 7400000, guid: bbd4e7a02d04997408920896a658ad40, type: 2}
+  - {fileID: 7400000, guid: c434a3ee3880b314eae86ef3367063fb, type: 2}
+  - {fileID: 7400000, guid: 11ab2fa054ad5154d9854adb4992969d, type: 2}
+  - {fileID: 7400000, guid: acb1eda9f8564184aa33aebafd921dde, type: 2}
+  - {fileID: 7400000, guid: fbc1abf629a565e45a066d8b2bc78a70, type: 2}
+  - {fileID: 7400000, guid: 10f0d86cf0fbc7d4dadd0514ecb3023f, type: 2}
+  - {fileID: 7400000, guid: 67c77ddce80e982409366f8913c70c81, type: 2}
+  - {fileID: 7400000, guid: ffa1e503744aabf46a3518ee7ead3fce, type: 2}
+  - {fileID: 7400000, guid: 822aa98453ae7434d82bd00ffe406c8c, type: 2}
+  - {fileID: 7400000, guid: 3e1d1d924e46e8b4abe435b284c1d6a4, type: 2}
+  - {fileID: 7400000, guid: e9ed1812674f7b0428b2996b6217d647, type: 2}
+  - {fileID: 7400000, guid: 013ece662e404c44881903977004d368, type: 2}
+  - {fileID: 7400000, guid: d618755f38813b14a837dcd1b4834fa8, type: 2}
+  - {fileID: 7400000, guid: 863642b9c874ee94497aeb457f70b99e, type: 2}
+  - {fileID: 7400000, guid: c04e34545c349c645b8c58f86f6be777, type: 2}
+  previewPartIdleAnimation: {fileID: 7400000, guid: e013426d7d3ea664bbfef14a0ae58cca, type: 2}
