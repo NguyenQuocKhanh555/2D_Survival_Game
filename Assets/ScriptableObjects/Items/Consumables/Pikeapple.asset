@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pikeapple
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 2798137034609787233, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: 0a62993cf352ab5419f01d8c9ec79bac, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

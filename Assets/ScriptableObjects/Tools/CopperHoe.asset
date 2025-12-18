@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
+  m_Name: CopperHoe
+  m_EditorClassIdentifier: 
+  toolName: Copper Hoe
+  toolAnimationID: 1
+  toolID: 0
+  allToolAnimations:
+  - {fileID: 7400000, guid: 26c50350198e7aa4ba9072e4b79e9456, type: 2}
+  - {fileID: 7400000, guid: e7c03127503ad204e8651b2d73b3cd09, type: 2}
+  - {fileID: 7400000, guid: 2192ac17ab2c49a469dfe0f3430059cc, type: 2}
+  - {fileID: 7400000, guid: b2577552e01c1e4418086ed063a9ceeb, type: 2}
+  toolWorldAction: {fileID: 0}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 0

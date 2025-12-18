@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5193c104f7020408e7b4c021b9e7cd, type: 3}
+  m_Name: CopperSword
+  m_EditorClassIdentifier: 
+  weaponName: Sword
+  weaponAnimationID: 1
+  weaponID: 0
+  allWeaponAnimations:
+  - {fileID: 7400000, guid: 4d526e1a0085f294cb3ae25d0abb6979, type: 2}
+  - {fileID: 7400000, guid: 1954cda3c4e9cab4ab863dde44a7ffc5, type: 2}
+  - {fileID: 7400000, guid: 23620078d5e0cce48b7d3a5cac08b8a0, type: 2}
+  - {fileID: 7400000, guid: 22148a398abfbae4a9590830e407d105, type: 2}
+  weaponDamage: 100

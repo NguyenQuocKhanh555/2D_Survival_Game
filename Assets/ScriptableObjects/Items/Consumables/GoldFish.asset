@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Gold Fish
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 6706745928139012777, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: be18027f73668c24eb506cf2d5a3fe95, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

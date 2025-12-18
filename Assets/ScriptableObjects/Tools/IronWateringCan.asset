@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
+  m_Name: IronWateringCan
+  m_EditorClassIdentifier: 
+  toolName: Iron Watering Can
+  toolAnimationID: 2
+  toolID: 1
+  allToolAnimations:
+  - {fileID: 7400000, guid: 732bac30df11b854a8bedfc1bfb8c5ab, type: 2}
+  - {fileID: 7400000, guid: fe3ea0c50a90c7e49a99e1b1f5d4e151, type: 2}
+  - {fileID: 7400000, guid: 6b244a5b7feb25d4390b087d685c8720, type: 2}
+  - {fileID: 7400000, guid: 6f73f465fa5b49c4792985136586d4d9, type: 2}
+  toolWorldAction: {fileID: 0}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 0

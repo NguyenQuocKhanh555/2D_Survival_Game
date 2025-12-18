@@ -18,7 +18,7 @@ MonoBehaviour:
   itemIcon: {fileID: -7490527842315869969, guid: b75d6c17b1080364b9e568af3df83b24, type: 3}
   itemType: 0
   itemDescription: 
-  toolData: {fileID: 0}
+  toolData: {fileID: 11400000, guid: ee745ecdc26c60a4db1b233a3f4656e7, type: 2}
   weaponData: {fileID: 0}
   itemEffect: {fileID: 0}
   armorData: {fileID: 0}

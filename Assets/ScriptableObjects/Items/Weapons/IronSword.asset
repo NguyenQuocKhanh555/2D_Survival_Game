@@ -19,7 +19,7 @@ MonoBehaviour:
   itemType: 0
   itemDescription: 
   toolData: {fileID: 0}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 848ef38b6b95b64459748ab0eddeb776, type: 2}
   itemEffect: {fileID: 0}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}

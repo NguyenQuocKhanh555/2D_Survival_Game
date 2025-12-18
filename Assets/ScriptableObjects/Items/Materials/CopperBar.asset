@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Copper Bar
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 8719062026180820668, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 4
   itemDescription: 

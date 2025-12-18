@@ -20,16 +20,16 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 3208bd478e7104c4ebef2f62fa6eb534, type: 2}
     quantity: 0
   - item: {fileID: 11400000, guid: 27a9a07d609897c488f0329707ec15c6, type: 2}
-    quantity: 100
+    quantity: 98
   - item: {fileID: 11400000, guid: ca1beb47be0453543bc5d0de7f591f8c, type: 2}
-    quantity: 100
+    quantity: 98
   - item: {fileID: 11400000, guid: 493ea37311107be48ab2019dcfc020de, type: 2}
     quantity: 0
-  - item: {fileID: 11400000, guid: 735d73ee27f2c1541a140a0c89893c2c, type: 2}
-    quantity: 5
   - item: {fileID: 11400000, guid: 00cb8c19961d8534e97105b5041de767, type: 2}
     quantity: 0
   - item: {fileID: 11400000, guid: 0a350f0d3ca4e5f4f84c10718f77ec49, type: 2}
+    quantity: 0
+  - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 0}
     quantity: 0

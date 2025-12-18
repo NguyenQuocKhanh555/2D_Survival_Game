@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Copper Ore
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 7267354517623950357, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 4
   itemDescription: 

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
+  m_Name: CopperFishingRod
+  m_EditorClassIdentifier: 
+  toolName: Copper Fishing Rod
+  toolAnimationID: 1
+  toolID: 2
+  allToolAnimations:
+  - {fileID: 7400000, guid: 7d7449ca40c493d41840b89fd8fedaca, type: 2}
+  - {fileID: 7400000, guid: ed48cf08cb5598842992f30e112fc062, type: 2}
+  - {fileID: 7400000, guid: 3e11a4de368dc1b4698b0b505582bcff, type: 2}
+  - {fileID: 7400000, guid: 9588c9b2d1ddf19458bcb29c0b947df2, type: 2}
+  - {fileID: 7400000, guid: de78facd1ae260540870418623d703cd, type: 2}
+  - {fileID: 7400000, guid: e81b8b46bf416a44eb72ec2f4c2acd3b, type: 2}
+  - {fileID: 7400000, guid: 973da8ac6f639f647b17fb833725d294, type: 2}
+  - {fileID: 7400000, guid: 15e2825f0044bb941aae62b1e1359418, type: 2}
+  - {fileID: 7400000, guid: 15be6a3f9ec35f24aa40bc550396c232, type: 2}
+  - {fileID: 7400000, guid: 7620b315c15766d4fac6ff1b9873c772, type: 2}
+  - {fileID: 7400000, guid: 3a0f1b43fd7009447bfdf3aee59d9325, type: 2}
+  - {fileID: 7400000, guid: 09ce481b2a0a3ab419e5a02dd3ee294f, type: 2}
+  - {fileID: 7400000, guid: 47f8b2bf438174a489bec9142de7c0b6, type: 2}
+  - {fileID: 7400000, guid: c8fd79ccd85544c409b06afda7dd795e, type: 2}
+  - {fileID: 7400000, guid: 00b82c45a9313e346938915afb36b0d5, type: 2}
+  - {fileID: 7400000, guid: 02c01c2a4a043dd4485917078e801852, type: 2}
+  toolWorldAction: {fileID: 0}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Blue Crystal
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 204210673, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 4
   itemDescription: 

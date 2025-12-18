@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
+  m_Name: IronHoe
+  m_EditorClassIdentifier: 
+  toolName: Iron Hoe
+  toolAnimationID: 2
+  toolID: 0
+  allToolAnimations:
+  - {fileID: 7400000, guid: 5c57f2dc1631c314a8ac8d78f449e397, type: 2}
+  - {fileID: 7400000, guid: 1ccfa28d888c4354589fda6d3692bb15, type: 2}
+  - {fileID: 7400000, guid: 3c9af9c48405f6f4d946b720e4e7c207, type: 2}
+  - {fileID: 7400000, guid: dac805758efcf8c419f3257380aa3b52, type: 2}
+  toolWorldAction: {fileID: 0}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 0

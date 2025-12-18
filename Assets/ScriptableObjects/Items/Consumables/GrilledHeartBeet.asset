@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Grilled Heart Beet
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 2085889184, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 11400000, guid: bef25a5887b256843a5d8b6d23ab6be2, type: 2}
+  itemEffect: {fileID: 11400000, guid: 5ac25799af5c6c24e8c7b646ce7c22ca, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

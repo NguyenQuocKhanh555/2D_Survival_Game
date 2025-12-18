@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
+  m_Name: CopperPickaxe
+  m_EditorClassIdentifier: 
+  toolName: Copper Pickaxe
+  toolAnimationID: 1
+  toolID: 0
+  allToolAnimations:
+  - {fileID: 7400000, guid: 7ec72c622692ff74e88ee18a8aadd876, type: 2}
+  - {fileID: 7400000, guid: 78ef91c1cadb5704e8eac20b4f691067, type: 2}
+  - {fileID: 7400000, guid: 2f8064c9755f4ab4c9f31369f6c66406, type: 2}
+  - {fileID: 7400000, guid: fbbf66faa55721743940da51bbb36996, type: 2}
+  toolWorldAction: {fileID: 0}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 0

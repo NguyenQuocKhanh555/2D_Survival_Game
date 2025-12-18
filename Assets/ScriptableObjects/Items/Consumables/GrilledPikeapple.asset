@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Grilled Pikeapple
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: -4738048182485962377, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: 7994ad62d4837534bb6304efedc7474f, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

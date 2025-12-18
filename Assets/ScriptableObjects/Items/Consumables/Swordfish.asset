@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Swordfish
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 3456572363309954224, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: 3b26a813aad8c5a4aaec541ad8504f7a, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

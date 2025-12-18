@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Orange Carp
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 8473294718668604789, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: 619b4db0c71d2fc4ebbd8ce9365f9e8d, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

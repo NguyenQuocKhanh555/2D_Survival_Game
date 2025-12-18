@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Devil Hand Seed
   isStackable: 1
-  maxStack: 100
+  maxStack: 99
   itemIcon: {fileID: 1526399805640527283, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 6
   itemDescription: 
@@ -23,4 +23,4 @@ MonoBehaviour:
   itemEffect: {fileID: 0}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
-  cropData: {fileID: 0}
+  cropData: {fileID: 11400000, guid: d03a0e740e98fcd48bb11368db4b7c43, type: 2}

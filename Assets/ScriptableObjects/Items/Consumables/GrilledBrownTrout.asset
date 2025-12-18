@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Grilled Brown Trout
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 1752452244, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: 8760e72da19ea97428bc3924b35c08d2, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

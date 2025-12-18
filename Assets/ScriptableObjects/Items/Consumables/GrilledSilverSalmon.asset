@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Grilled Silver Salmon
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: -8036719679047390226, guid: 2247a7cb311f0c54c9568b92c24b7c07, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: 3f5dfd7e25a4aed47b283436c37d4617, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

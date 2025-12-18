@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
+  m_Name: IronFishingRod
+  m_EditorClassIdentifier: 
+  toolName: Iron Fishing Rod
+  toolAnimationID: 2
+  toolID: 2
+  allToolAnimations:
+  - {fileID: 7400000, guid: 0decfa5476a3a104ca3c5e4cc4fb23a4, type: 2}
+  - {fileID: 7400000, guid: e86dc63ebee35e942a111ea015efd34a, type: 2}
+  - {fileID: 7400000, guid: 7394150323878d24d9590f361d350a6a, type: 2}
+  - {fileID: 7400000, guid: ffea81d924e445947bde40d8cfe1457d, type: 2}
+  - {fileID: 7400000, guid: 4f03f347fd7ccd840a1d83b4f71fa825, type: 2}
+  - {fileID: 7400000, guid: 9db7480052095af46ab647f80bdde7c7, type: 2}
+  - {fileID: 7400000, guid: 575c80eff4e7d5244856ef7afcccdd06, type: 2}
+  - {fileID: 7400000, guid: 42fcabb6191ba1746962fb3f14bcabff, type: 2}
+  - {fileID: 7400000, guid: d72c10652be982c4ca31b8a9f7f84572, type: 2}
+  - {fileID: 7400000, guid: dcf8e02e84dd6694abc0f1d94919f959, type: 2}
+  - {fileID: 7400000, guid: fb2b895b17a4c944ca08a03c908dde07, type: 2}
+  - {fileID: 7400000, guid: 5822b9c9fef7cf4479ac969e5e88321d, type: 2}
+  - {fileID: 7400000, guid: 16d9808dfb46b8944a13a4fef391d8fb, type: 2}
+  - {fileID: 7400000, guid: 8f0c767e6a755ca47a646c8d6bd2e448, type: 2}
+  - {fileID: 7400000, guid: 2ce6404c38e9f794ebbc400042889ce8, type: 2}
+  - {fileID: 7400000, guid: 560cf20475382554e8d35e9fa420fc00, type: 2}
+  toolWorldAction: {fileID: 0}
+  toolTileMapAction: {fileID: 0}
+  toolPower: 0

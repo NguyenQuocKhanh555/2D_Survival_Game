@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Meat
   isStackable: 1
-  maxStack: 0
+  maxStack: 99
   itemIcon: {fileID: 4245946030976450622, guid: f8e600f97eb703d41994033e73a424fa, type: 3}
   itemType: 3
   itemDescription: 
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
-  itemEffect: {fileID: 0}
+  itemEffect: {fileID: 11400000, guid: 31ced9e65e1fc6b4d8ca9a6a904b880d, type: 2}
   armorData: {fileID: 0}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}
