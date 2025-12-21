@@ -38,12 +38,36 @@ public class Stat
     }
 }
 
+[Serializable]
+public class PlayerStats
+{
+    public Stat health;
+    public Stat stamina;
+    public Stat hunger;
+    public Stat thirst;
+    public float bodyTemperature;
+    public int armor;
+    
+    public PlayerStats(float healthMax, float staminaMax, float hungerMax, float thirstMax, float bodyTemp, int armorValue)
+    {
+        health = new Stat(healthMax, healthMax);
+        stamina = new Stat(staminaMax, staminaMax);
+        hunger = new Stat(hungerMax, hungerMax);
+        thirst = new Stat(thirstMax, thirstMax);
+        bodyTemperature = bodyTemp;
+        armor = armorValue;
+    }
+}
+
 public class Player : MonoBehaviour, IDamageable
 {
-    [SerializeField] private SO_PlayerStats _playerStats;
     [SerializeField] private float _regenStaminaRate = 2f;
     [SerializeField] private float _regenStaminaDelay = 1f;
-
+    [SerializeField] private float _hungerDecayRate = 0.01f;
+    [SerializeField] private float _thirstDecayRate = 0.01f;
+    [SerializeField] private StatusPanel _statusPanel;
+    [SerializeField] private PlayerStats _playerStats;
+    
     public bool isDead = false;
     public bool isHungry = false;
     public bool isThirsty = false;
@@ -51,6 +75,20 @@ public class Player : MonoBehaviour, IDamageable
     public bool isTemperatureCritical = false;
 
     private float _lastStaminaUseTime;
+
+    public float GetCurrentHealth() => _playerStats.health.currentValue;
+    public float GetCurrrentHunger() => _playerStats.hunger.currentValue;
+    public float GetCurrentThirst() => _playerStats.thirst.currentValue;
+
+
+    private void Start()
+    {
+        _playerStats = new PlayerStats(100f, 100f, 100f, 100f, 37f, 0);
+
+        _statusPanel.SetUp(_playerStats.health.currentValue, _playerStats.health.maxValue,
+            _playerStats.hunger.currentValue, _playerStats.hunger.maxValue,
+            _playerStats.thirst.currentValue, _playerStats.thirst.maxValue);
+    }
 
     private void Update()
     {
@@ -62,6 +100,19 @@ public class Player : MonoBehaviour, IDamageable
                 isExhausted = false;
             }
         }
+
+        Drain();
+    }
+
+    private void Drain()
+    {
+        float hungerDrainRate = _hungerDecayRate;
+        float thirstDrainRate = _thirstDecayRate;
+
+        _playerStats.hunger.Subtract(hungerDrainRate * Time.deltaTime);
+        _playerStats.thirst.Subtract(thirstDrainRate * Time.deltaTime);
+        _statusPanel.UpdateHungerBar(_playerStats.hunger.currentValue, _playerStats.hunger.maxValue);        
+        _statusPanel.UpdateThirstBar(_playerStats.thirst.currentValue, _playerStats.thirst.maxValue);
     }
 
     public void UseStamina(float amount)
@@ -81,9 +132,41 @@ public class Player : MonoBehaviour, IDamageable
 
         float damageTaken = damage;
         _playerStats.health.Subtract(damageTaken);
+        _statusPanel.UpdateHealthBar(_playerStats.health.currentValue, _playerStats.health.maxValue);
+        
         if (_playerStats.health.currentValue <= 0 && !isDead)
         {
             isDead = true;
+        }
+    }
+
+    public void Heal(float amount)
+    {
+        if (isDead) return;
+
+        _playerStats.health.Add(amount);
+        _statusPanel.UpdateHealthBar(_playerStats.health.currentValue, _playerStats.health.maxValue);
+    }
+
+    public void RestoreHunger(float amount)
+    {
+        _playerStats.hunger.Add(amount);
+        _statusPanel.UpdateHungerBar(_playerStats.hunger.currentValue, _playerStats.hunger.maxValue);
+        
+        if (_playerStats.hunger.currentValue > 0f)
+        {
+            isHungry = false;
+        }
+    }
+
+    public void RestoreThirst(float amount)
+    {
+        _playerStats.thirst.Add(amount);
+        _statusPanel.UpdateThirstBar(_playerStats.thirst.currentValue, _playerStats.thirst.maxValue);
+        
+        if (_playerStats.thirst.currentValue > 0f)
+        {
+            isThirsty = false;
         }
     }
 

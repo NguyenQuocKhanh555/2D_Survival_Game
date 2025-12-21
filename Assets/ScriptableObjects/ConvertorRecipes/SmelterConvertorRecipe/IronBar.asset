@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   convertingRecipeID: 0
   materials:
-  - item: {fileID: 11400000, guid: 1930ba2c3cd596a41adbd39556f4b181, type: 2}
+  - item: {fileID: 11400000, guid: 6359aa1cca151844ca374030fadfd532, type: 2}
     quantity: 2
   result:
-    item: {fileID: 11400000, guid: dacd4fde84663624bb3bbe2cfd70c370, type: 2}
+    item: {fileID: 11400000, guid: b9b60f3b4d3e8ea40885d3b593bcc50e, type: 2}
     quantity: 1
   timeToProcess: 5

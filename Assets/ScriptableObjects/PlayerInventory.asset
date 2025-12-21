@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: a12ea46fbdf1d72449d84e993297a2f5, type: 2}
+  - item: {fileID: 0}
     quantity: 0
-  - item: {fileID: 11400000, guid: ce0615d0110adfe43b813f85821ddaf2, type: 2}
+  - item: {fileID: 0}
     quantity: 0
-  - item: {fileID: 11400000, guid: 3208bd478e7104c4ebef2f62fa6eb534, type: 2}
+  - item: {fileID: 0}
     quantity: 0
-  - item: {fileID: 11400000, guid: 27a9a07d609897c488f0329707ec15c6, type: 2}
-    quantity: 98
+  - item: {fileID: 0}
+    quantity: 0
   - item: {fileID: 11400000, guid: ca1beb47be0453543bc5d0de7f591f8c, type: 2}
     quantity: 98
   - item: {fileID: 11400000, guid: 493ea37311107be48ab2019dcfc020de, type: 2}
@@ -29,10 +29,10 @@ MonoBehaviour:
     quantity: 0
   - item: {fileID: 11400000, guid: 0a350f0d3ca4e5f4f84c10718f77ec49, type: 2}
     quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: b9b60f3b4d3e8ea40885d3b593bcc50e, type: 2}
+    quantity: 15
+  - item: {fileID: 11400000, guid: b9b60f3b4d3e8ea40885d3b593bcc50e, type: 2}
+    quantity: 18
   - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 0}
