@@ -4,12 +4,10 @@ using UnityEngine.UI;
 public class StatusBar : MonoBehaviour
 {
     [SerializeField] private Slider _sliderBar;
-    [SerializeField] private int _maxValue;
-    [SerializeField] private int _currentValue;
 
-    private void Start()
+    public void SetUpBar(float currentValue, float maxValue)
     {
-        _sliderBar.maxValue = _maxValue;
-        _sliderBar.value = _currentValue;
+        _sliderBar.maxValue = maxValue;
+        _sliderBar.value = currentValue;
     }
 }

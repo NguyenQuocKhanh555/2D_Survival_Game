@@ -1629,8 +1629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 155805590}
-  _maxValue: 100
-  _currentValue: 50
 --- !u!114 &155805590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2853,8 +2851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 198679122}
-  _maxValue: 100
-  _currentValue: 50
 --- !u!1 &199120811
 GameObject:
   m_ObjectHideFlags: 0
@@ -5598,9 +5594,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e3deaad76c53a4c8cd409a5f20b2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStats: {fileID: 11400000, guid: 435d6f92756663141af8c9b26ff5b855, type: 2}
   _regenStaminaRate: 100
   _regenStaminaDelay: 1
+  _hungerDecayRate: 0.1
+  _thirstDecayRate: 0.1
+  _statusPanel: {fileID: 727205387}
+  _playerStats:
+    health:
+      maxValue: 0
+      currentValue: 0
+    stamina:
+      maxValue: 0
+      currentValue: 0
+    hunger:
+      maxValue: 0
+      currentValue: 0
+    thirst:
+      maxValue: 0
+      currentValue: 0
+    bodyTemperature: 0
+    armor: 0
   isDead: 0
   isHungry: 0
   isThirsty: 0
@@ -5688,7 +5701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e1c377a856e3343a26fae0b4b7be48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStats: {fileID: 11400000, guid: 435d6f92756663141af8c9b26ff5b855, type: 2}
+  _player: {fileID: 413895679}
 --- !u!114 &413895685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6161,7 +6174,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.140625
+  orthographic size: 6.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6833,8 +6846,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 0}
-  _maxValue: 0
-  _currentValue: 0
 --- !u!114 &598535269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7983,8 +7994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 0}
-  _maxValue: 0
-  _currentValue: 0
 --- !u!114 &673687803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8426,6 +8435,7 @@ GameObject:
   - component: {fileID: 727205384}
   - component: {fileID: 727205386}
   - component: {fileID: 727205385}
+  - component: {fileID: 727205387}
   m_Layer: 5
   m_Name: PlayerStatus
   m_TagString: Untagged
@@ -8494,6 +8504,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727205383}
   m_CullTransparentMesh: 1
+--- !u!114 &727205387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727205383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623c0f3bcd3c20043a45815f7335a20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 198679123}
+  _hungerBar: {fileID: 1613233676}
+  _thirstBar: {fileID: 1995143747}
 --- !u!224 &739839616 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8333423399513292912, guid: a47cf4e80751a54419023dab879ec2e2, type: 3}
@@ -8807,7 +8832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &759976612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8878,9 +8903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a735d5541c644f544bd50154ab75dfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sliderBar: {fileID: 0}
-  _maxValue: 0
-  _currentValue: 0
+  _sliderBar: {fileID: 759976616}
 --- !u!114 &759976616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9176,7 +9199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &802371846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9866,6 +9889,7 @@ MonoBehaviour:
   _materialButtons:
   - {fileID: 1574569242}
   _resultButton: {fileID: 1387395117}
+  _processBar: {fileID: 0}
   convertorInteract: {fileID: 0}
 --- !u!114 &932943984
 MonoBehaviour:
@@ -12379,6 +12403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184392063}
   - component: {fileID: 1184392064}
+  - component: {fileID: 1184392065}
   m_Layer: 0
   m_Name: PlaceableObjectsManager
   m_TagString: Untagged
@@ -12415,6 +12440,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _placeableObjectsContainer: {fileID: 11400000, guid: 3d289502dcf48e149a16ef15e82dc0b4, type: 2}
   _targetTilemap: {fileID: 1906000416}
+--- !u!114 &1184392065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184392062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144f0595dc8583346a0619940aa492c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188548342
 GameObject:
   m_ObjectHideFlags: 0
@@ -13235,8 +13272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 1261994930}
-  _maxValue: 100
-  _currentValue: 50
 --- !u!114 &1261994930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17871,8 +17906,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 1613233677}
-  _maxValue: 100
-  _currentValue: 50
 --- !u!114 &1613233677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19845,6 +19878,7 @@ MonoBehaviour:
   _materialButtons:
   - {fileID: 1967353076}
   _resultButton: {fileID: 1582469624}
+  _processBar: {fileID: 0}
   convertorInteract: {fileID: 0}
 --- !u!114 &1804491574
 MonoBehaviour:
@@ -23342,6 +23376,7 @@ MonoBehaviour:
   _materialButtons:
   - {fileID: 167388156}
   _resultButton: {fileID: 950535415}
+  _processBar: {fileID: 759976615}
   convertorInteract: {fileID: 0}
 --- !u!1 &1941669760
 GameObject:
@@ -24496,8 +24531,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 1995143748}
-  _maxValue: 100
-  _currentValue: 50
 --- !u!114 &1995143748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24650,8 +24683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sliderBar: {fileID: 2018109555}
-  _maxValue: 100
-  _currentValue: 50
 --- !u!114 &2018109555
 MonoBehaviour:
   m_ObjectHideFlags: 0

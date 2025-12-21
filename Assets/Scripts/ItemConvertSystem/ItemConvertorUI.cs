@@ -6,6 +6,7 @@ public class ItemConvertorUI : MonoBehaviour
 {
     [SerializeField] private ItemConvertorMaterialButton[] _materialButtons;
     [SerializeField] private ItemConvertorResultButton _resultButton;
+    [SerializeField] private StatusBar _processBar;
 
     public ItemConvertorInteract convertorInteract;
 
@@ -27,6 +28,11 @@ public class ItemConvertorUI : MonoBehaviour
         }
     }
 
+    public void UpdateProcessBar(float currentValue, float maxValue)
+    {
+        _processBar.SetUpBar(currentValue, maxValue);
+    }
+
     public void UpdateUI()
     {
         for (int i = 0; i < convertorInteract.convertMaterials.Length; i++)
@@ -45,10 +51,7 @@ public class ItemConvertorUI : MonoBehaviour
     {
         SO_Item preMaterial = convertorInteract.convertMaterials[index].item;
         convertorInteract.convertMaterials[index].Copy(slot);
-        if (preMaterial != slot.item)
-        {
-            convertorInteract.StartProcess();
-        }
+        convertorInteract.StartProcess();
         UpdateUI();
         convertorInteract.StopProcess();
     }

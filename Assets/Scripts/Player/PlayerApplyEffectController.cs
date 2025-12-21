@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerApplyEffectController : MonoBehaviour
 {
-    [SerializeField] private SO_PlayerStats _playerStats;
+    [SerializeField] private Player _player;
 
     private Dictionary<ItemEffectTypes, Action<ItemEffect>> _instantHandlers;
     private Dictionary<ItemEffectTypes, Action<ItemEffect>> _overTimeHandlers;
@@ -48,36 +48,36 @@ public class PlayerApplyEffectController : MonoBehaviour
     // Instant
     private void ApplyHealthInstant(ItemEffect effect)
     {
-        _playerStats.health.Add(ModifyStat(_playerStats.health.currentValue, effect));
+        _player.Heal(ModifyStat(_player.GetCurrentHealth(), effect));
     }
 
     private void ApplyFoodInstant(ItemEffect effect)
     {
-        _playerStats.hunger.Add(ModifyStat(_playerStats.hunger.currentValue, effect));
+        _player.RestoreHunger(ModifyStat(_player.GetCurrrentHunger(), effect));
     }
 
     private void ApplyWaterInstant(ItemEffect effect)
     {
-        _playerStats.thirst.Add(ModifyStat(_playerStats.thirst.currentValue, effect));
+        _player.RestoreThirst(ModifyStat(_player.GetCurrentThirst(), effect));
     }
 
     // Over Time
     private void ApplyHealthOverTime(ItemEffect effect)
     {
         StartCoroutine(ApplyOverTime(effect,
-            () => _playerStats.health.Add(ModifyStat(_playerStats.health.currentValue, effect))));
+            () => _player.Heal(ModifyStat(_player.GetCurrentHealth(), effect))));
     }
 
     private void ApplyFoodOverTime(ItemEffect effect)
     {
         StartCoroutine(ApplyOverTime(effect,
-            () => _playerStats.hunger.Add(ModifyStat(_playerStats.hunger.currentValue, effect))));
+            () => _player.RestoreHunger(ModifyStat(_player.GetCurrrentHunger(), effect))));
     }
 
     private void ApplyWaterOverTime(ItemEffect effect)
     {
         StartCoroutine(ApplyOverTime(effect,
-            () => _playerStats.thirst.Add(ModifyStat(_playerStats.thirst.currentValue, effect))));
+            () => _player.RestoreThirst(ModifyStat(_player.GetCurrentThirst(), effect))));
     }
 
     private IEnumerator ApplyOverTime(ItemEffect effect, Action tickAction)
