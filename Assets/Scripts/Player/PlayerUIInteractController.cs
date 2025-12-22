@@ -5,9 +5,11 @@ public class PlayerUIInteractController : MonoBehaviour
 {
     [SerializeField] private GameObject _inventoryUI;
     [SerializeField] private GameObject _toolbarUI;
+    [SerializeField] private GameObject _playerStatusUI;
     [SerializeField] private GameObject _smelterUI;
     [SerializeField] private GameObject _campfireUI;
     [SerializeField] private GameObject _purifierUI;
+    [SerializeField] private GameObject _lootContainerUI;
 
     public GameObject researchTableUI;
     public Dictionary<string, GameObject> itemConvertingUI;
@@ -18,7 +20,8 @@ public class PlayerUIInteractController : MonoBehaviour
         {
             { "Smelter", _smelterUI },
             { "Campfire", _campfireUI },
-            { "Purifier", _purifierUI }
+            { "Purifier", _purifierUI },
+            { "LootContainer", _lootContainerUI }
         };
     }
 
@@ -31,6 +34,7 @@ public class PlayerUIInteractController : MonoBehaviour
     {
         _inventoryUI.SetActive(!_inventoryUI.activeSelf);
         _toolbarUI.SetActive(!_toolbarUI.activeSelf);
+        //_playerStatusUI.SetActive(!_playerStatusUI.activeSelf);
         if (_toolbarUI.activeSelf)
         {
             _toolbarUI.GetComponent<ToolbarItemPanel>().EnableToolbar();

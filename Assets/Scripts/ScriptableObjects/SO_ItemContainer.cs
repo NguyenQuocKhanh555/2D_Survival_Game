@@ -228,4 +228,14 @@ public class SO_ItemContainer : ScriptableObject
 
         return false;
     }
+
+    public void Init(int slotCount)
+    {
+        slots = new List<ItemSlot>();
+        
+        for (int i = 0; i < slotCount; i++)
+        {
+            slots.Add(new ItemSlot());
+        }
+    }
 }
