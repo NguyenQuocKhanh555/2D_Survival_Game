@@ -56,6 +56,8 @@ public class Mob : MonoBehaviour, IDamageable
 
     public void ChangeState(MobState state)
     {
+        if (GameManager.instance.CurrentGameState != GameState.Playing) return;
+
         if (_currentState != null) 
             _currentState.Exit();
 

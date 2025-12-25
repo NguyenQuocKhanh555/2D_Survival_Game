@@ -131,6 +131,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteRenderer: {fileID: 0}
   detector: {fileID: 5836582662267392762}
+  rangeAttack: {fileID: 0}
+  meleeAttack: {fileID: 0}
+  teleport: {fileID: 0}
   lastMotionVector: {x: 0, y: -1}
   mobType: 0
   mobHealth: 100
@@ -384,4 +387,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5d0e5192344a1468e8f461653988ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerInAttackRange: 0
+  isPlayerInDectectRange: 0

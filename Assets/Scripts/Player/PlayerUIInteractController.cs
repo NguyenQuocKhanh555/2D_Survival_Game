@@ -34,7 +34,7 @@ public class PlayerUIInteractController : MonoBehaviour
     {
         _inventoryUI.SetActive(!_inventoryUI.activeSelf);
         _toolbarUI.SetActive(!_toolbarUI.activeSelf);
-        //_playerStatusUI.SetActive(!_playerStatusUI.activeSelf);
+        _playerStatusUI.SetActive(!_playerStatusUI.activeSelf);
         if (_toolbarUI.activeSelf)
         {
             _toolbarUI.GetComponent<ToolbarItemPanel>().EnableToolbar();

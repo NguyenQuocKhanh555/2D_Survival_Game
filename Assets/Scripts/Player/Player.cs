@@ -67,31 +67,36 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private float _thirstDecayRate = 0.01f;
     [SerializeField] private StatusPanel _statusPanel;
     [SerializeField] private PlayerStats _playerStats;
-    
+    [SerializeField] private ScreenTint _screenTint;
+
     public bool isDead = false;
     public bool isHungry = false;
     public bool isThirsty = false;
     public bool isExhausted = false;
     public bool isTemperatureCritical = false;
 
+    private CheckPointInteract _currentCheckPoint;
+    private Vector3 _checkPoint = Vector3.zero;
     private float _lastStaminaUseTime;
+    private Animator _animator;
 
     public float GetCurrentHealth() => _playerStats.health.currentValue;
     public float GetCurrrentHunger() => _playerStats.hunger.currentValue;
     public float GetCurrentThirst() => _playerStats.thirst.currentValue;
 
-
     private void Start()
     {
+        _animator = GetComponent<Animator>();
+
         _playerStats = new PlayerStats(100f, 100f, 100f, 100f, 37f, 0);
 
-        _statusPanel.SetUp(_playerStats.health.currentValue, _playerStats.health.maxValue,
-            _playerStats.hunger.currentValue, _playerStats.hunger.maxValue,
-            _playerStats.thirst.currentValue, _playerStats.thirst.maxValue);
+        SetupStatusPanel(_statusPanel);
     }
 
     private void Update()
     {
+        if (GameManager.instance.CurrentGameState != GameState.Playing) return;    
+
         if (Time.time - _lastStaminaUseTime >= _regenStaminaDelay)
         {
             _playerStats.stamina.Add(_regenStaminaRate * Time.deltaTime);
@@ -102,6 +107,11 @@ public class Player : MonoBehaviour, IDamageable
         }
 
         Drain();
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TakeDamage(100f);
+        }
     }
 
     private void Drain()
@@ -113,6 +123,12 @@ public class Player : MonoBehaviour, IDamageable
         _playerStats.thirst.Subtract(thirstDrainRate * Time.deltaTime);
         _statusPanel.UpdateHungerBar(_playerStats.hunger.currentValue, _playerStats.hunger.maxValue);        
         _statusPanel.UpdateThirstBar(_playerStats.thirst.currentValue, _playerStats.thirst.maxValue);
+    }
+
+    public void SetupStatusPanel(StatusPanel panel)
+    {
+        _statusPanel = panel;
+        _statusPanel.SetUp(_playerStats);
     }
 
     public void UseStamina(float amount)
@@ -137,6 +153,7 @@ public class Player : MonoBehaviour, IDamageable
         if (_playerStats.health.currentValue <= 0 && !isDead)
         {
             isDead = true;
+            _animator.SetTrigger("dead");
         }
     }
 
@@ -168,6 +185,28 @@ public class Player : MonoBehaviour, IDamageable
         {
             isThirsty = false;
         }
+    }
+
+    public void SetRespawnPoint(Vector3 position, CheckPointInteract checkPointInteract)
+    {
+        _checkPoint = position + Vector3.down;
+        if (_currentCheckPoint != null)
+        {
+            _currentCheckPoint.Deactivate();
+        }
+        _currentCheckPoint = checkPointInteract;
+    }
+
+    public void RespawnPlayer()
+    {
+        _screenTint.Tint();
+        transform.position = _checkPoint;
+        isDead = false;
+        _playerStats.health.currentValue = _playerStats.health.maxValue / 2;
+        _playerStats.hunger.currentValue = _playerStats.hunger.maxValue / 2;
+        _playerStats.thirst.currentValue = _playerStats.thirst.maxValue / 2;
+        SetupStatusPanel(_statusPanel);
+        _screenTint.UnTint();
     }
 
     public void CalculateDamage(ref float damage)

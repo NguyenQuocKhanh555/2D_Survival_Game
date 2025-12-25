@@ -31,6 +31,8 @@ public class PlayerUseItemController : MonoBehaviour
 
         if (!isToolHasWorldAction && !isToolHasTileMapAction)
         {
+            animator.SetBool("isReel", false);
+            animator.SetBool("isCancel", false);
             return;
         }
 

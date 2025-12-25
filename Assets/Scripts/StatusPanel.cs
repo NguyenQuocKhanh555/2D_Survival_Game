@@ -6,11 +6,11 @@ public class StatusPanel : MonoBehaviour
     [SerializeField] private StatusBar _hungerBar;
     [SerializeField] private StatusBar _thirstBar;
 
-    public void SetUp(float currentHealth, float maxHealth, float currentHunger, float maxHunger, float currentThrist, float maxThrist)
+    public void SetUp(PlayerStats playerStats)
     {
-        _healthBar.SetUpBar(currentHealth, maxHealth);
-        _hungerBar.SetUpBar(currentHunger, maxHunger);
-        _thirstBar.SetUpBar(currentThrist, maxThrist);
+        _healthBar.SetUpBar(playerStats.health.currentValue, playerStats.health.maxValue);
+        _hungerBar.SetUpBar(playerStats.hunger.currentValue, playerStats.hunger.maxValue);
+        _thirstBar.SetUpBar(playerStats.thirst.currentValue, playerStats.thirst.maxValue);
     }
 
     public void UpdateHealthBar(float currentHealth, float maxValue)

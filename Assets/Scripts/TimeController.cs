@@ -31,6 +31,8 @@ public class TimeController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.CurrentGameState != GameState.Playing) return;
+
         _time += Time.deltaTime * _timeScale;
         
         DayLight();

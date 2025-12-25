@@ -35,9 +35,23 @@ public class InventoryManager : MonoBehaviour
     {
         return _playerInventory.slots[index].item;
     }
-    
-    public int CountSlots()
+
+    public int CountSlotsNonEmpty()
     {
-        return _playerInventory.slots.Count;
+        int count = 0;
+        foreach (var slot in _playerInventory.slots)
+        {
+            if (slot.item != null)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public void ClearInventory()
+    {
+        _playerInventory.Clear();
+        onInventoryChange?.Invoke();
     }
 }

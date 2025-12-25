@@ -6,13 +6,13 @@ public enum PlayerBodyPartType
     Head,
     Torso,
     Legs,
-    Backpack
+    Backpack,
+    Ring
 }
 
 [CreateAssetMenu(fileName = "New Player Part", menuName = "Player Body Part")]
 public class SO_PlayerBodyPart : ScriptableObject
 {
-    //public string partName;
     public PlayerBodyPartType partName;
     public int partAnimationID;
 

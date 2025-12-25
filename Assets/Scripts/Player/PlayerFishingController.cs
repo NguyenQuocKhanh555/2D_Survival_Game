@@ -8,8 +8,10 @@ public class PlayerFishingController : MonoBehaviour
     [SerializeField] private Transform _fishingBobberTransform;
     [SerializeField] private List<SO_FishPool> fishPools;
     [SerializeField] private TilemapReadController _tilemapReadController;
-    //[SerializeField] private SO_ItemContainer _inventoryContainer;
- 
+
+    public bool isFishing = false;
+    public bool hasCaughtFish = false;
+
     public void StartFishing()
     {
         Vector3Int gridPosition = _tilemapReadController.GetGridPosition(_fishingBobberTransform.position, false);
@@ -36,6 +38,7 @@ public class PlayerFishingController : MonoBehaviour
 
     private IEnumerator FishingCoroutine(SO_FishPool pool)
     {
+        isFishing = true;
         float waitTime = Random.Range(30f, 60f);
         SO_Item fish = GetFish(pool.availableFish);
 

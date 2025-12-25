@@ -19,7 +19,9 @@ public class ItemDragAndDrop : MonoBehaviour
             { 0, PlayerBodyPartType.Head },
             { 1, PlayerBodyPartType.Torso },
             { 2, PlayerBodyPartType.Legs },
-            { 3, PlayerBodyPartType.Backpack }
+            { 3, PlayerBodyPartType.Backpack },
+            { 4, PlayerBodyPartType.Ring },
+            { 5, PlayerBodyPartType.Ring }
         };
     }
 

@@ -99,6 +99,11 @@ public class SO_ItemContainer : ScriptableObject
         {
             List<ItemSlot> itemSlots = slots.FindAll(x => x.item == null);
 
+            if (addQuantity <= 0)
+            {
+                addQuantity = 1;
+            }
+
             for (int i = 0; i < addQuantity; i++)
             {
                 itemSlots[i].Set(itemToAdd, 0);
@@ -236,6 +241,14 @@ public class SO_ItemContainer : ScriptableObject
         for (int i = 0; i < slotCount; i++)
         {
             slots.Add(new ItemSlot());
+        }
+    }
+
+    public void Clear()
+    {
+        foreach (ItemSlot slot in slots)
+        {
+            slot.Clear();
         }
     }
 }
