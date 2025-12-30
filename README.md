@@ -40,10 +40,11 @@ Repository này bao gồm **toàn bộ mã nguồn** và **tài nguyên đồ h�
 │  └─ UniversalRenderPipelineGlobalSettings.asset
 ├─ Packages
 └─ ProjectSettings
-🖼️ Demo Screenshot
+```
+## 🖼️ Demo Screenshot
 (Hình ảnh demo sẽ được cập nhật)
 
-⚙️ Các cơ chế đã hoàn thành
+## ⚙️ Các cơ chế đã hoàn thành
 Hệ thống vật phẩm, ô vật phẩm và các cơ chế liên quan.
 
 Quản lý và điều khiển nhân vật.
@@ -60,7 +61,7 @@ Hệ thống sinh vật.
 
 Sinh bản đồ ngẫu nhiên bằng thuật toán.
 
-🚀 Hướng phát triển & Kế hoạch tương lai
+## 🚀 Hướng phát triển & Kế hoạch tương lai
 🔹 Phát triển chiều sâu lối chơi
 Tích hợp hệ thống nhiệm vụ, cốt truyện chính và các sự kiện ngẫu nhiên nhằm tăng tính gắn kết và tạo động lực cho người chơi khám phá thế giới.
 
@@ -73,10 +74,10 @@ Phát triển chế độ chơi hợp tác hoặc đối kháng để mang lại
 🔹 Phát hành trên nhiều nền tảng
 Mở rộng phạm vi tiếp cận bằng cách phát hành trò chơi trên các nền tảng khác như Android, iOS và WebGL.
 
-🧩 Yêu cầu hệ thống để mở dự án
+## 🧩 Yêu cầu hệ thống để mở dự án
 Unity Editor: 6000.0.60f1
 
-💻 Yêu cầu cấu hình tối thiểu để chơi game
+## 💻 Yêu cầu cấu hình tối thiểu để chơi game
 Hệ điều hành: Windows 11 (64-bit)
 
 CPU: Intel Core i5-2300 hoặc tương đương
@@ -89,7 +90,7 @@ Dung lượng lưu trữ: Tối thiểu 1–2 GB trống
 
 DirectX: Phiên bản 11 trở lên
 
-🛠️ Hướng dẫn cài đặt
+## 🛠️ Hướng dẫn cài đặt
 🔹 Mở dự án bằng Unity Editor
 Tải Unity Hub: link
 
