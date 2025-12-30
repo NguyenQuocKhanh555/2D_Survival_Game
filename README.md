@@ -1,12 +1,16 @@
-# Pix-Survival
+<h1 align="center">
+  <strong>
+    PIX-SURVIVAL
+  </strong>
+</h1>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f277ee59-3687-4724-881c-87c3df929378">
+</p>
 
-## 📌 Tên dự án
-**Xây dựng trò chơi sinh tồn 2D phong cách pixel art**
+## 📌 Tên dự án: Xây dựng trò chơi sinh tồn 2D phong cách pixel art
 
-## 🎮 Tên trò chơi
-**Pix-Survival**
+## 🎮 Tên trò chơi: Pix-Survival
 
----
 
 ## 📖 Mô tả
 **Pix-Survival** là một trò chơi thuộc thể loại **sinh tồn góc nhìn từ trên xuống (top-down)** với đồ họa được xây dựng theo **phong cách pixel art**.
@@ -14,7 +18,6 @@
 Trò chơi được phát triển bằng **Unity Engine**, trong khi toàn bộ tài nguyên đồ họa được thiết kế bằng **Aseprite**.  
 Repository này bao gồm **toàn bộ mã nguồn** và **tài nguyên đồ họa** của trò chơi.
 
----
 
 ## 📂 Cấu trúc thư mục tổng quát
 
@@ -42,7 +45,19 @@ Repository này bao gồm **toàn bộ mã nguồn** và **tài nguyên đồ h�
 └─ ProjectSettings
 ```
 ## 🖼️ Demo Screenshot
-(Hình ảnh demo sẽ được cập nhật)
+![Gameplay Demo](https://github.com/user-attachments/assets/7dfd8052-f799-47ad-ba2b-df3b2dbaea68)
+
+![Gameplay Demo](https://github.com/user-attachments/assets/215f3edb-8a20-4e35-80db-60d83f49e2e1)
+
+![Gameplay Demo](https://github.com/user-attachments/assets/1d4d2fa7-2c0e-4b62-8f58-3f13839277e2)
+
+![Gameplay Demo](https://github.com/user-attachments/assets/caa8d4f0-58c5-4989-9177-0ec31c303380)
+
+![Gameplay Demo](https://github.com/user-attachments/assets/6984455f-b62f-441a-9568-65daddb5a781)
+
+![Gameplay Demo](https://github.com/user-attachments/assets/31837d6d-dff8-4cb6-a049-4a5099a1ae2b)
+
+![Gameplay Demo](https://github.com/user-attachments/assets/f8fdf309-ebfd-4bd8-90d5-db9523eb6379)
 
 ## ⚙️ Các cơ chế đã hoàn thành
 Hệ thống vật phẩm, ô vật phẩm và các cơ chế liên quan.
