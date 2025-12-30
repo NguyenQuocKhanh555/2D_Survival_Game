@@ -100,7 +100,7 @@ Tải Unity Editor phiên bản 6000.0.60f1: link
 Clone repository:
 
 ```text
-git clone <repository-url>
+git clone https://github.com/NguyenQuocKhanh555/2D_Survival_Game.git
 ```
 
 Mở Unity Hub
