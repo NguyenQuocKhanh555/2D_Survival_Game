@@ -115,7 +115,7 @@ Mở Unity Hub
 
 Thêm thư mục dự án đã clone vào Unity Hub
 
-Nhấn Open để chạy dự án
+Nhấn chọn vào dự án để chạy dự án
 
 🔹 Tải và chơi trò chơi
 
