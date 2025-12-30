@@ -93,9 +93,17 @@ DirectX: Phiên bản 11 trở lên
 ## 🛠️ Hướng dẫn cài đặt
 🔹 Mở dự án bằng Unity Editor
 
-Tải Unity Hub: link
+Tải Unity Hub:
 
-Tải Unity Editor phiên bản 6000.0.60f1: link
+```text
+https://unity.com/download
+```
+
+Tải Unity Editor phiên bản 6000.0.60f1:
+
+```text
+https://unity.com/releases/editor/whats-new/6000.0.60f1#installs
+```
 
 Clone repository:
 
