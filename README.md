@@ -99,9 +99,9 @@ Tải Unity Editor phiên bản 6000.0.60f1: link
 
 Clone repository:
 
-bash
-Copy code
+```text
 git clone <repository-url>
+```
 
 Mở Unity Hub
 
