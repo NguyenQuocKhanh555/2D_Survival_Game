@@ -14,6 +14,88 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingRecipes:
   - craftingRecipe: {fileID: 11400000, guid: ab52756e47b195d4f960fcf5f7ec2e54, type: 2}
+    isLearn: 1
+  - craftingRecipe: {fileID: 11400000, guid: 66cc4dc861616034ab16e64d144aab58, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 7f58d884936849e41b942e799fb93af0, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 9f478d9e8b95ac44b84d8fd5701aaaea, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: f83807d40ed56084cae56743e7734203, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 0bed323d136f8f04caa062579f0642b4, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 1fba7239ae7cd0f43a8926b71eb66de5, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 2de85a9a64802524aa40e4e4221da70b, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: dbfb3b654cb14f141a0b3ac4707922ea, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 1eb14cc1dfbb9d9418871277df107840, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 19c5d26a96ae4144e821b450848375a9, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 9fe897c6aefb49547b792657b9258407, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 70c0ff4396020e04d978ca8ce0c37256, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 9b0e7e669734f53449a7cf9d88d68e81, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 41b4c9b9f08723a4887f4b0ad877e581, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: b21b93a0c68c5a040aa717d86dda4a06, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: fe6b9a025b9cc2949ba28e46dffd97b0, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 559306677cdafed4bbf898f91c89d811, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 17ba3d2927154b8478ac96ad814c7a2a, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: ea261e1824f8b6145aabc38727a736ae, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 98a21300e834e034b9b81850a7a2bca5, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 9b46abdbe2b2b8d4c85e1f494f6fb401, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 8fed5823c6b94c3499c6f4a883471ad2, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 9a590e244d60a2249a4c5899d2d26d9d, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: e36dc37bd32882548b211dd231a9e626, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: b1052ccc082f7d54cbc578d7431dd46f, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 86432c75765a7474ea111d03bba7fbe8, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: fca6077b379e75446bcc4f5bcb80d099, type: 2}
     isLearn: 0
   - craftingRecipe: {fileID: 11400000, guid: 2e00a97eb30536646bb9793f187007ad, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 883fa3c8b88249943b821546a3442b33, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 65785a12de89d7c4086b65b4c1621ece, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: fd43ec3dfbbbba549bec2e59f101892c, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 544fe97aad0e7244db8867436e968f0b, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: d5c30ede315da684c8e119c1ee148b2a, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 4b8de4f345b9ad04fb8cdedef5ec2e12, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 72c22469f4348d04b8357fed3615cefb, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 760e16b69dab1264ebd2e178f162bab7, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 013de4e2ff70d37488091758f011787b, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 976d0555d4447df49b1a50db3eca4eea, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: bebf43d0bc1aea54a9bda817df45e0fc, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 3c7d43c3e6e31b24c8b302ad2ddf2acc, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: 158d70f842f8c104d880eb43acba075d, type: 2}
+    isLearn: 0
+  - craftingRecipe: {fileID: 11400000, guid: a24fedbcf708a6a4683610b82d0e6f6c, type: 2}
     isLearn: 0

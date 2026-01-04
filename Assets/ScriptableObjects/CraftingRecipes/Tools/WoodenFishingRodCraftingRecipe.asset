@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32debf8b15692ec459efa695bad09601, type: 3}
-  m_Name: CookingPotCraftingRecipe
+  m_Name: WoodenFishingRodCraftingRecipe
   m_EditorClassIdentifier: 
   craftMaterials:
-  - item: {fileID: 11400000, guid: dacd4fde84663624bb3bbe2cfd70c370, type: 2}
-    quantity: 10
+  - item: {fileID: 11400000, guid: f35d4f851389caa40bf36a5f39f2f3af, type: 2}
+    quantity: 2
+  - item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
+    quantity: 2
   resultItem:
-    item: {fileID: 11400000, guid: 0b460b83a9a39a54c8477d1e714556ad, type: 2}
+    item: {fileID: 11400000, guid: 0a350f0d3ca4e5f4f84c10718f77ec49, type: 2}
     quantity: 0

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32debf8b15692ec459efa695bad09601, type: 3}
+  m_Name: CampfireCraftingRecipe
+  m_EditorClassIdentifier: 
+  craftMaterials:
+  - item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
+    quantity: 5
+  - item: {fileID: 11400000, guid: dacd4fde84663624bb3bbe2cfd70c370, type: 2}
+    quantity: 5
+  resultItem:
+    item: {fileID: 11400000, guid: 0abf7578ec4609f4ca4aedc69b21f0ff, type: 2}
+    quantity: 0

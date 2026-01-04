@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32debf8b15692ec459efa695bad09601, type: 3}
+  m_Name: CoolingHeadbandCraftingRecipe
+  m_EditorClassIdentifier: 
+  craftMaterials:
+  - item: {fileID: 11400000, guid: 006bdd796f1c02946aac443802dd4227, type: 2}
+    quantity: 5
+  - item: {fileID: 11400000, guid: 88353f416996fa34fa9906c7997972a6, type: 2}
+    quantity: 2
+  resultItem:
+    item: {fileID: 11400000, guid: d859b4351dc24dc40814a87b2c619017, type: 2}
+    quantity: 0

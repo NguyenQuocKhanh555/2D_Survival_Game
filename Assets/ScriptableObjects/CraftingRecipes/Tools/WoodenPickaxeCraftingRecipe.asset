@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32debf8b15692ec459efa695bad09601, type: 3}
-  m_Name: FilterCraftingRecipe
+  m_Name: WoodenPickaxeCraftingRecipe
   m_EditorClassIdentifier: 
-  craftMaterials: []
+  craftMaterials:
+  - item: {fileID: 11400000, guid: f35d4f851389caa40bf36a5f39f2f3af, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
+    quantity: 2
   resultItem:
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: 00cb8c19961d8534e97105b5041de767, type: 2}
     quantity: 0
