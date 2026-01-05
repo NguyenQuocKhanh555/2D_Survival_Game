@@ -52,6 +52,7 @@ public class CropsManager : MonoBehaviour
         crop.growState++;
         crop.spriteRenderer.sprite = crop.cropData.sprites[crop.growState];
         crop.isWater = false;
+        _wateringTilemap.SetTile(crop.position, null);
     }
 
     private void ScheduleCrop(Crop crop, float growthTime)
@@ -125,6 +126,13 @@ public class CropsManager : MonoBehaviour
         {
             Crop crop = GetCrop(position);
             _cropOnMap.Remove(crop);
+            if (crop.IsFullyGrown)
+            {
+                for (int i = 0; i < crop.cropData.products.Length; i++)
+                {
+                    SpawnItemManager.instance.SpawnItem(position, crop.cropData.products[i].productItem, crop.cropData.products[i].quantity);
+                }
+            }
             Destroy(crop.gameObject);
             _plowTilemap.SetTile(position, null);
             _wateringTilemap.SetTile(position, null);

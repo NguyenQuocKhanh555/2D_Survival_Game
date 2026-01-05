@@ -47,6 +47,8 @@ public class ItemConvertorManager : MonoBehaviour
 
     public void UnscheduleConvertor(ItemConvertorInteract convertor, int lastScheduledTime)
     {
+        if (!_processSortedList.ContainsKey(lastScheduledTime)) return;
+        if (!_processSortedList[lastScheduledTime].Contains(convertor)) return;
         _processSortedList[lastScheduledTime].Remove(convertor);
     }
 }

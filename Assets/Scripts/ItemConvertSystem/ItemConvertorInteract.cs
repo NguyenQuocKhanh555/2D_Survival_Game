@@ -14,9 +14,9 @@ public class ItemConvertorInteract : Interactable
 
     [SerializeField] private int _timer = 0;
     [SerializeField] private SO_ConvertingRecipe _currentProcessRecipe = null;
-    [SerializeField] private int _lastOpenedTime;
+    [SerializeField] private int _lastOpenedTime = 0;
     [SerializeField] private int _numOfProcessRecipe;
-    
+
     private int _lastScheduledTime = 0;
 
     public ItemSlot convertResult = new ItemSlot();
@@ -90,7 +90,12 @@ public class ItemConvertorInteract : Interactable
             {
                 convertResult.Set(_currentProcessRecipe.result.item, 0);
             }
-            convertResult.quantity += resultQuantity;
+
+            if (convertResult.item.isStackable)
+            {
+                convertResult.quantity += resultQuantity;
+            }
+            
             DecreaseMaterial(resultQuantity);    
             _numOfProcessRecipe -= resultQuantity;
 
@@ -150,8 +155,7 @@ public class ItemConvertorInteract : Interactable
 
     public void StartProcess()
     {
-        if (!CheckMaterials()) return;
-        if (convertResult.item != null && !convertResult.item.isStackable) return;
+        if (!CheckMaterials()) { return; }
 
         SO_ConvertingRecipe convertingRecipe = _recipeContainer.FindRecipeWithMaterials(convertMaterials);
         bool isSameRecipe = convertingRecipe == _currentProcessRecipe;
@@ -160,11 +164,7 @@ public class ItemConvertorInteract : Interactable
 
         _numOfProcessRecipe = GetMaxResultQuantity();
         _timer = isSameRecipe ? _timer : convertingRecipe.timeToProcess;
-
-        if (_lastScheduledTime != 0)         
-        {
-            _manager.UnscheduleConvertor(this, _lastScheduledTime);
-        }
+        _manager.UnscheduleConvertor(this, _lastScheduledTime);
 
         int stopTime = isSameRecipe ? TimeController.instance.GetTime() + _timer + (_numOfProcessRecipe - 1) * _currentProcessRecipe.timeToProcess
             : TimeController.instance.GetTime() + _numOfProcessRecipe * _currentProcessRecipe.timeToProcess;
@@ -230,6 +230,11 @@ public class ItemConvertorInteract : Interactable
     private int GetMaxResultQuantity()
     {
         if (_currentProcessRecipe == null) { return 0; }
+
+        if (!_currentProcessRecipe.result.item.isStackable)
+        {
+            return 1;
+        }
 
         int quantity = 0;
         foreach (ItemSlot material in _currentProcessRecipe.materials)

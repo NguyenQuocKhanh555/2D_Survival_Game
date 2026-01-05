@@ -15,9 +15,7 @@ public class CraftingPanel : MonoBehaviour
     private SO_CraftingRecipe _currentRecipe;
     private int _craftQuantity = 1;
     private int _minCraftQuantity = 1;
-    private int _maxCraftQuantity = 100;
-
-    public SO_ItemContainer playerInventory;
+    private int _maxCraftQuantity = 99;
 
     private void Start()
     {
@@ -77,8 +75,8 @@ public class CraftingPanel : MonoBehaviour
     {
         if (_currentRecipe == null) return;
         bool canAddCraftItemToInventory = _currentRecipe.resultItem.item.isStackable ?
-            playerInventory.CheckFreeSpaceForStackableItem(_currentRecipe.resultItem.item, _craftQuantity) :
-            playerInventory.CheckFreeSpaceForNonStackableItem(_craftQuantity);
+            InventoryManager.instance.CheckFreeSpaceForStackableItem(_currentRecipe.resultItem.item, _craftQuantity) :
+            InventoryManager.instance.CheckFreeSpaceForNonStackableItem(_craftQuantity);
 
         if (!canAddCraftItemToInventory) return;
         bool isEnoughMaterials = true;
@@ -87,7 +85,7 @@ public class CraftingPanel : MonoBehaviour
         {
             ItemSlot itemSlot = _currentRecipe.craftMaterials[i];
             int materialQuantity = itemSlot.quantity * _craftQuantity;
-            if (materialQuantity > playerInventory.GetItemQuantity(itemSlot.item))
+            if (materialQuantity > InventoryManager.instance.GetItemQuantity(itemSlot.item))
             {
                 isEnoughMaterials = false;
                 break;
@@ -95,12 +93,12 @@ public class CraftingPanel : MonoBehaviour
         }
 
         if (!isEnoughMaterials) return;
-        playerInventory.AddItem(_currentRecipe.resultItem.item, _craftQuantity);
+        InventoryManager.instance.AddItemToInventory(_currentRecipe.resultItem.item, _craftQuantity);
 
         for (int i = 0; i < _currentRecipe.craftMaterials.Count; i++)
         {
             ItemSlot itemSlot = _currentRecipe.craftMaterials[i];
-            playerInventory.RemoveItem(itemSlot.item, itemSlot.quantity * _craftQuantity);
+            InventoryManager.instance.RemoveItemFromInventory(itemSlot.item, itemSlot.quantity * _craftQuantity);
         }
 
         UpdateCraftItemInfo();

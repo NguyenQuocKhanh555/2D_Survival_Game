@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a40f2ae11a833e4f8e5e88aab7d070e, type: 3}
   m_Name: CopperHoe
   m_EditorClassIdentifier: 
-  toolName: Copper Hoe
+  toolName: Hoe
   toolAnimationID: 1
   toolID: 0
   allToolAnimations:

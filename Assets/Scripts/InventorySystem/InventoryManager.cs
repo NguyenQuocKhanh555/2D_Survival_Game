@@ -54,4 +54,19 @@ public class InventoryManager : MonoBehaviour
         _playerInventory.Clear();
         onInventoryChange?.Invoke();
     }
+
+    public bool CheckFreeSpaceForStackableItem(SO_Item item, int checkAmount)
+    {
+        return _playerInventory.CheckFreeSpaceForStackableItem(item, checkAmount);
+    }
+
+    public bool CheckFreeSpaceForNonStackableItem(int checkQuantity)
+    {
+        return _playerInventory.CheckFreeSpaceForNonStackableItem(checkQuantity);
+    }
+
+    public int GetItemQuantity(SO_Item item)
+    {
+        return _playerInventory.GetItemQuantity(item);
+    }
 }

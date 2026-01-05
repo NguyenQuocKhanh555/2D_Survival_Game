@@ -56,8 +56,16 @@ public class ItemDragAndDrop : MonoBehaviour
         {
             if (_dragAndDropItem.item == itemSlot.item && itemSlot.item.isStackable) 
             {
-                itemSlot.quantity += _dragAndDropItem.quantity;
-                _dragAndDropItem.Clear();
+                if (itemSlot.quantity + _dragAndDropItem.quantity > itemSlot.item.maxStack)
+                {
+                    _dragAndDropItem.quantity -= itemSlot.item.maxStack - itemSlot.quantity;
+                    itemSlot.quantity = itemSlot.item.maxStack;
+                }
+                else
+                {
+                    itemSlot.quantity += _dragAndDropItem.quantity;
+                    _dragAndDropItem.Clear();
+                }
             }
             else
             {
@@ -67,8 +75,20 @@ public class ItemDragAndDrop : MonoBehaviour
         UpdateIcon();
     }
 
+    public void OnClickNonAddableSlot(ItemSlot itemSlot)
+    {
+        if (_dragAndDropItem.item == null)
+        {
+            _dragAndDropItem.Copy(itemSlot);
+            itemSlot.Clear();
+        }
+        UpdateIcon();
+    }
+
     private void SwapItem(ItemSlot itemSlot)
     {
+        if (_dragAndDropItem.item.maxStack < _dragAndDropItem.quantity) return;
+
         SO_Item item = itemSlot.item;
         int quantity = itemSlot.quantity;
 

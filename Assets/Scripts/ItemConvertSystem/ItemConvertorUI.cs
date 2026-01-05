@@ -56,8 +56,12 @@ public class ItemConvertorUI : MonoBehaviour
         convertorInteract.StopProcess();
     }
 
-    public void OnClickResultButton(ItemSlot slot)
+    public void OnClickResultButton(ItemSlot slot, bool isStartProcess)
     {
+        if (isStartProcess)
+        {
+            convertorInteract.StartProcess();
+        }
         convertorInteract.convertResult.Copy(slot);
         UpdateUI();
     }

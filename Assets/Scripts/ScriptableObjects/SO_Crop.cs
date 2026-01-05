@@ -4,11 +4,11 @@ using UnityEngine;
 public class SO_Crop : ScriptableObject
 {
     public int cropId;
-    public int timeToGrow;
     public Product[] products;
     public Sprite[] sprites;
     public int[] growthStateTime;
 
+    [System.Serializable]
     public struct Product
     {
         public SO_Item productItem;
