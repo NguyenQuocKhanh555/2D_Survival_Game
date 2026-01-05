@@ -3,13 +3,15 @@ using UnityEngine;
 public class PlayerInteractController : MonoBehaviour
 {
     private Interactable _currentSelectedObject = null;
+    private Interactable _currentInteractObject = null;
 
     [SerializeField] private InteractDetector _interactDetector;
 
     public bool isInteracting = false;
-
+    
     private void Update()
     {
+        if (_currentInteractObject != null) return;
         Check();
     }
 
@@ -56,8 +58,16 @@ public class PlayerInteractController : MonoBehaviour
 
     public void Interact(Player player)
     {
+        if (_currentInteractObject != null)
+        {
+            _currentInteractObject.Interact(player);
+            _currentInteractObject = null;
+            return;
+        }
+
         if (_currentSelectedObject == null) { return; }
 
         _currentSelectedObject.Interact(player);
+        _currentInteractObject = _currentSelectedObject;
     }
 }

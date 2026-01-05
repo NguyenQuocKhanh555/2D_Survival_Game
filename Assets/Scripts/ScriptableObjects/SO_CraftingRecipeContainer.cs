@@ -20,6 +20,12 @@ public class CraftingRecipeSlot
         this.craftingRecipe = craftingRecipe;
         this.isLearn = isLearn;
     }
+
+    public void Clear()
+    {
+        craftingRecipe = null;
+        isLearn = false;
+    }
 }
 
 [CreateAssetMenu(fileName = "New Crafting Recipe Container", menuName = "Crafting/Crafting Recipe Container")]
@@ -27,13 +33,44 @@ public class SO_CraftingRecipeContainer : ScriptableObject
 {
     public List<CraftingRecipeSlot> craftingRecipes;
 
-    public List<CraftingRecipeSlot> FindRecipeWithResearchMaterial(SO_Item materialItem)
+    public List<CraftingRecipeSlot> FindRecipeCanBeLearned(SO_ItemContainer researchedItems)
     {
         List<CraftingRecipeSlot> recipes = new List<CraftingRecipeSlot>();
 
         for (int i = 0; i < craftingRecipes.Count; i++)
         {
             if (craftingRecipes[i].isLearn) continue;
+            
+            bool canBeLearned = true;
+            
+            for (int j = 0; j < craftingRecipes[i].craftingRecipe.craftMaterials.Count; j++)
+            {
+                ItemSlot materialSlot = craftingRecipes[i].craftingRecipe.craftMaterials[j];
+                if (!researchedItems.CheckItem(materialSlot))
+                {
+                    canBeLearned = false;
+                    break;
+                }
+            }
+            
+            if (canBeLearned)
+            {
+                recipes.Add(craftingRecipes[i]);
+            }
+        }
+
+        return recipes;
+    }
+
+    public List<CraftingRecipeSlot> FindRecipeCanNotBeLearned(SO_Item materialItem, List<CraftingRecipeSlot> canBeLearnedList)
+    {
+        List<CraftingRecipeSlot> recipes = new List<CraftingRecipeSlot>();
+
+        for (int i = 0; i < craftingRecipes.Count; i++)
+        {
+            if (craftingRecipes[i].isLearn) continue;
+            if (canBeLearnedList.Contains(craftingRecipes[i])) continue;
+
             ItemSlot materialSlot = craftingRecipes[i].craftingRecipe.craftMaterials.Find(x => x.item == materialItem);
             if (materialSlot != null)
             {

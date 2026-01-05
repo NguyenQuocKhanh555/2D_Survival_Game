@@ -39,7 +39,9 @@ public class CraftRecipeMenu : MonoBehaviour
     {
         if (recipes.Count <= _recipeButtons.Count) { return; }
 
-        for (int i = 0; i < recipes.Count - _recipeButtons.Count; i++) 
+        int buttonsToCreate = recipes.Count - _recipeButtons.Count;
+
+        for (int i = 0; i < buttonsToCreate; i++) 
         {
             GameObject obj = Instantiate(_craftRecipeButtonPrefab, this.transform);
 

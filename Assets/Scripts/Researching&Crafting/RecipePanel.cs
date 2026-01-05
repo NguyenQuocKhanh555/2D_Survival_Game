@@ -23,6 +23,7 @@ public class RecipePanel : MonoBehaviour
 
         for (int i = 0; i < _recipeMaterialImages.Count; i++)
         {
+            _recipeMaterialImages[i].Clear();
             _recipeMaterialImages[i].gameObject.SetActive(false);
         }
 
@@ -38,6 +39,9 @@ public class RecipePanel : MonoBehaviour
                 numOfResearchedMaterials++;
             }   
         }
+
+        _resultItemIcon.sprite = null;
+        _learnButton.SetActive(false);
 
         if (numOfResearchedMaterials >= recipe.craftingRecipe.craftMaterials.Count)
         {

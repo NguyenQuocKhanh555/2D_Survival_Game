@@ -5802,6 +5802,7 @@ Transform:
   - {fileID: 1635846564}
   - {fileID: 2063143514}
   - {fileID: 1880380165}
+  - {fileID: 750843953}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &413895675
@@ -6523,7 +6524,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 306.65857
+  orthographic size: 10.333333
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9356,7 +9357,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750843950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a6bf8552be6484ab438994ad0e8ae8, type: 3}
   m_Name: 
@@ -9481,14 +9482,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750843950}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1469255531}
   - {fileID: 880606628}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 413895674}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &750843954
 MonoBehaviour:
@@ -10990,7 +10991,6 @@ MonoBehaviour:
   _minusCraftQuantityButton: {fileID: 872575267}
   _craftQuantityInputField: {fileID: 670457592}
   _craftButton: {fileID: 1372545619}
-  playerInventory: {fileID: 11400000, guid: 407016f11f503cb4382f6a5d1f29b440, type: 2}
 --- !u!1001 &904417963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13362,7 +13362,7 @@ MonoBehaviour:
   _itemIconImage: {fileID: 486893535}
   _itemDescription: {fileID: 1029835404}
   _researchButton: {fileID: 1370059045}
-  researchedItem: {fileID: 11400000, guid: 3425a16ac0d58714883efaaf00719512, type: 2}
+  researchedItemContainer: {fileID: 11400000, guid: 3425a16ac0d58714883efaaf00719512, type: 2}
   itemSlot:
     item: {fileID: 0}
     quantity: 0
@@ -15811,7 +15811,7 @@ MonoBehaviour:
   _recipePanels:
   - {fileID: 1172749540362544948}
   _recipePanelPrefab: {fileID: 3629367580943141471, guid: 147084a869223e14dbbcd9db20d8418f, type: 3}
-  recipeContainer: {fileID: 11400000, guid: f6f6fe6fd6a628249a6bbfe8b7c1408f, type: 2}
+  globalRecipeContainer: {fileID: 11400000, guid: f6f6fe6fd6a628249a6bbfe8b7c1408f, type: 2}
 --- !u!1001 &1295625965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23363,7 +23363,6 @@ GameObject:
   - component: {fileID: 1846701624}
   - component: {fileID: 1846701626}
   - component: {fileID: 1846701625}
-  - component: {fileID: 1846701627}
   m_Layer: 5
   m_Name: RecipeListPanel
   m_TagString: Untagged
@@ -23429,36 +23428,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846701623}
   m_CullTransparentMesh: 1
---- !u!114 &1846701627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846701623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03668a9ef5173245b6ce1c608ca046c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _researchItemButton: {fileID: 1075283457}
-  _recipeScrollViewContent: {fileID: 1294785655}
-  _recipePanels:
-  - {fileID: 1172749540362544948}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _recipePanelPrefab: {fileID: 3629367580943141471, guid: 147084a869223e14dbbcd9db20d8418f, type: 3}
-  recipeContainer: {fileID: 11400000, guid: f6f6fe6fd6a628249a6bbfe8b7c1408f, type: 2}
 --- !u!1 &1847621466
 GameObject:
   m_ObjectHideFlags: 0
@@ -30214,7 +30183,6 @@ SceneRoots:
   - {fileID: 1796968426}
   - {fileID: 2038389874}
   - {fileID: 593763094}
-  - {fileID: 750843953}
   - {fileID: 286563820}
   - {fileID: 658215189}
   - {fileID: 969291358}

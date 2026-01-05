@@ -9,7 +9,7 @@ public class ResearchRecipePanel : MonoBehaviour
     [SerializeField] private List<RecipePanel> _recipePanels;
     [SerializeField] private GameObject _recipePanelPrefab;
 
-    public SO_CraftingRecipeContainer recipeContainer;
+    public SO_CraftingRecipeContainer globalRecipeContainer;
 
     private void OnEnable()
     {
@@ -18,26 +18,29 @@ public class ResearchRecipePanel : MonoBehaviour
 
     public void OnClickResearchButton()
     {
-        if (_researchItemButton.researchedItem.slots.Count <= 0) { return; }
+        if (_researchItemButton.researchedItemContainer.slots.Count <= 0) { return; }
 
         List<CraftingRecipeSlot> recipes = new List<CraftingRecipeSlot>();
 
-        for (int i = 0; i < _researchItemButton.researchedItem.slots.Count; i++)
-        {
-            SO_Item materialItem = _researchItemButton.researchedItem.slots[i].item;
+        recipes = recipes.Union(globalRecipeContainer.FindRecipeCanBeLearned(_researchItemButton.researchedItemContainer)).ToList();
 
-            recipes = recipes.Union(recipeContainer.FindRecipeWithResearchMaterial(materialItem)).ToList();
+        for (int i = 0; i < _researchItemButton.researchedItemContainer.slots.Count; i++)
+        {
+            SO_Item materialItem = _researchItemButton.researchedItemContainer.slots[i].item;
+
+            recipes = recipes.Union(globalRecipeContainer.FindRecipeCanNotBeLearned(materialItem, recipes)).ToList();
         }
 
-        Show(recipes, _researchItemButton.researchedItem);
+        Show(recipes, _researchItemButton.researchedItemContainer);
     }
 
     private void CreateNewRecipePanels(List<CraftingRecipeSlot> recipes)
     {
         if (recipes.Count <= _recipePanels.Count) return;
-        int loop = recipes.Count - _recipePanels.Count;
+        
+        int panelsToCreate = recipes.Count - _recipePanels.Count;
 
-        for (int i = 0; i < loop; i++)
+        for (int i = 0; i < panelsToCreate; i++)
         {
             GameObject obj = Instantiate(_recipePanelPrefab, this.transform);
 

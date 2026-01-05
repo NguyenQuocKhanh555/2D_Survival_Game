@@ -9,4 +9,9 @@ public class RecipeMaterialImage : MonoBehaviour
     {
         _iconImage.sprite = itemIcon;
     }
+
+    public void Clear()
+    {
+        _iconImage.sprite = null;
+    }
 }

@@ -10,14 +10,14 @@ public class ResearchItemButton : MonoBehaviour
     [SerializeField] private TMP_Text _itemDescription;
     [SerializeField] private GameObject _researchButton;
     
-    public SO_ItemContainer researchedItem;
+    public SO_ItemContainer researchedItemContainer;
     public ItemSlot itemSlot = new ItemSlot();
 
     public void OnClickResearchItemButton()
     {
         _itemDragAndDrop.OnClickOnResearchTablePanel(itemSlot);
         UpdateResearchInfo();
-        _researchButton.SetActive(!researchedItem.CheckItem(itemSlot));
+        _researchButton.SetActive(!researchedItemContainer.CheckItem(itemSlot));
     }
 
     public void ReturnItemInSlot()

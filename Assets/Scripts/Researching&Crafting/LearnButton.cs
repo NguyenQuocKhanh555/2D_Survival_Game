@@ -14,7 +14,7 @@ public class LearnButton : MonoBehaviour
 
     public void OnClick()
     {
-        _recipePanel.researchRecipePanel.recipeContainer.LearnCraftingRecipe(_craftingRecipeSlot.craftingRecipe);
+        _recipePanel.researchRecipePanel.globalRecipeContainer.LearnCraftingRecipe(_craftingRecipeSlot.craftingRecipe);
         _learnedCraftingRecipeContainer.AddCraftingRecipe(_craftingRecipeSlot.craftingRecipe);
         this.gameObject.SetActive(false);
         _recipePanel.researchRecipePanel.OnClickResearchButton();

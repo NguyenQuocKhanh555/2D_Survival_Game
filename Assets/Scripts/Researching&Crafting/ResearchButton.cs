@@ -14,7 +14,7 @@ public class ResearchButton : MonoBehaviour
 
     public void OnClick()
     {
-        _researchItemButton.researchedItem.AddItemSlot(_researchItemSlot);
+        _researchItemButton.researchedItemContainer.AddItemSlot(_researchItemSlot);
         _researchItemButton.itemSlot.Clear();
         _researchItemButton.UpdateResearchInfo();
         _researchRecipePanel.OnClickResearchButton();
