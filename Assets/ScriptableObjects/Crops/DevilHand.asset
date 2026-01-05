@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cropId: 2
   timeToGrow: 600
+  products:
+  - productItem: {fileID: 11400000, guid: 82de631ff91e55a4898b6f2b7eab0d52, type: 2}
+    quantity: 2
   sprites:
   - {fileID: -1719471598, guid: c3e60c06cb5657d4e854afcfe5be7b8b, type: 3}
   - {fileID: 94957227, guid: c3e60c06cb5657d4e854afcfe5be7b8b, type: 3}
   - {fileID: -820834072, guid: c3e60c06cb5657d4e854afcfe5be7b8b, type: 3}
   - {fileID: 940202091, guid: c3e60c06cb5657d4e854afcfe5be7b8b, type: 3}
-  growthStateTime: 00000000050000000a0000000f000000
+  growthStateTime: 00000000050000000500000005000000

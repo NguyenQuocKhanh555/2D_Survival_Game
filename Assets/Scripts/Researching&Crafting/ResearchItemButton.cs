@@ -20,6 +20,15 @@ public class ResearchItemButton : MonoBehaviour
         _researchButton.SetActive(!researchedItem.CheckItem(itemSlot));
     }
 
+    public void ReturnItemInSlot()
+    {
+        if (itemSlot.item == null) return;
+
+        InventoryManager.instance.AddItemToInventory(itemSlot.item, itemSlot.quantity);
+        itemSlot.Clear();
+        UpdateResearchInfo();
+    }
+
     public void UpdateResearchInfo()
     {
         if (itemSlot.item != null)

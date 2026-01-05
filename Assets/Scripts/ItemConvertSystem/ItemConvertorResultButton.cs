@@ -22,8 +22,15 @@ public class ItemConvertorResultButton : MonoBehaviour
         _resultSlot.Copy(slot);
         _resultIcon.gameObject.SetActive(true);
         _resultIcon.sprite = _resultSlot.item.itemIcon;
-        _quantity.gameObject.SetActive(true);
-        _quantity.text = _resultSlot.quantity.ToString();
+        if (_resultSlot.item.isStackable)
+        {
+            _quantity.gameObject.SetActive(true);
+            _quantity.text = _resultSlot.quantity.ToString();
+        }
+        else
+        {
+            _quantity.gameObject.SetActive(false);
+        }
     }
 
     public void Clear()
@@ -36,7 +43,9 @@ public class ItemConvertorResultButton : MonoBehaviour
 
     public void OnClick()
     {
-        _dragAndDrop.OnClick(_resultSlot);
-        _itemConvertorUI.OnClickResultButton(_resultSlot);
+        bool before = _resultSlot.item != null && !_resultSlot.item.isStackable;
+        _dragAndDrop.OnClickNonAddableSlot(_resultSlot);
+        bool after = _resultSlot.item == null;
+        _itemConvertorUI.OnClickResultButton(_resultSlot, before && after);
     }
 }

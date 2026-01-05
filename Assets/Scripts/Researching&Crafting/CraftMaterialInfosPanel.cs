@@ -22,7 +22,7 @@ public class CraftMaterialInfosPanel : MonoBehaviour
         _materialIcon.sprite = material.item.itemIcon;
         _materialName.text = material.item.name;
 
-        int inventoryMaterialQuantity = _materialsPanel.craftingPanel.playerInventory.GetItemQuantity(material.item);
+        int inventoryMaterialQuantity = InventoryManager.instance.GetItemQuantity(material.item);
         int materialQuantity = material.quantity * craftQuantity;
         _materialCount.text = inventoryMaterialQuantity + "/" + materialQuantity;
         _materialCount.color = inventoryMaterialQuantity >= materialQuantity ? Color.green : Color.red;
