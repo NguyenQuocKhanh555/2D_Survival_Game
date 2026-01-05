@@ -18,5 +18,5 @@ MonoBehaviour:
     quantity: 2
   result:
     item: {fileID: 11400000, guid: b0d96a4a521a18e46911080d322378d6, type: 2}
-    quantity: 0
+    quantity: 1
   timeToProcess: 5

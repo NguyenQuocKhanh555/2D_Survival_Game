@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: CampfireRecipeContainer
   m_EditorClassIdentifier: 
   recipes:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 518ca4fdbe63ef94fa32387894028835, type: 2}
+  - {fileID: 11400000, guid: 863f2a7ab80dd5c4bb1820726f042112, type: 2}
+  - {fileID: 11400000, guid: bed205e88c186b64eb42dcaa53bb3fd0, type: 2}
+  - {fileID: 11400000, guid: 6acac0c3e75a6a44b8c5e60e4d5ce4d8, type: 2}
+  - {fileID: 11400000, guid: 3341b2c0502cc0844aa5d023aca51b10, type: 2}
+  - {fileID: 11400000, guid: 5914971ab344e224499cc66072fd0e6f, type: 2}
+  - {fileID: 11400000, guid: ce57d7e9fafade14a887eb64c649ac9d, type: 2}
+  - {fileID: 11400000, guid: e3e84aee371adf94d8a930a239abe7e7, type: 2}
+  - {fileID: 11400000, guid: 477ce569c38a6d24382118a14add5a52, type: 2}
+  - {fileID: 11400000, guid: e09162f5bd7594f44868a858dfaac07a, type: 2}

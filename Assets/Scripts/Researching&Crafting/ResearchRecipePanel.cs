@@ -35,8 +35,9 @@ public class ResearchRecipePanel : MonoBehaviour
     private void CreateNewRecipePanels(List<CraftingRecipeSlot> recipes)
     {
         if (recipes.Count <= _recipePanels.Count) return;
+        int loop = recipes.Count - _recipePanels.Count;
 
-        for (int i = 0; i < recipes.Count - _recipePanels.Count; i++) 
+        for (int i = 0; i < loop; i++)
         {
             GameObject obj = Instantiate(_recipePanelPrefab, this.transform);
 

@@ -709,6 +709,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Wood_Plank_Icon
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae9bbf5da3812c4aac957bbdcc3645e
+      internalID: -443418622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rope_Icon
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03394553be894e41a7c44b7f03b7605
+      internalID: -382621352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -747,7 +791,9 @@ TextureImporter:
       Iron_Bar_Icon: 7166279185356764023
       Purifier_0_Icon: 1215902485465811832
       Research_Table_Icon: 8582592622733107648
+      Rope_Icon: -382621352
       Smelter_0_Icon: -3457536095352515250
+      Wood_Plank_Icon: -443418622
       _Icon: 8719062026180820668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

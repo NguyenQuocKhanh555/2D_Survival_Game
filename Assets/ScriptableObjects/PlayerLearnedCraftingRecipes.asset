@@ -15,8 +15,84 @@ MonoBehaviour:
   craftingRecipes:
   - craftingRecipe: {fileID: 11400000, guid: ab52756e47b195d4f960fcf5f7ec2e54, type: 2}
     isLearn: 1
-  - craftingRecipe: {fileID: 11400000, guid: 2e00a97eb30536646bb9793f187007ad, type: 2}
-    isLearn: 1
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
+  - craftingRecipe: {fileID: 0}
+    isLearn: 0
   - craftingRecipe: {fileID: 0}
     isLearn: 0
   - craftingRecipe: {fileID: 0}
