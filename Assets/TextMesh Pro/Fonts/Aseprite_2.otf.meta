@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8dfd5d1c015cd894ea89391b4aa842ac
+guid: 71b049af27735fd4ea021bfe82a73571
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Aseprite
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8dfd5d1c015cd894ea89391b4aa842ac, type: 3}
   customCharacters: 
   fontRenderingMode: 1
   ascentCalculationMode: 1
