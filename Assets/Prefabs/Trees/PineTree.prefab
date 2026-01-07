@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5419669400333904710
+--- !u!1 &5456791380599350399
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3040728337298327607}
-  - component: {fileID: 913312157376694425}
-  - component: {fileID: 5280445099150975480}
+  - component: {fileID: 2186260136113149132}
+  - component: {fileID: 4029401445439782810}
+  - component: {fileID: 3698038296761092590}
+  - component: {fileID: 702749844189170447}
+  - component: {fileID: -7242980321494463595}
   m_Layer: 0
   m_Name: PineTree
   m_TagString: Untagged
@@ -18,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3040728337298327607
+--- !u!4 &2186260136113149132
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5419669400333904710}
+  m_GameObject: {fileID: 5456791380599350399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,13 +35,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &913312157376694425
+--- !u!212 &4029401445439782810
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5419669400333904710}
+  m_GameObject: {fileID: 5456791380599350399}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,24 +79,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7725318966163699239, guid: c2f96becdac5d264dbd2464793ee4c72, type: 3}
+  m_Sprite: {fileID: 6003313035913842413, guid: 047d7b7f23fc7c447bd35319295919dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5280445099150975480
+--- !u!61 &3698038296761092590
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5419669400333904710}
+  m_GameObject: {fileID: 5456791380599350399}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -122,15 +124,47 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.1}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 5, y: 7}
+    newSize: {x: 5, y: 7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.3, y: 0.25}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &702749844189170447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456791380599350399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38e21bcd1b0fdc468955e8d44925465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickupItemDrop: {fileID: 8761779123943588426, guid: 540f056dacfb66e439db5ed6b9181ead, type: 3}
+  _spread: 0.5
+  _item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
+  _itemCountInOneDrop: 1
+  _dropCount: 5
+  _nodeType: 0
+  _resourceNodeDurability: 10
+--- !u!114 &-7242980321494463595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456791380599350399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26b147ee432894b90b0dc731ea9036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1

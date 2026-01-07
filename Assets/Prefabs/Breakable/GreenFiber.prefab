@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2752348536937570653}
   - component: {fileID: 7779424105823047375}
   - component: {fileID: 7261161279363610234}
+  - component: {fileID: 2243077898482154401}
   m_Layer: 0
   m_Name: GreenFiber
   m_TagString: Untagged
@@ -134,3 +135,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3383102, y: 1.2}
   m_EdgeRadius: 0
+--- !u!114 &2243077898482154401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046539204932046414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26b147ee432894b90b0dc731ea9036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1

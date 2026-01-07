@@ -129,8 +129,12 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (_isDodging) return;
-        Vector2 movement = _moveInput * _walkSpeed * Time.fixedDeltaTime;
-        _rb.MovePosition(_rb.position + movement);
+        _rb.linearVelocity = _moveInput * _walkSpeed;
+        //Vector3 movement = _moveInput * _walkSpeed * Time.fixedDeltaTime;
+        //_rb.MovePosition(transform.position + movement);
+        Vector3 pos = transform.position;
+        pos.z = pos.y * 0.0001f;
+        transform.position = pos;
     }
 
     private void OnDodge(InputAction.CallbackContext context)

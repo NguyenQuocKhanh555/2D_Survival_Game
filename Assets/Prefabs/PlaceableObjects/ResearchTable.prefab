@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5085973160859039468}
   - component: {fileID: 6674176256997507962}
   - component: {fileID: 2943210292999809739}
+  - component: {fileID: -6520839347625158713}
   m_Layer: 0
   m_Name: ResearchTable
   m_TagString: Untagged
@@ -148,4 +149,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _highlightMats: {fileID: 2100000, guid: 52882a7b4b15bfd419f46320d074935a, type: 2}
-  _researchingUI: {fileID: 0}
+--- !u!114 &-6520839347625158713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236646265411913404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26b147ee432894b90b0dc731ea9036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1

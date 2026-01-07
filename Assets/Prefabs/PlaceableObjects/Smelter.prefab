@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2349285735802731930}
   - component: {fileID: 7662818434630451085}
   - component: {fileID: 3311981125410228200}
+  - component: {fileID: 2311650732970801661}
   m_Layer: 0
   m_Name: Smelter
   m_TagString: Untagged
@@ -153,6 +154,8 @@ MonoBehaviour:
   _recipeContainer: {fileID: 11400000, guid: 154798c680c8ab0418a010943ddac670, type: 2}
   _timer: 0
   _currentProcessRecipe: {fileID: 0}
+  _lastOpenedTime: 0
+  _numOfProcessRecipe: 0
   convertResult:
     item: {fileID: 0}
     quantity: 0
@@ -181,3 +184,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2311650732970801661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842674095921068370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26b147ee432894b90b0dc731ea9036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1

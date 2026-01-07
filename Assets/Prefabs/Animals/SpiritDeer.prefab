@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7512968764938947649}
   - component: {fileID: 7614787959275429296}
   - component: {fileID: 6586991286992546025}
+  - component: {fileID: 6269208499758021568}
   m_Layer: 0
   m_Name: SpiritDeer
   m_TagString: Untagged
@@ -215,6 +216,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7779777, y: 1.1201437}
   m_EdgeRadius: 0
+--- !u!114 &6269208499758021568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117333876973656813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26b147ee432894b90b0dc731ea9036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 0
 --- !u!1 &5541391592885860660
 GameObject:
   m_ObjectHideFlags: 0

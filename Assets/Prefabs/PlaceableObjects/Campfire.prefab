@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9186185502404723301}
   - component: {fileID: 3065997357043979003}
   - component: {fileID: 5083056642788623775}
+  - component: {fileID: -5865487536767487066}
   m_Layer: 0
   m_Name: Campfire
   m_TagString: Untagged
@@ -107,6 +108,8 @@ MonoBehaviour:
   _recipeContainer: {fileID: 11400000, guid: 936f6812e0b3fb148981d1d3f85f3d18, type: 2}
   _timer: 0
   _currentProcessRecipe: {fileID: 0}
+  _lastOpenedTime: 0
+  _numOfProcessRecipe: 0
   convertResult:
     item: {fileID: 0}
     quantity: 0
@@ -181,3 +184,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5865487536767487066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269151630917649507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26b147ee432894b90b0dc731ea9036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1

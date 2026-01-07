@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6838562393971512405}
   - component: {fileID: 6258965823618979326}
   - component: {fileID: 1262635870807824071}
+  - component: {fileID: 1987910937864444404}
   m_Layer: 0
   m_Name: WoodenChest
   m_TagString: Untagged
@@ -97,6 +98,7 @@ MonoBehaviour:
   _closedForm: {fileID: 7952422664872360696, guid: 87808a8fcd68a2e4882b08dc8243d562, type: 3}
   _isOpened: 0
   _lootContainerName: LootContainer
+  _itemContainer: {fileID: 0}
 --- !u!212 &1262635870807824071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -152,3 +154,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1987910937864444404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697668764364072215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26b147ee432894b90b0dc731ea9036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1
