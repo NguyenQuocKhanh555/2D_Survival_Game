@@ -107,11 +107,6 @@ public class Player : MonoBehaviour, IDamageable
         }
 
         Drain();
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(100f);
-        }
     }
 
     private void Drain()

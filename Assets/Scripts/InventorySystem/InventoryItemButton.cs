@@ -7,8 +7,10 @@ public class InventoryItemButton : MonoBehaviour, IItemButton, IPointerClickHand
 {
     [SerializeField] private Image _itemIcon;
     [SerializeField] private TMP_Text _itemQuantity;
+    [SerializeField] private Sprite _lockIcon;
 
     private int _inventoryIndex;
+    private bool _isLocked = false;
 
     private InventoryItemPanel _inventoryItemPanel;
 
@@ -20,6 +22,16 @@ public class InventoryItemButton : MonoBehaviour, IItemButton, IPointerClickHand
     public void SetInventoryIndex(int index)
     {
         _inventoryIndex = index;
+    }
+
+    public void LockButton()
+    {
+        _isLocked = true;
+    }
+
+    public void UnlockButton()
+    {
+        _isLocked = false;
     }
 
     public void Set(ItemSlot itemSlot)
@@ -38,6 +50,13 @@ public class InventoryItemButton : MonoBehaviour, IItemButton, IPointerClickHand
         }
     }
 
+    public void SetLockIcon()
+    {
+        _itemIcon.gameObject.SetActive(true);
+        _itemIcon.sprite = _lockIcon;
+        _itemQuantity.gameObject.SetActive(false);
+    }
+
     public void Clear()
     {
         _itemIcon.sprite = null;
@@ -48,6 +67,7 @@ public class InventoryItemButton : MonoBehaviour, IItemButton, IPointerClickHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (_isLocked) return;
         _inventoryItemPanel.OnClick(_inventoryIndex);
     }
 }

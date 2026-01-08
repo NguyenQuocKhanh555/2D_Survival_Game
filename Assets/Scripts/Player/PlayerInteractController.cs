@@ -56,18 +56,19 @@ public class PlayerInteractController : MonoBehaviour
         }
     }
 
-    public void Interact(Player player)
+    public bool Interact(Player player)
     {
         if (_currentInteractObject != null)
         {
             _currentInteractObject.Interact(player);
             _currentInteractObject = null;
-            return;
+            return false;
         }
 
-        if (_currentSelectedObject == null) { return; }
+        if (_currentSelectedObject == null) { return false; }
 
         _currentSelectedObject.Interact(player);
         _currentInteractObject = _currentSelectedObject;
+        return true;
     }
 }

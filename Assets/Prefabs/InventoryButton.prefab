@@ -348,3 +348,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemIcon: {fileID: 4688037298608032840}
   _itemQuantity: {fileID: 1056600991479207711}
+  _lockIcon: {fileID: -1528025487300390942, guid: 839fcd4a7eeee054f9becfd4107737fd, type: 3}

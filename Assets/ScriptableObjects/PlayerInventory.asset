@@ -15,12 +15,12 @@ MonoBehaviour:
   slots:
   - item: {fileID: 11400000, guid: 0a350f0d3ca4e5f4f84c10718f77ec49, type: 2}
     quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 479cb664b4efcb640915dc16c02b21af, type: 2}
+    quantity: 5
+  - item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
+    quantity: 93
+  - item: {fileID: 11400000, guid: 671f1e12b2d28764b8c6d435a012d308, type: 2}
+    quantity: 3
   - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 0}

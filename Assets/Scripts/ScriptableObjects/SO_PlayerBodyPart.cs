@@ -19,4 +19,8 @@ public class SO_PlayerBodyPart : ScriptableObject
     public List<AnimationClip> allPartAnimations = new List<AnimationClip>();
 
     public AnimationClip previewPartIdleAnimation;
+
+    public int armorValue;
+    public int attackValue;
+    public int inventorySlotsAdded;
 }

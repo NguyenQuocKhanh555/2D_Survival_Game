@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     private PlayerUIInteractController _inventoryController;
     private PlayerToolbarController _toolbarController;
     private PlayerPickupItemController _pickupItemController;
-    private PlayerUseItemController _useItemController; 
+    private PlayerUseItemController _useItemController;
+    private PlayerFishingController _fishingController;
 
     private Vector2 _moveInput;
     private Vector2 _lastMotionVector;
@@ -31,8 +32,11 @@ public class PlayerController : MonoBehaviour
     private bool _isDodging = false;
     private bool _canDodge = true;
 
-    public bool isFishing = false;
-    public bool isPickupItem = false;
+    //public bool isFishing = false;
+    //public bool isPickupItem = false;
+    public bool isBusy = false;
+    public bool isInteracting = false;
+    public bool isInventoryOpen = false;
 
     private void Awake()
     {
@@ -45,6 +49,7 @@ public class PlayerController : MonoBehaviour
         _toolbarController = GetComponent<PlayerToolbarController>();
         _pickupItemController = GetComponent<PlayerPickupItemController>();
         _useItemController = GetComponent<PlayerUseItemController>();
+        _fishingController = GetComponent<PlayerFishingController>();
     }
 
     private void OnEnable()
@@ -90,6 +95,11 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMovementInput()
     {
+        if (_isDodging) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         _moveInput = _playerControls.PlayerMovement.Move.ReadValue<Vector2>();
 
         _animator.SetFloat("horizontal", _moveInput.x);
@@ -110,6 +120,9 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerToolbarSelectInput()
     {
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         _scrollInput = _playerControls.UI.SelectOnToolbar.ReadValue<float>();
         if (_scrollInput != 0)
             _toolbarController.SelectToolbarIndex(_scrollInput);
@@ -129,6 +142,10 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (_isDodging) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         Vector2 movement = _moveInput * _walkSpeed * Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + movement);
     }
@@ -137,30 +154,45 @@ public class PlayerController : MonoBehaviour
     {
         if (_isDodging || !_canDodge) return;
         if (_moveInput == Vector2.zero) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         StartCoroutine(DodgeCoroutine());
     }
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        _interactController.Interact(_player);
+        if (_isDodging) return;
+        if (isBusy) return;
+
+        isInteracting = _interactController.Interact(_player);
     }
 
     private void OnAction(InputAction.CallbackContext context)
     {
+        if (_fishingController.isFishing)
+        {
+            _useItemController.UseTool(_animator, _lastMotionVector);
+            return;
+        }
+
         if (_isDodging) return;
         if (_isPointerOverUI) return;
         if (_toolbarController.GetToolbarSelectedItem == null) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
             case ItemTypes.Weapon:
                 _useItemController.UseWeapon(_animator, _lastMotionVector);
                 break;
             case ItemTypes.Tool:
+                _fishingController.lastMotionVector = _lastMotionVector;
                 _useItemController.UseTool(_animator, _lastMotionVector);
                 break;
-/*            case ItemTypes.FishingRod:
-                _useItemController.UseFishingRod(_animator);
-                break;*/
             default:
                 break;
         }
@@ -171,6 +203,10 @@ public class PlayerController : MonoBehaviour
         if (_isDodging) return;
         if (_isPointerOverUI) return;
         if (_toolbarController.GetToolbarSelectedItem == null) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
             case ItemTypes.Consumable:
@@ -190,23 +226,37 @@ public class PlayerController : MonoBehaviour
     private void OnPickupItem(InputAction.CallbackContext context)
     {
         if (_isDodging) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         _pickupItemController.PickupSingleItem();
     }
 
     private void OnPickupAroundItem(InputAction.CallbackContext context)
     {
         if (_isDodging) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
         _pickupItemController.FindNearestPickupItem();
     }
 
     private void OnOpenInventory(InputAction.CallbackContext context)
     {
         if (_isDodging) return;
+        if (isBusy) return;
+
         _inventoryController.ToggleInventory();
         if (_inventoryController.IsInventoryOpen)
-            _playerControls.PlayerMovement.Disable();
+        {
+            isInventoryOpen = true;
+        }
         else
-            _playerControls.PlayerMovement.Enable();
+        {
+            isInventoryOpen = false;
+        }
     }
 
     private IEnumerator DodgeCoroutine()

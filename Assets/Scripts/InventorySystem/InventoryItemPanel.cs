@@ -15,6 +15,7 @@ public class InventoryItemPanel : MonoBehaviour, IItemPanel
     {
         SetSourcePanel();
         SetIndex();
+        SetLockButton();
         Show();
     }
 
@@ -23,11 +24,15 @@ public class InventoryItemPanel : MonoBehaviour, IItemPanel
         Clear();
         Show();
         InventoryManager.instance.onInventoryChange += Show;
+        InventoryManager.instance.onInventorySizeChange += SetLockButton;
+        InventoryManager.instance.onInventorySizeChange += Show;
     }
 
     private void OnDisable()
     {
         InventoryManager.instance.onInventoryChange -= Show;
+        InventoryManager.instance.onInventorySizeChange -= SetLockButton;
+        InventoryManager.instance.onInventorySizeChange -= Show;
     }
 
     public void SetSourcePanel()
@@ -43,6 +48,21 @@ public class InventoryItemPanel : MonoBehaviour, IItemPanel
         for (int i = 0; i < _buttons.Count; i++)
         {
             _buttons[i].SetInventoryIndex(i);
+        }
+    }
+
+    public void SetLockButton()
+    {
+        int inventorySize = InventoryManager.instance.inventorySize;
+
+        for (int i = 20; i < _buttons.Count; i++)
+        {
+            _buttons[i].UnlockButton();
+        }
+
+        for (int i = inventorySize; i < _buttons.Count; i++)
+        {
+            _buttons[i].LockButton();
         }
     }
 
@@ -66,6 +86,11 @@ public class InventoryItemPanel : MonoBehaviour, IItemPanel
             {
                 _buttons[i].Set(InventoryManager.instance.GetItemSlotInInventory(i));
             }
+        }
+
+        for (int i = inventorySize; i < _buttons.Count; i++)
+        {
+            _buttons[i].SetLockIcon();
         }
     }
 
