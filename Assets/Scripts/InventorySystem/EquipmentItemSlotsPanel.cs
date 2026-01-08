@@ -9,8 +9,11 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     [SerializeField] private ItemDragAndDrop _itemDragAndDrop;
 
     [SerializeField] private EquipmentItemButton[] _equipmentItemButtons;
+    [SerializeField] private Sprite[] _holderSprites;
 
     public Action onChangeEquipment;
+    public bool isArmorChanged = false;
+    public bool isBackpackChanged = false;
 
     private void Start()
     {
@@ -28,21 +31,50 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     {
         Clear();
         Show();
+        //InventoryManager.instance.onInventorySizeChange += UpdateInventorySize;
     }
 
-    private void LateUpdate()
+    /*private void OnDisable()
+    {
+        InventoryManager.instance.onInventorySizeChange -= UpdateInventorySize;
+    }*/
+
+/*    private void LateUpdate()
     {
         if (_equipmentContainer == null) return;
 
-        if (_equipmentContainer.isChange)
+        if (isArmorChanged)
         {
-            Show();
+            //Show();
             UpdatePlayerParts();
-            _equipmentContainer.isChange = false;
+            isArmorChanged = false;
         }
+
+
+        if (isBackpackChanged)
+        {
+            //Show();
+            UpdateInventorySize();
+            isBackpackChanged = false;
+        }
+    }*/
+
+    public void UpdateInventorySize()
+    {
+        int newSize = _equipmentContainer.slots[3].item != null
+            ? _equipmentContainer.slots[3].item.armorData.inventorySlotsAdded
+            : 20;
+
+        if (newSize < InventoryManager.instance.inventorySize)
+        {
+            InventoryManager.instance.PushItemOutOfLockedSlots(newSize);
+        }
+
+        InventoryManager.instance.inventorySize = newSize;
+        InventoryManager.instance.onInventorySizeChange?.Invoke();
     }
 
-    private void UpdatePlayerParts()
+    public void UpdatePlayerParts()
     {
         for (int i = 0; i < _playerBody.playerBodyParts.Length; i++)
         {
@@ -55,6 +87,7 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
                 _playerBody.playerBodyParts[i].playerPart = _equipmentContainer.slots[i].item.armorData;
             }
         }
+
         onChangeEquipment?.Invoke();
     }
 
@@ -77,7 +110,7 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     public void OnClick(int id)
     {
         _itemDragAndDrop.OnClickOnEquipmentPanel(_equipmentContainer.slots[id], id);
-        _equipmentContainer.isChange = true;
+        //_equipmentContainer.isChange = true;
         Show();
     }
 
@@ -89,11 +122,11 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
         {
             if (_equipmentContainer.slots[i].item == null)
             {
-                _equipmentItemButtons[i].Clear();
+                _equipmentItemButtons[i].Set(_holderSprites[i]);
             }
             else
             {
-                _equipmentItemButtons[i].Set(_equipmentContainer.slots[i]);
+                _equipmentItemButtons[i].Set(_equipmentContainer.slots[i].item.itemIcon);
             }
         }
     }
@@ -102,7 +135,7 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     {
         for (int i = 0; i < _equipmentItemButtons.Length; i++)
         {
-            _equipmentItemButtons[i].Clear();
+            _equipmentItemButtons[i].Set(_holderSprites[i]);
         }
     }
 }

@@ -9,6 +9,7 @@ public class PlayerUseItemController : MonoBehaviour
     [SerializeField] private PlayerEquipmentController _equipmentController;
     [SerializeField] private PlayerAttackController _attackController;
     [SerializeField] private PlayerApplyEffectController _applyEffectController;
+    [SerializeField] private PlayerFishingController _fishingController;
     [SerializeField] private MarkerManager _markerManager;
     [SerializeField] private PlacementPreview _placementPreview;
     [SerializeField] private float _offSetDistance = 1f;
@@ -23,6 +24,20 @@ public class PlayerUseItemController : MonoBehaviour
     {
         if (_equipmentController.currentToolData == null) return;
         
+        if (_fishingController.isFishing && !_fishingController.hasCaughtFish)
+        {
+            animator.SetBool("isCancel", true);
+            _fishingController.StopFishing();
+            return;
+        }
+
+        if (_fishingController.hasCaughtFish)
+        {
+            animator.SetBool("isReel", true);
+            _fishingController.Reel();
+            return;
+        }
+
         animator.SetTrigger("action");
         animator.SetInteger("toolId", _equipmentController.currentToolData.toolID);
 
@@ -103,12 +118,6 @@ public class PlayerUseItemController : MonoBehaviour
         _attackController.MeleeAttack(
             _equipmentController.currentWeaponData.weaponDamage, lastMotionVector);
     }
-
-/*    public void UseFishingRod(Animator animator)
-    {
-        if (_equipmentController.currentToolData == null) return;
-        animator.SetTrigger("fish");
-    }*/
 
     public void UseConsumableItem(Animator animator, Vector2 lastMotionVector, PlayerToolbarController toolbarController)
     {

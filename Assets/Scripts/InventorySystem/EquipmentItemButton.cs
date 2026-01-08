@@ -20,16 +20,9 @@ public class EquipmentItemButton : MonoBehaviour, IPointerClickHandler
         _equipmentSlotIndex = index;
     }
 
-    public void Set(ItemSlot itemSlot)
+    public void Set(Sprite sprite)
     {
-        _itemIcon.gameObject.SetActive(true);
-        _itemIcon.sprite = itemSlot.item.itemIcon;
-    }
-
-    public void Clear()
-    {
-        _itemIcon.sprite = null;
-        _itemIcon.gameObject.SetActive(false);
+        _itemIcon.sprite = sprite;
     }
 
     public void OnPointerClick(PointerEventData eventData)

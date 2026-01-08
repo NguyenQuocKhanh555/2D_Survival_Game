@@ -6,11 +6,13 @@ public class GraveInteract : Interactable
 
     public void StoreInventory()
     {
-        int size = InventoryManager.instance.CountSlotsNonEmpty();
+        int graveSize = InventoryManager.instance.CountSlotsNonEmpty();
         _graveContainer = (SO_ItemContainer)ScriptableObject.CreateInstance(typeof(SO_ItemContainer));
-        _graveContainer.Init(size);
+        _graveContainer.Init(graveSize);
 
-        for (int i = 0; i < 40; i++)
+        int inventorySize = InventoryManager.instance.inventorySize;
+
+        for (int i = 0; i < inventorySize; i++)
         {
             if (InventoryManager.instance.GetItemInSlot(i) != null)
             {

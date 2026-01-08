@@ -10,6 +10,8 @@ public class ItemDragAndDrop : MonoBehaviour
     [SerializeField] private RectTransform _dragAndDropIconTransform;
     [SerializeField] private Image _dragAndDropIconImage;
 
+    [SerializeField] private EquipmentItemSlotsPanel _equipmentItemSlotsPanel;
+
     private Dictionary<int, PlayerBodyPartType> _equipmentPartMap;
 
     private void Start()
@@ -38,6 +40,7 @@ public class ItemDragAndDrop : MonoBehaviour
                     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     worldPosition.z = 0;
 
+                    SpawnItemManager.instance.SpawnItem(worldPosition, _dragAndDropItem.item, _dragAndDropItem.quantity);
                     _dragAndDropItem.Clear();
                     this.gameObject.SetActive(false);
                 }
@@ -102,6 +105,18 @@ public class ItemDragAndDrop : MonoBehaviour
         {
             _dragAndDropItem.Copy(itemSlot);
             itemSlot.Clear();
+
+            PlayerBodyPartType expectedPart = _dragAndDropItem.item.armorData.partName;
+
+            if (expectedPart == PlayerBodyPartType.Head || expectedPart == PlayerBodyPartType.Torso || expectedPart == PlayerBodyPartType.Legs)
+            {
+                _equipmentItemSlotsPanel.UpdatePlayerParts();
+            }
+
+            if (expectedPart == PlayerBodyPartType.Backpack)
+            {
+                _equipmentItemSlotsPanel.UpdateInventorySize();
+            }
         }
         else
         {
@@ -110,6 +125,16 @@ public class ItemDragAndDrop : MonoBehaviour
             if (_dragAndDropItem.item.armorData.partName != expectedPart) return;
 
             SwapItem(itemSlot);
+
+            if (expectedPart == PlayerBodyPartType.Head || expectedPart == PlayerBodyPartType.Torso || expectedPart == PlayerBodyPartType.Legs)
+            {
+                _equipmentItemSlotsPanel.UpdatePlayerParts();
+            }
+
+            if (expectedPart == PlayerBodyPartType.Backpack)
+            {
+                _equipmentItemSlotsPanel.UpdateInventorySize();
+            }
         }
         UpdateIcon();
     }
