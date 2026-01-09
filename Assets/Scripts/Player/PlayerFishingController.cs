@@ -27,8 +27,8 @@ public class PlayerFishingController : MonoBehaviour
 
     public void StartFishing()
     {
-        Vector3Int gridPosition = _tilemapReadController.GetGridPosition((Vector2)transform.position + lastMotionVector, false);
-        TileBase waterTile = _tilemapReadController.GetTileAtGridPosition(gridPosition);
+        Vector3Int gridPosition = _tilemapReadController.GetWaterGridPosition((Vector2)transform.position + lastMotionVector, false);
+        TileBase waterTile = _tilemapReadController.GetWaterTileAtGridPosition(gridPosition);
 
         SO_FishPool pool = GetPool(waterTile);
 
@@ -55,7 +55,7 @@ public class PlayerFishingController : MonoBehaviour
     private IEnumerator FishingCoroutine(SO_FishPool pool)
     {
         isFishing = true;
-        float waitTime = UnityEngine.Random.Range(30f, 60f);
+        float waitTime = UnityEngine.Random.Range(5f, 10f);
         _caughtFishItem = GetFish(pool.availableFish);
 
         yield return new WaitForSeconds(waitTime);

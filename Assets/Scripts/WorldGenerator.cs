@@ -51,6 +51,8 @@ public class WorldGenerator : MonoBehaviour
     private Vector2Int[] biomeCenters;
     private System.Random rng;
 
+    [SerializeField] private GameObject _loadingScreen;
+
     // Public helper to launch generation (can be called from inspector via custom button or other scripts)
     [ContextMenu("Generate Map")]
     public void GenerateMap()
@@ -272,6 +274,9 @@ public class WorldGenerator : MonoBehaviour
 
         float elapsed = Time.realtimeSinceStartup - t0;
         Debug.Log($"Map generated: {mapSize}×{mapSize}, biomes={biomeCount}. Time: {elapsed:F2}s");
+
+        _loadingScreen.SetActive(false);
+
         yield break;
     }
 

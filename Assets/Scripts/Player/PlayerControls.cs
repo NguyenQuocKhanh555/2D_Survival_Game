@@ -301,6 +301,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Esc"",
+                    ""type"": ""Button"",
+                    ""id"": ""80fb87a5-f4ee-4497-9c2a-2610f45a7b2b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -325,6 +334,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""SelectOnToolbar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44f8be47-2161-4d40-b288-46f3ecd27b2d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Esc"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -344,6 +364,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_OpenInventory = m_UI.FindAction("OpenInventory", throwIfNotFound: true);
         m_UI_SelectOnToolbar = m_UI.FindAction("SelectOnToolbar", throwIfNotFound: true);
+        m_UI_Esc = m_UI.FindAction("Esc", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -589,6 +610,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_OpenInventory;
     private readonly InputAction m_UI_SelectOnToolbar;
+    private readonly InputAction m_UI_Esc;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -608,6 +630,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/SelectOnToolbar".
         /// </summary>
         public InputAction @SelectOnToolbar => m_Wrapper.m_UI_SelectOnToolbar;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/Esc".
+        /// </summary>
+        public InputAction @Esc => m_Wrapper.m_UI_Esc;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -640,6 +666,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SelectOnToolbar.started += instance.OnSelectOnToolbar;
             @SelectOnToolbar.performed += instance.OnSelectOnToolbar;
             @SelectOnToolbar.canceled += instance.OnSelectOnToolbar;
+            @Esc.started += instance.OnEsc;
+            @Esc.performed += instance.OnEsc;
+            @Esc.canceled += instance.OnEsc;
         }
 
         /// <summary>
@@ -657,6 +686,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SelectOnToolbar.started -= instance.OnSelectOnToolbar;
             @SelectOnToolbar.performed -= instance.OnSelectOnToolbar;
             @SelectOnToolbar.canceled -= instance.OnSelectOnToolbar;
+            @Esc.started -= instance.OnEsc;
+            @Esc.performed -= instance.OnEsc;
+            @Esc.canceled -= instance.OnEsc;
         }
 
         /// <summary>
@@ -768,5 +800,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSelectOnToolbar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Esc" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEsc(InputAction.CallbackContext context);
     }
 }

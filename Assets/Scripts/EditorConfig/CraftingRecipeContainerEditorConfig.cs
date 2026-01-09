@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(SO_CraftingRecipeContainer))]
-public class CraftingRecipeContainerEditorConfig : Editor
+//[CustomEditor(typeof(SO_CraftingRecipeContainer))]
+public class CraftingRecipeContainerEditorConfig : MonoBehaviour
 {
-    override public void OnInspectorGUI()
+    /*override public void OnInspectorGUI()
     {
         SO_CraftingRecipeContainer container = target as SO_CraftingRecipeContainer;
         if (GUILayout.Button("Set default"))
@@ -22,5 +22,5 @@ public class CraftingRecipeContainerEditorConfig : Editor
             }
         }
         DrawDefaultInspector();
-    }
+    }*/
 }

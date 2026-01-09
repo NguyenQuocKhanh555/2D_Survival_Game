@@ -7,6 +7,7 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     [SerializeField] private SO_PlayerBody _playerBody;
     [SerializeField] private SO_ItemContainer _equipmentContainer;
     [SerializeField] private ItemDragAndDrop _itemDragAndDrop;
+    [SerializeField] private PlayerPassiveController _playerPassiveController;
 
     [SerializeField] private EquipmentItemButton[] _equipmentItemButtons;
     [SerializeField] private Sprite[] _holderSprites;
@@ -14,6 +15,7 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
     public Action onChangeEquipment;
     public bool isArmorChanged = false;
     public bool isBackpackChanged = false;
+    public SO_ItemSet currentItemSet;
 
     private void Start()
     {
@@ -85,6 +87,57 @@ public class EquipmentItemSlotsPanel : MonoBehaviour
             else
             {
                 _playerBody.playerBodyParts[i].playerPart = _equipmentContainer.slots[i].item.armorData;
+            }
+        }
+
+        bool hasFullEquiped = true;
+        bool hasFullSet = false;
+
+        for (int i = 0; i < _playerBody.playerBodyParts.Length; i++)
+        {
+            if (_equipmentContainer.slots[i].item == null)
+            {
+                hasFullEquiped = false;
+                break;
+            }
+            if (_equipmentContainer.slots[i].item.armorData.itemSet == null)
+            {
+                hasFullEquiped = false;
+                break;
+            }
+        }
+
+        if (hasFullEquiped)
+        {
+            hasFullSet = _equipmentContainer.slots[0].item.armorData.itemSet == _equipmentContainer.slots[1].item.armorData.itemSet
+                            && _equipmentContainer.slots[1].item.armorData.itemSet == _equipmentContainer.slots[2].item.armorData.itemSet;
+            if (hasFullSet)
+            {
+                if (currentItemSet != _equipmentContainer.slots[0].item.armorData.itemSet)
+                {
+                    if (currentItemSet != null)
+                    {
+                        _playerPassiveController.RemovePassiveEffect(currentItemSet.passiveEffects.effectType);
+                    }
+                    currentItemSet = _equipmentContainer.slots[0].item.armorData.itemSet;
+                    _playerPassiveController.AddPassiveEffect(currentItemSet.passiveEffects.effectType);
+                }
+            }
+            else
+            {
+                if (currentItemSet != null)
+                {
+                    _playerPassiveController.RemovePassiveEffect(currentItemSet.passiveEffects.effectType);
+                    currentItemSet = null;
+                }
+            }
+        }
+        else
+        {
+            if (currentItemSet != null)
+            {
+                _playerPassiveController.RemovePassiveEffect(currentItemSet.passiveEffects.effectType);
+                currentItemSet = null;
             }
         }
 

@@ -20,6 +20,7 @@ public class SO_PlayerBodyPart : ScriptableObject
 
     public AnimationClip previewPartIdleAnimation;
 
+    public SO_ItemSet itemSet;
     public int armorValue;
     public int attackValue;
     public int inventorySlotsAdded;

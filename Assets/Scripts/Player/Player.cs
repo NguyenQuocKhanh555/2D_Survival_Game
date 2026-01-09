@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [Serializable]
 public class Stat
@@ -61,13 +62,15 @@ public class PlayerStats
 
 public class Player : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float _regenStaminaRate = 2f;
-    [SerializeField] private float _regenStaminaDelay = 1f;
-    [SerializeField] private float _hungerDecayRate = 0.01f;
-    [SerializeField] private float _thirstDecayRate = 0.01f;
+/*    [SerializeField] private float _regenStaminaRate = 2f;
+    [SerializeField] private float _regenStaminaDelay = 1f;*/
+    [SerializeField] private float _hungerDecayRate = 0.1f;
+    [SerializeField] private float _thirstDecayRate = 0.1f;
     [SerializeField] private StatusPanel _statusPanel;
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private ScreenTint _screenTint;
+    [SerializeField] private TilemapReadController _tilemapReadController;
+    [SerializeField] private PlayerPassiveController _playerPassiveController;
 
     public bool isDead = false;
     public bool isHungry = false;
@@ -79,6 +82,12 @@ public class Player : MonoBehaviour, IDamageable
     private Vector3 _checkPoint = Vector3.zero;
     private float _lastStaminaUseTime;
     private Animator _animator;
+
+    [SerializeField] private TileBase _hotBiomeTile;
+    [SerializeField] private TileBase _coldBiomeTile;
+    [SerializeField] private float _changeTemperatureDelay = 10f;
+    [SerializeField] private TileBase _currentTile;
+    [SerializeField] private float _timeInBiome = 0f;
 
     public float GetCurrentHealth() => _playerStats.health.currentValue;
     public float GetCurrrentHunger() => _playerStats.hunger.currentValue;
@@ -95,18 +104,80 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (GameManager.instance.CurrentGameState != GameState.Playing) return;    
+        //if (GameManager.instance.CurrentGameState != GameState.Playing) return;    
 
-        if (Time.time - _lastStaminaUseTime >= _regenStaminaDelay)
+/*        if (Time.time - _lastStaminaUseTime >= _regenStaminaDelay)
         {
             _playerStats.stamina.Add(_regenStaminaRate * Time.deltaTime);
             if (_playerStats.stamina.currentValue >= _playerStats.stamina.maxValue)
             {
                 isExhausted = false;
             }
-        }
+        }*/
 
         Drain();
+
+        Vector3Int gridPosition = _tilemapReadController.GetGridPosition(transform.position, false);
+        _currentTile = _tilemapReadController.GetTileAtGridPosition(gridPosition);
+
+        if (_currentTile == _hotBiomeTile)
+        {
+            if (_playerStats.bodyTemperature >= 40f || _playerPassiveController.HasPassiveEffect(PassiveEffectTypes.HeatResistance))
+            {
+                return;
+            }
+            
+            _timeInBiome += Time.deltaTime;
+
+            if (_timeInBiome >= _changeTemperatureDelay)
+            {
+                _playerStats.bodyTemperature += 0.5f;
+                _thirstDecayRate += 0.01f;
+                _statusPanel.UpdateTemperature(_playerStats.bodyTemperature);
+                _timeInBiome = 0f;
+            }
+        }
+        else if (_currentTile == _coldBiomeTile)
+        {
+            if (_playerStats.bodyTemperature <= 34f || _playerPassiveController.HasPassiveEffect(PassiveEffectTypes.ColdResistance))
+            {
+                return;
+            }
+
+            _timeInBiome += Time.deltaTime;
+
+            if (_timeInBiome >= _changeTemperatureDelay)
+            {
+                _playerStats.bodyTemperature -= 0.5f;
+                _hungerDecayRate += 0.01f;
+                _statusPanel.UpdateTemperature(_playerStats.bodyTemperature);
+                _timeInBiome = 0f;
+            }
+        }
+        else
+        {
+            if (_playerStats.bodyTemperature == 37f)
+            {
+                return;
+            }
+
+            _timeInBiome += Time.deltaTime;
+
+            if (_timeInBiome >= _changeTemperatureDelay)
+            {
+                _playerStats.bodyTemperature += _playerStats.bodyTemperature > 37f ? -0.5f : 0.5f;
+                if (_playerStats.bodyTemperature > 37f)
+                {
+                    _thirstDecayRate -= 0.01f;
+                }
+                else
+                {
+                    _hungerDecayRate -= 0.01f;
+                }
+                _statusPanel.UpdateTemperature(_playerStats.bodyTemperature);
+                _timeInBiome = 0f;
+            }
+        }
     }
 
     private void Drain()
@@ -126,7 +197,7 @@ public class Player : MonoBehaviour, IDamageable
         _statusPanel.SetUp(_playerStats);
     }
 
-    public void UseStamina(float amount)
+/*    public void UseStamina(float amount)
     {
         _playerStats.stamina.Subtract(amount);
         if (_playerStats.stamina.currentValue <= 0)
@@ -135,7 +206,7 @@ public class Player : MonoBehaviour, IDamageable
         }
 
         _lastStaminaUseTime = Time.time;
-    }
+    }*/
 
     public void TakeDamage(float damage)
     {
@@ -180,6 +251,15 @@ public class Player : MonoBehaviour, IDamageable
         {
             isThirsty = false;
         }
+    }
+
+    public void ResetTemperature()
+    {
+        _playerStats.bodyTemperature = 37f;
+        _statusPanel.UpdateTemperature(_playerStats.bodyTemperature);
+        _timeInBiome = 0f;
+        _hungerDecayRate = 0.1f;
+        _thirstDecayRate = 0.1f;
     }
 
     public void SetRespawnPoint(Vector3 position, CheckPointInteract checkPointInteract)

@@ -4454,8 +4454,8 @@ MonoBehaviour:
   mapSize: 500
   biomeCount: 5
   autoGenerateOnStart: 1
-  randomSeed: 1111
-  useFixedSeed: 1
+  randomSeed: 0
+  useFixedSeed: 0
   biomeGroundTiles:
   - {fileID: 11400000, guid: 24fff2e0ab707044b82c6693696d10d3, type: 2}
   - {fileID: 11400000, guid: fbba5efbf043e7e48bf92a797f709ccd, type: 2}

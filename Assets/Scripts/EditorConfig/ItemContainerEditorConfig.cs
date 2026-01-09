@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(SO_ItemContainer))]
-public class ItemContainerEditorConfig : Editor
+//[CustomEditor(typeof(SO_ItemContainer))]
+public class ItemContainerEditorConfig : MonoBehaviour
 {
-    override public void OnInspectorGUI()
+   /* override public void OnInspectorGUI()
     {
         SO_ItemContainer container = target as SO_ItemContainer;
         if (GUILayout.Button("Clear"))
@@ -15,5 +15,5 @@ public class ItemContainerEditorConfig : Editor
             }
         }
         DrawDefaultInspector();
-    }
+    }*/
 }

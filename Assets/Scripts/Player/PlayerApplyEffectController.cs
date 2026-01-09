@@ -101,5 +101,4 @@ public class PlayerApplyEffectController : MonoBehaviour
             _ => 0f
         };
     }
-
 }

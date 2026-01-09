@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   slots:
+  - item: {fileID: 11400000, guid: 493ea37311107be48ab2019dcfc020de, type: 2}
+    quantity: 0
   - item: {fileID: 11400000, guid: a12ea46fbdf1d72449d84e993297a2f5, type: 2}
     quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 0a350f0d3ca4e5f4f84c10718f77ec49, type: 2}
     quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: ce0615d0110adfe43b813f85821ddaf2, type: 2}
     quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 27a9a07d609897c488f0329707ec15c6, type: 2}
+    quantity: 99
+  - item: {fileID: 11400000, guid: 0b460b83a9a39a54c8477d1e714556ad, type: 2}
     quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 6359aa1cca151844ca374030fadfd532, type: 2}
+    quantity: 10
+  - item: {fileID: 11400000, guid: 3208bd478e7104c4ebef2f62fa6eb534, type: 2}
     quantity: 0
-  - item: {fileID: 11400000, guid: fbcc2cb17dff6e94dbf4805a0c96da6f, type: 2}
+  - item: {fileID: 11400000, guid: d859b4351dc24dc40814a87b2c619017, type: 2}
     quantity: 0
-  - item: {fileID: 11400000, guid: 5d158925c86132a49bfaa9e2739a5873, type: 2}
+  - item: {fileID: 11400000, guid: 05f404eb051ae6741b8678577591505d, type: 2}
     quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 85da543577713c44e934a1e1e0f9c06a, type: 2}
     quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 69890b4bf8c64a84882bca1e356fefd0, type: 2}
     quantity: 0
   - item: {fileID: 0}
     quantity: 0

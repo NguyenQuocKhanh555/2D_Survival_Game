@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: HoePlowTile
   m_EditorClassIdentifier: 
   _canPlow:
-  - {fileID: 11400000, guid: 98e2cd967b37cd14da237731578ed653, type: 2}
-  - {fileID: 11400000, guid: 29c7459ff29578540ac60971582cffe2, type: 2}
-  - {fileID: 11400000, guid: d28ee9e2124360f46be73b30f4501414, type: 2}
+  - {fileID: 11400000, guid: fbba5efbf043e7e48bf92a797f709ccd, type: 2}
+  - {fileID: 11400000, guid: 24fff2e0ab707044b82c6693696d10d3, type: 2}
+  - {fileID: 11400000, guid: d43873bdcdcce0542a08b9a5d08c9c0d, type: 2}
+  - {fileID: 11400000, guid: 0e29ecfd573c5874f89e94ed3d324f6c, type: 2}
+  - {fileID: 11400000, guid: 33e6c4b4702e42142963d7b5fcdf5159, type: 2}

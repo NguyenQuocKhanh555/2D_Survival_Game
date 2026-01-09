@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _dodgeSpeed = 1.0f;
     [SerializeField] private float _dodgeDistance = 10f;
     [SerializeField] private float _dodgeCooldown = 1.0f;
-    [SerializeField] private float _staminaDodgeConsumption = 10.0f;
+    //[SerializeField] private float _staminaDodgeConsumption = 10.0f;
+    [SerializeField] private GameObject _escUI;
 
     private PlayerControls _playerControls;
     private Rigidbody2D _rb;
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.UI.OpenInventory.performed += OnOpenInventory;
         _playerControls.PlayerMovement.Dodge.performed += OnDodge;
         _playerControls.PlayerMovement.Consume.performed += OnConsumeItem;
+        _playerControls.UI.Esc.performed += OnEsc;
     }
 
     private void OnDisable()
@@ -73,6 +75,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.PlayerMovement.PickupItemAround.performed -= OnPickupAroundItem;
         _playerControls.PlayerMovement.Dodge.performed -= OnDodge;
         _playerControls.PlayerMovement.Consume.performed -= OnConsumeItem;
+        _playerControls.UI.Esc.performed -= OnEsc;
         _playerControls.Disable();
     }
 
@@ -261,9 +264,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnEsc(InputAction.CallbackContext context)
+    {
+        if (_isDodging) return;
+        if (isInteracting) return;
+        if (isBusy) return;
+        if (isInventoryOpen) return;
+
+        _escUI.SetActive(!_escUI.activeSelf);
+    }
+
     private IEnumerator DodgeCoroutine()
     {
-        _player.UseStamina(_staminaDodgeConsumption);
+        //_player.UseStamina(_staminaDodgeConsumption);
         _animator.SetTrigger("dodge");
         _isDodging = true;
         _canDodge = false;
