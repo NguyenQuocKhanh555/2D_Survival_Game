@@ -211,7 +211,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void ApplyDamage(float damage)
     {
-        //TakeDamage(damage);
+        TakeDamage(damage);
     }
 
     public void CheckState()

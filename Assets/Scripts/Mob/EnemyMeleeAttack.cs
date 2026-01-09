@@ -14,7 +14,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     public bool isAttacking = false;
     public MobDetector detectRange;
 
-    private bool IsPlayerInAttackRange
+    public bool IsPlayerInAttackRange
     {
         get
         {

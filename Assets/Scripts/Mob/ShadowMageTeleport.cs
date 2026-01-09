@@ -17,6 +17,10 @@ public class ShadowMageTeleport : MonoBehaviour
     public void CreateOpenPort()
     {
         _openPortal.SetActive(true);
+        if (_closePortal == null)
+        {
+            _closePortal = Instantiate(_openPortal, transform.position, Quaternion.identity);
+        }
         _closePortal.SetActive(true);
         Vector2 direction = _detector.PlayerToMob;
         _newPosition = (Vector2)transform.position + direction * _teleportDistance;

@@ -19,6 +19,7 @@ public class Mob : MonoBehaviour, IDamageable
     public EnemyRangeAttack rangeAttack;
     public EnemyMeleeAttack meleeAttack;
     public ShadowMageTeleport teleport;
+    public SO_Item dropItem;
 
     public Vector2 lastMotionVector = Vector2.down;  
     public MobType mobType;
@@ -41,7 +42,8 @@ public class Mob : MonoBehaviour, IDamageable
         meleeAttack = GetComponent<EnemyMeleeAttack>();
         teleport = GetComponent<ShadowMageTeleport>();
 
-        ChangeState(new MobIdleState(this));
+        _currentState = new MobIdleState(this);
+        _currentState.Enter();
     }
 
     private void Update()
@@ -50,13 +52,13 @@ public class Mob : MonoBehaviour, IDamageable
 
         if (isDead)
         {
-            ChangeState(new MobDieState(this));
+            ChangeState(new MobDeathState(this));
         }
     }
 
     public void ChangeState(MobState state)
     {
-        if (GameManager.instance.CurrentGameState != GameState.Playing) return;
+        //if (GameManager.instance.CurrentGameState != GameState.Playing) return;
 
         if (_currentState != null) 
             _currentState.Exit();
@@ -102,6 +104,12 @@ public class Mob : MonoBehaviour, IDamageable
 
     public void Dead()
     {
+        if (dropItem != null)
+        {
+            int dropCount = dropItem.isStackable ? 1 : 0;
+            SpawnItemManager.instance.SpawnItem(transform.position, dropItem, dropCount);
+        }
+        
         Destroy(gameObject);
     }
 

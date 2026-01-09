@@ -42,8 +42,9 @@ public class MobIdleState : MobState
             return;
         }
 
-        if (mob.mobType == MobType.MeleeEnemy && mob.detector.isPlayerInDectectRange)
+        if (mob.mobType == MobType.MeleeEnemy && mob.detector.isPlayerInDectectRange && !mob.meleeAttack.IsPlayerInAttackRange)
         {
+            Debug.Log("Chasing from idle");
             mob.ChangeState(new EnemyChaseState(mob));
             return;
         }

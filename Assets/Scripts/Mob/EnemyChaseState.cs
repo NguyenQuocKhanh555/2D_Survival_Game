@@ -21,6 +21,7 @@ public class EnemyChaseState : MobState
 
         if (!mob.detector.isPlayerInDectectRange)
         {
+            mob.animator.SetBool("isChase", false);
             mob.ChangeState(new MobIdleState(mob));
             return;
         }
@@ -35,7 +36,7 @@ public class EnemyChaseState : MobState
 
     public override void Exit()
     {
-        mob.animator.SetBool("isChase", false);
+
     }
 }
 

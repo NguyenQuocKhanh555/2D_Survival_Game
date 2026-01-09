@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -17,7 +17,15 @@ public class WorldGenerator : MonoBehaviour
     public TileBase[] biomeWaterTiles;  // water tiles per biome
 
     [Header("Tilemap")]
-    public Tilemap targetTilemap;
+    public Tilemap groundTilemap;
+    public Tilemap waterTilemap;
+    public TilemapCollider2D waterTilemapCollider;
+    public CompositeCollider2D waterCompositeCollider;
+    public GameObject[] biomeTreePrefabs; 
+    public GameObject[] biomeOrePrefabs;
+
+    [Range(0f, 1f)] public float treeSpawnChance = 0.02f;
+    [Range(0f, 1f)] public float oreSpawnChance = 0.005f;
 
     [Header("Voronoi / Noise smoothing")]
     [Range(0f, 1f)] public float noiseStrength = 0.15f; // how much Perlin noise biases Voronoi
@@ -30,8 +38,14 @@ public class WorldGenerator : MonoBehaviour
     public int maxLakeRadius = 20;
     [Range(0f, 1f)] public float maxLakeBiomeFraction = 0.06f; // lake can't occupy more than this fraction of biome
 
+    [Header("Animal Spawn")]
+    public GameObject[] animalPrefabs;
+    public int animalCount = 10;
+    public float spawnRadius = 50f;
+
     [Header("Performance")]
     public int tilesPerYield = 20000; // yield to next frame to avoid freeze in editor/play
+    public int objectsPerYield = 300;
 
     // internal
     private Vector2Int[] biomeCenters;
@@ -42,7 +56,7 @@ public class WorldGenerator : MonoBehaviour
     public void GenerateMap()
     {
         StopAllCoroutines();
-        if (targetTilemap == null)
+        if (groundTilemap == null)
         {
             Debug.LogError("Target Tilemap not assigned!");
             return;
@@ -65,13 +79,15 @@ public class WorldGenerator : MonoBehaviour
         else
             rng = new System.Random();
 
-        StartCoroutine(GenerateMapCoroutine());
+        StartCoroutine(GenerateMapCoroutine());       
     }
 
     private void Start()
     {
         if (autoGenerateOnStart)
+        {
             GenerateMap();
+        }     
     }
 
     private IEnumerator GenerateMapCoroutine()
@@ -102,8 +118,12 @@ public class WorldGenerator : MonoBehaviour
         // 2) Build biome assignment + list of positions per biome
         // We'll prepare a tile array for the whole map and a biome id per tile if needed
         BoundsInt fullBounds = new BoundsInt(-half, -half, 0, mapSize, mapSize, 1);
+        bool[] isLakeTile;
         int totalTiles = mapSize * mapSize;
-        TileBase[] tiles = new TileBase[totalTiles];
+        //TileBase[] tiles = new TileBase[totalTiles];
+        TileBase[] groundTiles = new TileBase[totalTiles];
+        TileBase[] lakeTiles = new TileBase[totalTiles];
+        isLakeTile = new bool[totalTiles];
         int[] biomeIdPerTile = new int[totalTiles]; // store assigned biome id for later lake checks
 
         // Precompute Perlin offsets (randomize)
@@ -151,7 +171,9 @@ public class WorldGenerator : MonoBehaviour
                 }
 
                 // assign ground tile for that biome
-                tiles[idx] = biomeGroundTiles[bestBiome];
+                //tiles[idx] = biomeGroundTiles[bestBiome];
+                groundTiles[idx] = biomeGroundTiles[bestBiome];
+                lakeTiles[idx] = null;
                 biomeIdPerTile[idx] = bestBiome;
 
                 processed++;
@@ -222,7 +244,9 @@ public class WorldGenerator : MonoBehaviour
                             // Only carve lake if this tile currently belongs to the same biome (avoid lakes spanning biomes)
                             if (biomeIdPerTile[idx] == b)
                             {
-                                tiles[idx] = biomeWaterTiles[b];
+                                //tiles[idx] = biomeWaterTiles[b];
+                                lakeTiles[idx] = biomeWaterTiles[b];
+                                isLakeTile[idx] = true;
                             }
                         }
                     }
@@ -233,11 +257,21 @@ public class WorldGenerator : MonoBehaviour
         }
 
         // 6) Apply to Tilemap using SetTilesBlock (single call)
-        targetTilemap.ClearAllTiles();
-        targetTilemap.SetTilesBlock(fullBounds, tiles);
+        groundTilemap.ClearAllTiles();
+        waterTilemap.ClearAllTiles();
+        groundTilemap.SetTilesBlock(fullBounds, groundTiles);
+        waterTilemap.SetTilesBlock(fullBounds, lakeTiles);
+
+        waterTilemap.RefreshAllTiles();
+        waterTilemap.CompressBounds();
+        waterTilemapCollider.ProcessTilemapChanges();
+        waterCompositeCollider.GenerateGeometry();
+
+        StartCoroutine(SpawnBiomeObjectsCoroutine(fullBounds, biomeIdPerTile, isLakeTile));
+        StartCoroutine(SpawnAnimalsCoroutine());
 
         float elapsed = Time.realtimeSinceStartup - t0;
-        Debug.Log($"Map generated: {mapSize}�{mapSize}, biomes={biomeCount}. Time: {elapsed:F2}s");
+        Debug.Log($"Map generated: {mapSize}×{mapSize}, biomes={biomeCount}. Time: {elapsed:F2}s");
         yield break;
     }
 
@@ -251,4 +285,93 @@ public class WorldGenerator : MonoBehaviour
         }
         return true;
     }
+
+    private IEnumerator SpawnBiomeObjectsCoroutine(BoundsInt bounds, int[] biomeIdPerTile, bool[] isLakeTile)
+    {
+        int spawned = 0;
+
+        for (int i = 0; i < biomeIdPerTile.Length; i++)
+        {
+            if (isLakeTile[i]) continue;
+
+            int biome = biomeIdPerTile[i];
+
+            int ix = i % bounds.size.x;
+            int iy = i / bounds.size.x;
+
+            Vector3Int cellPos = new Vector3Int(
+                ix + bounds.xMin,
+                iy + bounds.yMin,
+                0
+            );
+
+            Vector3 worldPos = groundTilemap.CellToWorld(cellPos) + new Vector3(0.5f, 0f, 0f);
+            worldPos.z = 0f;
+
+            // 🌳 Tree
+            if (biomeTreePrefabs[biome] != null &&
+                rng.NextDouble() < treeSpawnChance)
+            {
+                Instantiate(
+                    biomeTreePrefabs[biome],
+                    worldPos,
+                    Quaternion.identity//,
+                    //objectParent
+                );
+                spawned++;
+            }
+            // ⛏ Ore
+            else if (biomeOrePrefabs[biome] != null &&
+                     rng.NextDouble() < oreSpawnChance)
+            {
+                Instantiate(
+                    biomeOrePrefabs[biome],
+                    worldPos,
+                    Quaternion.identity//,
+                    //objectParent
+                );
+                spawned++;
+            }
+
+            if (spawned >= objectsPerYield)
+            {
+                spawned = 0;
+                yield return null; // nhường frame
+            }
+        }
+
+        Debug.Log("Finished spawning biome objects.");
+    }
+
+    public IEnumerator SpawnAnimalsCoroutine()
+    {
+        if (animalPrefabs == null || animalPrefabs.Length == 0)
+            yield break;
+
+        int spawned = 0;
+
+        while (spawned < animalCount)
+        {
+            float angle = (float)(rng.NextDouble() * Mathf.PI * 2f);
+            float radius = spawnRadius * Mathf.Sqrt((float)rng.NextDouble());
+
+            Vector3 pos = new Vector3(
+                Mathf.Cos(angle) * radius,
+                Mathf.Sin(angle) * radius,
+                0f
+            );
+
+            int prefabIndex = rng.Next(0, animalPrefabs.Length);
+            GameObject prefab = animalPrefabs[prefabIndex];
+
+            if (!Physics2D.OverlapCircle(pos, 0.5f))
+            {
+                Instantiate(prefab, pos, Quaternion.identity);
+                spawned++;
+            }
+
+            yield return null; // 1 con / frame
+        }
+    }
+
 }
