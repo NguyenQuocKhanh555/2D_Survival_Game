@@ -29,19 +29,13 @@ public class MobPatrolState : MobState
 
     public override void Update()
     {
-        if (mob.isDead)
-        {
-            mob.ChangeState(new MobDieState(mob));
-            return;
-        }
-
         if (mob.mobType == MobType.MeleeEnemy && mob.meleeAttack.CanAttack())
         {
             mob.ChangeState(new EnemyMeleeAttackState(mob));
             return;
         }
 
-        if (mob.mobType == MobType.MeleeEnemy && mob.detector.isPlayerInDectectRange)
+        if (mob.mobType == MobType.MeleeEnemy && mob.detector.isPlayerInDectectRange && !mob.meleeAttack.IsPlayerInAttackRange)
         {
             mob.ChangeState(new EnemyChaseState(mob));
             return;

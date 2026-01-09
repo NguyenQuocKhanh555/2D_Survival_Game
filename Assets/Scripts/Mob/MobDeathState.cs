@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class MobDieState : MobState
+public class MobDeathState : MobState
 {
-    public MobDieState(Mob mob) : base(mob)
+    public MobDeathState(Mob mob) : base(mob)
     {
     }
 
     public override void Enter()
     {
+        mob.rb.linearVelocity = Vector2.zero;
+        mob.isDead = false;
         mob.animator.SetTrigger("die");
     }
 

@@ -8,6 +8,8 @@ public class EnemyMeleeAttackState : MobState
 
     public override void Enter()
     {
+        mob.rb.linearVelocity = Vector2.zero;
+
         Vector2 direction = mob.detector.MobToPlayer;
         Vector2 faceDirection = mob.SnapToCardinal(direction);
         mob.lastMotionVector = faceDirection;
@@ -22,6 +24,7 @@ public class EnemyMeleeAttackState : MobState
     {
         if (!mob.meleeAttack.isAttacking)
         {
+            mob.animator.SetBool("isChase", false);
             mob.ChangeState(new MobIdleState(mob));
             return;
         }

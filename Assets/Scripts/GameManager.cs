@@ -20,11 +20,6 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        SetGameState(GameState.Playing);
-    }
-
     public void SetGameState(GameState newState)
     {
         if (CurrentGameState == newState) return;
@@ -39,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Setup:
                 // Initialize game setup
+                Time.timeScale = 0f;
                 break;
             case GameState.Playing:
                 Time.timeScale = 1f;
