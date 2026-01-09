@@ -21,6 +21,6 @@ MonoBehaviour:
   toolData: {fileID: 0}
   weaponData: {fileID: 0}
   itemEffect: {fileID: 0}
-  armorData: {fileID: 0}
+  armorData: {fileID: 11400000, guid: 559a80c374a11b1468356dffd8db603e, type: 2}
   placeableData: {fileID: 0}
   cropData: {fileID: 0}

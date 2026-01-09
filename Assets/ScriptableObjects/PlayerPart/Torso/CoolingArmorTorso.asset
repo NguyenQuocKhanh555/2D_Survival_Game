@@ -56,3 +56,6 @@ MonoBehaviour:
   - {fileID: 7400000, guid: c3057314b3e42ed45821963cf222ee0f, type: 2}
   - {fileID: 7400000, guid: 321f915ae43d0684987a8b583dc6691c, type: 2}
   previewPartIdleAnimation: {fileID: 7400000, guid: 03a2b28579b276341bd99e5740df206d, type: 2}
+  armorValue: 10
+  attackValue: 0
+  inventorySlotsAdded: 0

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: HeartBeetItemEffect
   m_EditorClassIdentifier: 
   itemEffects:
-  - effectType: 0
-    effectMethod: 0
-    effectValue: -5
-    effectDuration: 0
   - effectType: 1
     effectMethod: 0
     effectValue: 10
+    effectDuration: 0
+  - effectType: 2
+    effectMethod: 0
+    effectValue: 20
     effectDuration: 0

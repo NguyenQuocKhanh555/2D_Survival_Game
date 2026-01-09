@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 033c3776d4bd4454f8676592e9c4e2a5, type: 3}
-  m_Name: PikeappleItemEffect
+  m_Script: {fileID: 11500000, guid: 9a51bdc28ae431343b73ae74a30c5acf, type: 3}
+  m_Name: MythicBackpack
   m_EditorClassIdentifier: 
-  itemEffects:
-  - effectType: 1
-    effectMethod: 0
-    effectValue: 10
-    effectDuration: 0
-  - effectType: 2
-    effectMethod: 0
-    effectValue: 20
-    effectDuration: 0
+  partName: 3
+  partAnimationID: 0
+  allPartAnimations: []
+  previewPartIdleAnimation: {fileID: 0}
+  armorValue: 0
+  attackValue: 0
+  inventorySlotsAdded: 40

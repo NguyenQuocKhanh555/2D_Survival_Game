@@ -21,11 +21,11 @@ MonoBehaviour:
     quantity: 93
   - item: {fileID: 11400000, guid: 671f1e12b2d28764b8c6d435a012d308, type: 2}
     quantity: 3
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 85da543577713c44e934a1e1e0f9c06a, type: 2}
     quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: fbcc2cb17dff6e94dbf4805a0c96da6f, type: 2}
     quantity: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 5d158925c86132a49bfaa9e2739a5873, type: 2}
     quantity: 0
   - item: {fileID: 0}
     quantity: 0

@@ -6466,8 +6466,9 @@ MonoBehaviour:
   _dodgeDistance: 2
   _dodgeCooldown: 1
   _staminaDodgeConsumption: 10
-  isFishing: 0
-  isPickupItem: 0
+  isBusy: 0
+  isInteracting: 0
+  isInventoryOpen: 0
 --- !u!95 &413895677
 Animator:
   serializedVersion: 7
@@ -7245,7 +7246,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 14.25
+  orthographic size: 306.65857
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -30414,8 +30415,6 @@ RectTransform:
   - {fileID: 1316725393}
   - {fileID: 1526800998}
   - {fileID: 1243815591}
-  - {fileID: 1316725393}
-  - {fileID: 803135970}
   - {fileID: 460182079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
