@@ -172,6 +172,8 @@ public class PlayerController : MonoBehaviour
         if (isBusy) return;
 
         isInteracting = _interactController.Interact(_player);
+        _rb.linearVelocity = Vector2.zero;
+        _animator.SetBool("moving", false);
     }
 
     private void OnAction(InputAction.CallbackContext context)
@@ -188,6 +190,8 @@ public class PlayerController : MonoBehaviour
         if (isInteracting) return;
         if (isBusy) return;
         if (isInventoryOpen) return;
+        _rb.linearVelocity = Vector2.zero;
+        _animator.SetBool("moving", false);
 
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
@@ -211,6 +215,8 @@ public class PlayerController : MonoBehaviour
         if (isInteracting) return;
         if (isBusy) return;
         if (isInventoryOpen) return;
+        _rb.linearVelocity = Vector2.zero;
+        _animator.SetBool("moving", false);
 
         switch (_toolbarController.GetToolbarSelectedItem.itemType)
         {
@@ -254,6 +260,9 @@ public class PlayerController : MonoBehaviour
         if (isBusy) return;
 
         _inventoryController.ToggleInventory();
+        _rb.linearVelocity = Vector2.zero;
+        _animator.SetBool("moving", false);
+
         if (_inventoryController.IsInventoryOpen)
         {
             isInventoryOpen = true;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftMaterials:
   - item: {fileID: 11400000, guid: 7f633fdf7c089874ca86c6fe3f4a3465, type: 2}
-    quantity: 10
+    quantity: 5
   resultItem:
     item: {fileID: 11400000, guid: d3e587fb056c6ef4eadbaa61e67f6e43, type: 2}
     quantity: 0

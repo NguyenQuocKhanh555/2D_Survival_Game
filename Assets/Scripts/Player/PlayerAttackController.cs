@@ -14,7 +14,7 @@ public class PlayerAttackController : MonoBehaviour
         foreach (Collider2D collider in hitColliders)
         {
             Damageable damageable = collider.GetComponent<Damageable>();
-            if (damageable != null)
+            if (damageable != null && !collider.CompareTag("Player"))
             {
                 damageable.TakeDamage(damage);
             }

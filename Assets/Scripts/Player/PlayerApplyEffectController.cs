@@ -48,7 +48,14 @@ public class PlayerApplyEffectController : MonoBehaviour
     // Instant
     private void ApplyHealthInstant(ItemEffect effect)
     {
-        _player.Heal(ModifyStat(_player.GetCurrentHealth(), effect));
+        if (effect.effectValue < 0f)
+        {
+            _player.TakeDamage(ModifyStat(_player.GetCurrentHealth(), effect));
+        } 
+        else
+        {
+            _player.Heal(ModifyStat(_player.GetCurrentHealth(), effect));
+        }
     }
 
     private void ApplyFoodInstant(ItemEffect effect)

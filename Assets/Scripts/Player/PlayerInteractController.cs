@@ -69,6 +69,12 @@ public class PlayerInteractController : MonoBehaviour
 
         _currentSelectedObject.Interact(player);
         _currentInteractObject = _currentSelectedObject;
+        if (_currentInteractObject.GetComponent<GraveInteract>() != null)
+        {
+            _currentInteractObject = null;
+            return false;
+        }
+
         return true;
     }
 }

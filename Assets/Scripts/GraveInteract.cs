@@ -26,6 +26,7 @@ public class GraveInteract : Interactable
 
     public override void Interact(Player player)
     {
+
         for (int i = 0; i < _graveContainer.slots.Count; i++)
         {
             ItemSlot slot = _graveContainer.slots[i];

@@ -213,6 +213,10 @@ public class Player : MonoBehaviour, IDamageable
         if (isDead) return;
 
         float damageTaken = damage;
+        if (damageTaken < 0)
+        { 
+            damageTaken *= -1;        
+        }
         _playerStats.health.Subtract(damageTaken);
         _statusPanel.UpdateHealthBar(_playerStats.health.currentValue, _playerStats.health.maxValue);
         
@@ -220,6 +224,7 @@ public class Player : MonoBehaviour, IDamageable
         {
             isDead = true;
             _animator.SetTrigger("dead");
+            this.GetComponent<PlayerController>().enabled = false;
         }
     }
 
@@ -282,6 +287,7 @@ public class Player : MonoBehaviour, IDamageable
         _playerStats.thirst.currentValue = _playerStats.thirst.maxValue / 2;
         SetupStatusPanel(_statusPanel);
         _screenTint.UnTint();
+        this.GetComponent<PlayerController>().enabled = true;
     }
 
     public void CalculateDamage(ref float damage)
